@@ -86,7 +86,8 @@ def _single_corr_by_perplexity_plot(
             family          = row['family']
             model_name_with_size = row['model_name_with_size']
             color_          = MARKER_COLORS_BY_FAMILY[family]
-            marker_shape    = SIGNIFICANCE_SHAPES[signif]
+            # marker_shape    = SIGNIFICANCE_SHAPES[signif]
+            marker_shape    = "o"
             dot_x           = perplexity_val + offset
             
             if est_strategy == "Regular":
@@ -127,7 +128,7 @@ def _single_corr_by_perplexity_plot(
                 ax.text(
                     text_x,
                     corr_val + 0.05, # corr_val + CI_yerr + 0.02,
-                    model_name_with_size,
+                    'Pythia 70M',
                     ha='center', va='bottom', fontsize=fontsize_model,
                     rotation=90, #if n_corrs == 2 else 0,
                     color='grey'
@@ -159,7 +160,8 @@ def _single_corr_by_perplexity_plot(
     ax.axhline(y=0.2, color='grey', linestyle='--', linewidth=0.4)
     
     # x axis label perplexity
-    ax.set_xlabel("$Average$ $Surprisal$", fontsize=fontsize_axis, fontweight='bold')
+    # ax.set_xlabel("$Average$ $Surprisal$", fontsize=fontsize_axis, fontweight='bold')
+    ax.set_xlabel("$Log$ $Perplexity$", fontsize=fontsize_axis, fontweight='bold')
     
     if all_levels:
         # check for correlation between perplexity and results
@@ -194,24 +196,24 @@ def _build_legend_ppl_plot(
     ):
     # Build a single legend for significance colors
     handles = []
-    for shape in ['o', '^']:
-        if shape == 'o':
-            label = "p < 0.05"
-        elif shape == '^':
-            label = "p >= 0.05"
-        else:
-            raise ValueError(f"Unknown shape: {shape}")
-        # Create an invisible line with the given marker
-        line = mlines.Line2D(
-            [], [], 
-            color='black',            # or any color to represent the marker edge
-            marker=shape,
-            label=label,
-            markeredgecolor='black',
-            markersize=markzise_legend,
-            linestyle='None'
-        )
-        handles.append(line)
+    # for shape in ['o', '^']:
+    #     if shape == 'o':
+    #         label = "p < 0.05"
+    #     elif shape == '^':
+    #         label = "p >= 0.05"
+    #     else:
+    #         raise ValueError(f"Unknown shape: {shape}")
+    #     # Create an invisible line with the given marker
+    #     line = mlines.Line2D(
+    #         [], [], 
+    #         color='black',            # or any color to represent the marker edge
+    #         marker=shape,
+    #         label=label,
+    #         markeredgecolor='black',
+    #         markersize=markzise_legend,
+    #         linestyle='None'
+    #     )
+    #     handles.append(line)
         
     # add to legend Familiy shapes
     # relevant families
@@ -229,7 +231,7 @@ def _build_legend_ppl_plot(
         handles=handles, 
         loc='lower center', 
         bbox_to_anchor=(0.5, 0.0), 
-        ncol=4, 
+        ncol=5, 
         fontsize=fontsize_legend_text, 
         frameon=False
     )

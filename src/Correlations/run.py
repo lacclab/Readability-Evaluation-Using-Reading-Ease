@@ -10,7 +10,7 @@ from src.Correlations.plots_code.grid_corr_by_ppl_RTx3_RTxLevel import plot_corr
 from src.Correlations.plots_code.grid_perm_test_RTx2_RTxSenPar_diff_only import plot_perm_test_RTx2_RTxSenPar_diff_only
 from src.Correlations.plots_code.grid_corr_between_all_measures_3x2_LevelxSenPar import plot_all_within_readability_measures_correlation
 
-from src.utils.stat_analysis.Julia_models import setup_julia # Julia install - run: curl -fsSL https://install.julialang.org | sh -s -- --default-channel lts
+from utils.stat_analysis.cocor import setup_julia # Julia install - run: curl -fsSL https://install.julialang.org | sh -s -- --default-channel lts
 from src.Correlations.define_cols import (
     MAIN_RT_COLS, MAIN_TEXT_COLS, MAIN_SURP_COLS, ALL_SURP_COLS, PROMPT_COLS_FULL_LABELS,
     MAIN_PROMPT_COLS, SM_PROMPT_COLS, SM_RT_COLS_SET1, SM_RT_COLS_SET2, SM_RT_COLS_SET3

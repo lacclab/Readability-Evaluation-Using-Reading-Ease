@@ -1,23 +1,20 @@
+from pathlib import Path
 import itertools
-import numpy as np
 import pandas as pd
 from typing import List, Literal
-from scipy.stats import pearsonr, spearmanr, permutation_test
+from scipy.stats import pearsonr, spearmanr
 from tqdm import tqdm
 from loguru import logger
 import os
-from src.utils.stat_analysis.stat_utils import add_p_val_symbols, get_mean_ci
+from src.utils.stat_analysis.stat_utils import add_p_val_symbols, get_mean_ci, p_to_star
 from src.utils.data_utils import get_text_id_cols, add_id_cols, add_reading_regime_col
 from src.utils.files_utils import replace_results_in_file
 from src.Correlations.define_cols import (
     MAIN_RT_COLS, MAIN_TEXT_COLS, MAIN_SURP_COLS, ALL_SURP_COLS, SM_TEXT_COLS, SM_RT_COLS, SM_SURP_COLS, SM_PROMPT_COLS, READING_COMPREHENSION_COLS, OPPOSITE_DIRECTION_METRICS
 )
-from src.Correlations.utils import _del_leg_file_if_exists
-from src.constants import DEFAULT_RANDOM_STATE
 
 N_CV_FOLDS = 10
 N_BOOTSTRAP = 200
-N_PERMUTATION = 1000
 
 # ----------
 # Main Funcs
@@ -25,15 +22,15 @@ N_PERMUTATION = 1000
 
 def calc_correlations(
     src_path: str,
-    resolution: Literal["sentence", "paragraph"], 
-    L1_or_L2: Literal["L1", "L2", "L1_and_L2"],
+    resolution: Literal["sentence", "paragraph", "article"], 
+    reader_type: Literal["L1", "L2", "general_reader", "L1_and_L2"],
     reading_regime: str,
     pred_type: Literal["RT", "comprehension"],
     run_for_all_surp: bool = False,
     include_bootstrap: bool = False,
     run_for_specific_text_cols: List = None
     ):
-    results_dir = src_path / f"Correlations/{L1_or_L2}/{reading_regime}"
+    results_dir = src_path / f"Correlations/{reader_type}/{reading_regime}"
     results_dir.mkdir(parents=True, exist_ok=True)
     logger.info(f"--- {resolution=} | {reading_regime=} ---")
     
@@ -46,7 +43,7 @@ def calc_correlations(
         surp_cols_to_run = MAIN_SURP_COLS + SM_SURP_COLS
     
     # get metrics
-    level_metrics_df = _get_metrics_df(src_path, resolution, reading_regime, L1_or_L2, surp_cols_to_run, pred_type)
+    level_metrics_df = _get_ele_adv_metrics_df(src_path, resolution, reading_regime, reader_type, surp_cols_to_run, pred_type)
     existing_surp_cols = [col for col in surp_cols_to_run if col in level_metrics_df.columns]    
     
     if run_for_specific_text_cols:
@@ -55,16 +52,13 @@ def calc_correlations(
         run_for_text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + existing_surp_cols
     all_cols = pred_cols + run_for_text_cols
     
-    # calc diff Adv - Ele
-    diff_metrics_df = _calc_diff_in_values_between_levels(level_metrics_df, cols=all_cols, resolution=resolution)
-    # create df with all metrics Adv, Ele, Diff
-    all_metrics_df = _get_merged_metrics_df(all_cols, level_metrics_df, diff_metrics_df, resolution)
+    # add diff metrics
+    all_metrics_df = _add_diff_metrics(resolution, all_cols, level_metrics_df)
+    
     # save all_metrics_df
     if not run_for_specific_text_cols:
         all_metrics_df.to_csv(results_dir / f"{pred_type}_all_metrics_df_{resolution}.csv", index=False)
-    # Add batch_article_id col
-    all_metrics_df = add_id_cols(all_metrics_df, batch_article_id=True)
-
+    
     # --- Calculate Correlations ---
     corr_df = _get_corr_df(resolution, all_metrics_df, run_for_text_cols, reading_regime, pred_cols, results_dir, include_bootstrap)
     
@@ -158,114 +152,160 @@ def agg_folds_correlations(src_path, resolution, L1_or_L2, reading_regime, inclu
     
     replace_results_in_file(results_dir / f"agg_folds_corr_{resolution}.csv", agg_corr_df)
 
-def calc_perm_test(
-    src_path: str,
-    resolution: Literal["sentence", "paragraph", "article"], 
-    L1_or_L2: Literal["L1", "L2", "general_reader", "L1_and_L2"],
-    reading_regime: str,
-    est_strategy: Literal["CV", "Bootstrap"],
-    surp_cols_to_run: List,
-    ):
-    results_dir = src_path / f"Correlations/{L1_or_L2}/{reading_regime}"
-    results_dir.mkdir(parents=True, exist_ok=True)
-    logger.info(f"{resolution=} | {reading_regime=}")
+def calc_RT_corr_for_pair_plots(src_path, resolution):
+    RT_cols = MAIN_RT_COLS + SM_RT_COLS
     
-    # define statistic
-    def _statistic(x, y, axis):
-        return np.mean(x, axis=axis) - np.mean(y, axis=axis)
+    # L1 next to L2
+    reading_regime = "FirstReading"
+    reader_type = 'L1_next_to_L2'
+    L1_metrics_df, L2_metrics_df = _load_L1_and_L2_RT_metrics(
+        src_path, 
+        resolution, 
+        RT_cols,
+        reading_regime,
+        reader_type
+    )
+    corrs = calc_corr_between_cols(RT_cols, L1_metrics_df, L2_metrics_df)
+    corrs['reader_type'] = reader_type
+    corrs['reading_regime'] = reading_regime
+    corrs['resolution'] = resolution
+    # save corrs
+    results_dir = src_path / f"Correlations/{reader_type}/{reading_regime}"
+    corrs.to_csv(results_dir / f"RT_corrs_{resolution}.csv", index=False)
     
-    # columns should iclude : pred_col, text_col, level_type, pearson_corr, spearman_corr, pearson_p, spearman_p, n_vals, reading_regime, fold
-    
-    # groupby corr_df by pred_col, text_col, level_type
-    # for each pair of groups: filter fold!=all and calc permutation test between pearson_corr of the two groups
-    text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + surp_cols_to_run
+    # Gathering0 next to Hunting0
+    reading_regime = 'Gathering0_next_to_Hunting0'
+    reader_type = "L1_and_L2"
+    Gathering0_metrics_df, Hunting0_metrics_df = _load_Gathering0_and_Hunting0_RT_metrics(
+        src_path, 
+        resolution, 
+        RT_cols,
+        reading_regime,
+        reader_type
+    )
+    corrs = calc_corr_between_cols(RT_cols, Gathering0_metrics_df, Hunting0_metrics_df)
+    corrs['reader_type'] = reader_type
+    corrs['reading_regime'] = reading_regime
+    corrs['resolution'] = resolution
+    # save corrs
+    results_dir = src_path / f"Correlations/{reader_type}/{reading_regime}"
+    corrs.to_csv(results_dir / f"RT_corrs_{resolution}.csv", index=False)
 
-    perm_test_dfs = []
-    skipped = 0
-    skipped_pairs = []
+def calc_corr_between_formulas_for_pair_plots(src_path, resolution):
+    text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + MAIN_SURP_COLS + SM_SURP_COLS
     
-    pred_cols = MAIN_RT_COLS + SM_RT_COLS
-    for pred_col in tqdm(pred_cols, desc="Calculating permutation tests..."):
-        # corr df
-        corr_df = pd.read_csv(results_dir / f"correlations_{resolution}_{pred_col}.csv")
-        for level_type, group_df in corr_df.groupby('level_type'):
-            # iterate on each pair of text_cols
-            combinations = list(itertools.combinations(text_cols, 2))
-            for text_col_1, text_col_2 in combinations:
-                skip_current = False
-                # abs corr
-                group_df['pearson_corr'] = group_df['pearson_corr'].abs()
-                # filter group_df by text_col_1 and text_col_2
-                group_1 = group_df[group_df['text_col'] == text_col_1]
-                group_2 = group_df[group_df['text_col'] == text_col_2]
-                
-                if est_strategy == "CV":
-                    # filter fold!=all and fold!=bootstrap_all
-                    group_1 = group_1[group_1['fold'] != 'bootstrap_all']
-                    group_2 = group_2[group_2['fold'] != 'bootstrap_all']
-                    group_1 = group_1[group_1['fold'] != 'all']
-                    group_2 = group_2[group_2['fold'] != 'all']
+    text_id_cols = get_text_id_cols(resolution)
+    merge_cols = text_id_cols + ["level"]
+    metrics_df = _load_readability_metrics(src_path, resolution)
+    metrics_df, exisiting_surp_cols = _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, MAIN_SURP_COLS)
+    metrics_df = _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols)
+    metrics_df = _add_ppl_metrics(src_path, metrics_df, resolution, merge_cols)
+    
+    # add diff metrics
+    metrics_df = _add_diff_metrics(
+        resolution, 
+        metrics_cols=text_cols, 
+        level_metrics_df=metrics_df
+        )
+    
+    corrs = []
+    for level_type in ['Adv', 'Ele', 'diff']:
+        for r_i, r_name in enumerate(text_cols):
+            for c_i, c_name in enumerate(text_cols):
+                if r_name == c_name:
+                    continue
+                if (c_name, r_name) in corrs or (r_name, c_name) in corrs:
+                    continue
                     
-                    if len(group_1.dropna()) != N_CV_FOLDS or len(group_2.dropna()) != N_CV_FOLDS:
-                        skipped += 1
-                        skipped_pairs.append((pred_col, level_type, text_col_1, text_col_2))
-                        skip_current = True
-                elif est_strategy == "Bootstrap":
-                    # based on bootstrap
-                    group_1 = group_1[group_1['fold'] == 'bootstrap_all']
-                    group_2 = group_2[group_2['fold'] == 'bootstrap_all']
-                    if len(group_1.dropna()) != N_BOOTSTRAP or len(group_2.dropna()) != N_BOOTSTRAP:
-                        skipped += 1
-                        skipped_pairs.append((pred_col, level_type, text_col_1, text_col_2))
-                        skip_current = True
-                else:
-                    raise ValueError(f"Invalid est_strategy: {est_strategy}")
-                
-                if skip_current:
-                    perm_p, perm_stat = None, None
-                else:
-                    # calc 
-                    # tation test
-                    perm_test = permutation_test(
-                        (group_1['pearson_corr'], group_2['pearson_corr']), 
-                        _statistic, vectorized=True, permutation_type='samples', n_resamples=N_PERMUTATION, random_state=DEFAULT_RANDOM_STATE)
-                    perm_p, perm_stat = perm_test.pvalue, perm_test.statistic
-                
-                # append to perm_test_dfs
-                perm_test_dfs.append({
-                    'pred_col': pred_col,
+                # calc corr between cols
+                col_a_name = f"{level_type}_{r_name}"
+                col_b_name = f"{level_type}_{c_name}"
+                clean_df = metrics_df[[col_a_name, col_b_name]].dropna()
+                # log how many rows where dropped
+                dropped = len(metrics_df) - len(clean_df)
+                N_SENTENCES_NO_MATCH = 94
+                if dropped > N_SENTENCES_NO_MATCH:
+                    print(f"Dropping {dropped} out of {len(metrics_df)} rows for correlation between {col_a_name} and {col_b_name}")
+                pearson_corr, pearson_p = pearsonr(clean_df[col_a_name], clean_df[col_b_name])
+
+                symbol = p_to_star(pearson_p)
+                corrs.append({
                     'level_type': level_type,
-                    'text_col_1': text_col_1,
-                    'mean_corr_1': group_1['pearson_corr'].mean(),
-                    'std_corr_1': group_1['pearson_corr'].std(),
-                    'n_noNan_1': len(group_1.dropna()),
-                    'text_col_2': text_col_2,
-                    'mean_corr_2': group_2['pearson_corr'].mean(),
-                    'std_corr_2': group_2['pearson_corr'].std(),
-                    'n_noNan_2': len(group_2.dropna()),
-                    'perm_p': perm_p,
-                    'perm_stat': perm_stat
+                    'text_col_1': r_name,
+                    'text_col_2': c_name,
+                    'pearson_corr': pearson_corr,
+                    'pearson_p': pearson_p,
+                    'pearson_p_symbol': symbol,
                 })
-                
-        if skipped > 0:
-            logger.warning(f"Skipped {skipped} pairs due to missing values")
-            
-        # skipped_pairs
-        if skipped_pairs:
-            skipped_pairs_df = pd.DataFrame(skipped_pairs, columns=['pred_col', 'level_type', 'text_col_1', 'text_col_2'])
-            skipped_pairs_df.to_csv(results_dir / f"skipped_pairs_{resolution}_{est_strategy}.csv", index=False)
-        
-        perm_test_df = pd.DataFrame(perm_test_dfs)
-        # add p val symbols
-        perm_test_df = add_p_val_symbols(perm_test_df, 'perm_p')
-        replace_results_in_file(results_dir / f"perm_test_{resolution}_{est_strategy}.csv", perm_test_df)
-        
-        legacy_file = f"perm_test_{resolution}.csv"
-        _del_leg_file_if_exists(legacy_file, results_dir)
-        
+
+    corrs = pd.DataFrame(corrs)
+    corrs['resolution'] = resolution
+    # save corrs
+    results_dir = src_path / "readability_metrics"
+    corrs.to_csv(results_dir / f"formulas_corrs_{resolution}.csv", index=False)
+
 # -------             
 # Helpers
 # ------- 
+
+def calc_corr_between_cols(cols, df_1, df_2):
+    # calc corr for each col between df_1 and df_2
+    corr_dfs = []
+    for col in cols:
+        for prefix in ['Adv_', 'Ele_', 'diff_']:
+            col_name = prefix + col
+            if col_name in df_1.columns and col_name in df_2.columns:
+                corr = df_1[col_name].corr(df_2[col_name], method='pearson')
+                corr_dfs.append({
+                    'col': col,
+                    'full_col': col_name,
+                    'pearson_corr': corr
+                })
+            else:
+                logger.warning(f"Column {col} not found in both dataframes")
+    return pd.DataFrame(corr_dfs)
+
+def _add_diff_metrics(
+    resolution: Literal["sentence", "paragraph", "article"], 
+    metrics_cols: List,
+    level_metrics_df: pd.DataFrame,
+):  
+    # calc diff Adv - Ele
+    diff_metrics_df = _calc_diff_in_values_between_levels(level_metrics_df, cols=metrics_cols, resolution=resolution)
+    # create df with all metrics Adv, Ele, Diff
+    all_metrics_df = _get_merged_metrics_df(metrics_cols, level_metrics_df, diff_metrics_df, resolution)
+    # Add batch_article_id col
+    all_metrics_df = add_id_cols(all_metrics_df, batch_article_id=True)
+    return all_metrics_df
+
+def _get_ele_adv_metrics_df(
+    src_path, 
+    resolution: Literal["sentence", "paragraph", "article"], 
+    reading_regime: str, 
+    reader_type: Literal["L1", "L2", "general_reader", "L1_and_L2"],
+    surp_cols_to_run: List,
+    pred_type: Literal["RT", "comprehension"]
+    ):
+    text_id_cols = get_text_id_cols(resolution)
+    merge_cols = text_id_cols + ["level"]
+    logger.info(f"Loading metrics for resolution={resolution} | merge_keys={merge_cols}")
+
+    metrics_df = _load_readability_metrics(src_path, resolution)
+    metrics_df, exisiting_surp_cols = _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, surp_cols_to_run)
+    metrics_df = _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols)
+    metrics_df = _add_ppl_metrics(src_path, metrics_df, resolution, merge_cols)
+    metrics_df = _add_eye_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
+    metrics_df = _add_reading_speed_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
+
+    if resolution != "sentence" and pred_type == "comprehension":
+        metrics_df = _add_reading_comprehension_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols) 
+        # select cols 
+        select_cols = merge_cols + MAIN_TEXT_COLS + SM_TEXT_COLS + MAIN_RT_COLS + SM_RT_COLS + SM_PROMPT_COLS + exisiting_surp_cols + READING_COMPREHENSION_COLS
+    else:
+        select_cols = merge_cols + MAIN_TEXT_COLS + SM_TEXT_COLS + MAIN_RT_COLS + SM_RT_COLS + SM_PROMPT_COLS + exisiting_surp_cols
+    
+    return metrics_df[select_cols].sort_values(by=merge_cols)
+
 
 def _load_readability_metrics(src_path, resolution):
     metrics_df = pd.read_csv(src_path / f"readability_metrics/data/{resolution}s_metrics_cleaned.csv")
@@ -372,34 +412,6 @@ def _add_reading_comprehension_metrics(src_path, metrics_df, resolution, reading
     metrics_df = metrics_df.merge(qa_rt_df, on=merge_cols, how="left")
     return metrics_df
 
-def _get_metrics_df(
-    src_path, 
-    resolution: Literal["sentence", "paragraph", "article"], 
-    reading_regime: str, 
-    reader_type: Literal["L1", "L2", "general_reader", "L1_and_L2"],
-    surp_cols_to_run: List,
-    pred_type: Literal["RT", "comprehension"]
-    ):
-    text_id_cols = get_text_id_cols(resolution)
-    merge_cols = text_id_cols + ["level"]
-    logger.info(f"Loading metrics for resolution={resolution} | merge_keys={merge_cols}")
-
-    metrics_df = _load_readability_metrics(src_path, resolution)
-    metrics_df, exisiting_surp_cols = _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, surp_cols_to_run)
-    metrics_df = _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols)
-    metrics_df = _add_ppl_metrics(src_path, metrics_df, resolution, merge_cols)
-    metrics_df = _add_eye_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
-    metrics_df = _add_reading_speed_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
-
-    if resolution != "sentence" and pred_type == "comprehension":
-        metrics_df = _add_reading_comprehension_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols) 
-        # select cols 
-        select_cols = merge_cols + MAIN_TEXT_COLS + SM_TEXT_COLS + MAIN_RT_COLS + SM_RT_COLS + SM_PROMPT_COLS + exisiting_surp_cols + READING_COMPREHENSION_COLS
-    else:
-        select_cols = merge_cols + MAIN_TEXT_COLS + SM_TEXT_COLS + MAIN_RT_COLS + SM_RT_COLS + SM_PROMPT_COLS + exisiting_surp_cols
-    
-    return metrics_df[select_cols].sort_values(by=merge_cols)
-
 def _calc_diff_in_values_between_levels(metrics_df: pd.DataFrame, cols: List, resolution: Literal["sentence", "paragraph", "article"]):
     # Calculate the difference in mean TF per sentence between levels Adv and Ele
     pivot_by_cols = get_text_id_cols(resolution)
@@ -458,7 +470,18 @@ def _get_curr_corr(
     pred_col, text_col, level_type, 
     reading_regime, text_id_col, fold, bootstrap_iter
     ):
-    sub_df = metrics_df[['batch', 'article_id', text_id_col, 'fold', col_a, col_b]].dropna()
+    if level_type != 'all':
+        sub_df = metrics_df[['batch', 'article_id', text_id_col, 'fold', col_a, col_b]].dropna()
+    else:
+        # take both Adv and Ele
+        ele_df = metrics_df[['batch', 'article_id', text_id_col, 'fold', f'Ele_{text_col}', f'Ele_{pred_col}']].dropna()
+        ele_df = ele_df.rename(columns={f'Ele_{text_col}': col_a, f'Ele_{pred_col}': col_b})
+        ele_df['level'] = 'Ele'
+        adv_df = metrics_df[['batch', 'article_id', text_id_col, 'fold', f'Adv_{text_col}', f'Adv_{pred_col}']].dropna()
+        adv_df = adv_df.rename(columns={f'Adv_{text_col}': col_a, f'Adv_{pred_col}': col_b})
+        adv_df['level'] = 'Adv'
+        sub_df = pd.concat([ele_df, adv_df], ignore_index=True)
+        assert len(ele_df) + len(adv_df) == len(sub_df)
     
     pearson_corr, pearson_p = pearsonr(sub_df[col_a], sub_df[col_b])
     spearman_corr, spearman_p = spearmanr(sub_df[col_a], sub_df[col_b])  
@@ -528,7 +551,7 @@ def _get_corr_df(resolution, all_metrics_df, text_cols, reading_regime, pred_col
     # Initialize lists to store results
     corr_dfs = []
     invalid_dfs = []
-    combinations = list(itertools.product(pred_cols, text_cols, ['Adv', 'Ele', 'diff']))  # Convert to list for tqdm
+    combinations = list(itertools.product(pred_cols, text_cols, ['all', 'Adv', 'Ele', 'diff']))  # Convert to list for tqdm
     # save combinations to df
     combinations_df = pd.DataFrame(combinations, columns=['pred_col', 'text_col', 'level_type'])
     combinations_df.to_csv(results_dir / f"combinations_{resolution}.csv", index=False)
@@ -538,10 +561,11 @@ def _get_corr_df(resolution, all_metrics_df, text_cols, reading_regime, pred_col
         col_a = f'{level_type}_{text_col}'
         col_b = f'{level_type}_{pred_col}'
         
-        valid, valid_df = _validate_df_before_corr(all_metrics_df, col_a, col_b, 'Regular')
-        if not valid:
-            invalid_dfs.append(valid_df)
-            continue
+        if level_type != 'all':
+            valid, valid_df = _validate_df_before_corr(all_metrics_df, col_a, col_b, 'Regular')
+            if not valid:
+                invalid_dfs.append(valid_df)
+                continue
         
         corr_dfs.append(_get_curr_corr(
             all_metrics_df, col_a, col_b, 
@@ -550,10 +574,11 @@ def _get_corr_df(resolution, all_metrics_df, text_cols, reading_regime, pred_col
         
         # Corr for each fold
         for fold, fold_df in all_metrics_df.groupby('fold'):
-            valid, valid_df = _validate_df_before_corr(fold_df, col_a, col_b, 'CV')
-            if not valid:
-                invalid_dfs.append(valid_df)
-                continue
+            if level_type != 'all':
+                valid, valid_df = _validate_df_before_corr(fold_df, col_a, col_b, 'CV')
+                if not valid:
+                    invalid_dfs.append(valid_df)
+                    continue
             
             corr_dfs.append(_get_curr_corr(
                 fold_df, col_a, col_b, 
@@ -571,10 +596,11 @@ def _get_corr_df(resolution, all_metrics_df, text_cols, reading_regime, pred_col
                 col_a = f'{level_type}_{text_col}'
                 col_b = f'{level_type}_{pred_col}'
                 
-                valid, valid_df = _validate_df_before_corr(resample_df, col_a, col_b, 'Bootstrap')
-                if not valid:
-                    continue
-                
+                if level_type != 'all':
+                    valid, valid_df = _validate_df_before_corr(resample_df, col_a, col_b, 'Bootstrap')
+                    if not valid:
+                        continue
+                    
                 corr_dfs.append(_get_curr_corr(
                     resample_df, col_a, col_b, 
                     pred_col, text_col, level_type, 
@@ -624,3 +650,82 @@ def _agg_over_groups(
         'spearman_p': mean_spearman_p
     }
   
+def _handle_opposite_direction_metrics(all_diff_df: pd.DataFrame, metrics_to_plot: List):
+    updated_metrics = metrics_to_plot.copy()
+    for metric in metrics_to_plot:
+        if metric in OPPOSITE_DIRECTION_METRICS:
+            all_diff_df[f'diff_{metric}_(-)'] = -all_diff_df[f'diff_{metric}']
+            # replace
+            updated_metrics[updated_metrics.index(metric)] = f'{metric}_(-)'
+    return all_diff_df, updated_metrics
+    
+
+def _load_Gathering0_and_Hunting0_RT_metrics(src_path, resolution, RT_cols, reading_regime, reader_type):
+    # load metrics
+    Gathering0_level_metrics_df = _get_ele_adv_metrics_df(
+        src_path=src_path, 
+        resolution=resolution, 
+        reading_regime="Gathering0", 
+        reader_type=reader_type, 
+        surp_cols_to_run=[], 
+        pred_type="RT"
+    )
+    Hunting0_level_metrics_df = _get_ele_adv_metrics_df(
+        src_path=src_path, 
+        resolution=resolution, 
+        reading_regime="Hunting0", 
+        reader_type=reader_type, 
+        surp_cols_to_run=[], 
+        pred_type="RT"
+    )
+    # add diff metrics
+    Gathering0_metrics_df = _add_diff_metrics(
+        resolution, 
+        metrics_cols=RT_cols, 
+        level_metrics_df=Gathering0_level_metrics_df
+        )
+    Hunting0_metrics_df = _add_diff_metrics(
+        resolution,
+        metrics_cols=RT_cols,
+        level_metrics_df=Hunting0_level_metrics_df
+    )
+    return Gathering0_metrics_df, Hunting0_metrics_df
+
+
+def _load_L1_and_L2_RT_metrics(src_path, resolution, RT_cols, reading_regime, reader_type):
+    # load metrics
+    L1_level_metrics_df = _get_ele_adv_metrics_df(
+        src_path=src_path, 
+        resolution=resolution, 
+        reading_regime=reading_regime, 
+        reader_type="L1", 
+        surp_cols_to_run=[], 
+        pred_type="RT"
+    )
+    L2_level_metrics_df = _get_ele_adv_metrics_df(
+        src_path=src_path, 
+        resolution=resolution, 
+        reading_regime=reading_regime, 
+        reader_type="L2", 
+        surp_cols_to_run=[], 
+        pred_type="RT"
+    )
+    # add diff metrics
+    L1_metrics_df = _add_diff_metrics(
+        resolution, 
+        metrics_cols=RT_cols, 
+        level_metrics_df=L1_level_metrics_df
+        )
+    L2_metrics_df = _add_diff_metrics(
+        resolution,
+        metrics_cols=RT_cols,
+        level_metrics_df=L2_level_metrics_df
+    )
+    return L1_metrics_df, L2_metrics_df
+
+
+if __name__== "__main__":
+    src_path = Path.cwd() / "src"
+    calc_corr_between_formulas_for_pair_plots(src_path=src_path, resolution="sentence")
+    calc_corr_between_formulas_for_pair_plots(src_path=src_path, resolution="paragraph")
+    # calc_corr_between_formulas_for_pair_plots(src_path=src_path, resolution="article")

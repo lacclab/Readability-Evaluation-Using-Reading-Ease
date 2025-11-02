@@ -3,7 +3,6 @@ TRADITIONAL_MEASURES = [
     "dale_chall_score", # 1948
     "gunning_fog_index", # 1952
     "ARI", # 1967
-    "smog_index", # 1969
     "coleman_liau_index", # 1975
     "flesch_kincaid_grade_score", # 1975
 ]
@@ -25,7 +24,6 @@ TEXT_COL_TO_YEAR = {
     "dale_chall_score": 1948,
     "gunning_fog_index": 1952,
     "ARI": 1967,
-    "smog_index": 1969,
     "coleman_liau_index": 1975,
     "flesch_kincaid_grade_score": 1975,
     "CML2RI": 2008,
@@ -187,7 +185,6 @@ TEXT_COLS_FULL_LABELS = {
         "dale_chall_score": 'Dale-Chall',
         "gunning_fog_index": 'Gunning Fog',
         "coleman_liau_index": 'Coleman-Liau',
-        "smog_index": 'SMOG',
         "ARI": 'ARI',
         
         "CAREC": 'CAREC',

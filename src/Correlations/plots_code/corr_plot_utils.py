@@ -158,9 +158,6 @@ def _add_bin_names_legend(fig, legend_text_fontsize, bin_type):
     return fig
 
 def _filter_corr_df_by_text_cols(corr_df, text_cols, resolution):
-    # if resolution is sentence - remove SMOG from pred_cols
-    if resolution == 'sentence' and 'smog_index' in text_cols and len(text_cols) > 1:
-        text_cols = [col for col in text_cols if col != "smog_index"]
     # filter text_cols
     corr_df = corr_df[corr_df['text_col'].isin(text_cols)]
     return corr_df

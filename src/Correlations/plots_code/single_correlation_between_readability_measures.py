@@ -13,8 +13,10 @@ from src.utils.stat_analysis.stat_utils import p_to_star
 def _single_corr_between_readability_measures(
     ax, 
     metrics_df, 
+    row_index,
     col_index,
     level_type,
+    resolution,
     LevelxSenPar=False,
     axes_fontsize=14,
     ):
@@ -92,7 +94,7 @@ def _single_corr_between_readability_measures(
                 ax.text(
                     x_center, y_center,
                     round(pearson_corr,1),
-                    ha='center', va='center', fontsize=8
+                    ha='center', va='center', fontsize=9
                 )
 
     # 3) Set tick labels using short-labeled version
@@ -106,12 +108,4 @@ def _single_corr_between_readability_measures(
 
     ax.set_xticklabels(col_short, rotation=90, fontsize=axes_fontsize)
     ax.set_yticklabels(row_short, fontsize=axes_fontsize)
-    
-    if LevelxSenPar:
-        if col_index == 0:
-            level_type_labels = {'Adv': 'Original\n', 'Ele': 'Simplified\n', 'diff': f'{DELTA}: Original - Simplified\n'}
-        
-
-            y_axis_str = f"{level_type_labels[level_type]}\n\n"
-            ax.set_ylabel(y_axis_str, fontsize=axes_fontsize+1, fontweight='bold')    
     

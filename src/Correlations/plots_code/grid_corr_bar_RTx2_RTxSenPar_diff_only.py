@@ -59,7 +59,7 @@ def plot_corr_grid_RTx2_RTxSenPar_diff_only(
         
         # Set y-label on the left column, set column titles on top row
         for j, y_type in enumerate(resolution_types):
-            y_labels = {'sentence': 'Sentences\n\n', 'paragraph': 'Paragraphs\n\n'}
+            y_labels = {'sentence': 'Sentences\n\n', 'paragraph': 'Passages\n\n'}
             axs[0, j].set_title(y_labels[y_type], fontsize=fontsize_title, fontweight='bold')
     else:
         # create fig with subplots
