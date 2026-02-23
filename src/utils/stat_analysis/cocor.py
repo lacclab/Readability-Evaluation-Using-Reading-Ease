@@ -5,7 +5,7 @@ import scipy.stats
 import time
 
 import juliapkg
-juliapkg.require_julia("=1.10.7")
+juliapkg.require_julia("=1.12.4")
 juliapkg.resolve()
 
 from juliacall import Main as jl, convert as jlconvert  # noqa: E402, F401
