@@ -1,0 +1,39 @@
+surp_col,model_id,model_name_with_size,sentence_level_ppl,name_with_ppl,model_family,model_size,model_size_milions
+Pythia 70M,EleutherAI-pythia-70m,70M Pythia,48.99401474,Pythia 70M | ppl: 48.99,Pythia,70M,70
+Pythia 160M,EleutherAI-pythia-160m,160M Pythia,32.86998367,Pythia 160M | ppl: 32.87,Pythia,160M,160
+Pythia 410M,EleutherAI-pythia-410m,410M Pythia,22.60700798,Pythia 410M | ppl: 22.61,Pythia,410M,410
+Pythia 1B,EleutherAI-pythia-1b,1B Pythia,19.42802811,Pythia 1B | ppl: 19.43,Pythia,1B,1000
+Pythia 1.4B,EleutherAI-pythia-1.4b,1.4B Pythia,17.69765854,Pythia 1.4B | ppl: 17.7,Pythia,1.4B,1400
+Pythia 2.8B,EleutherAI-pythia-2.8b,2.8B Pythia,15.82765293,Pythia 2.8B | ppl: 15.83,Pythia,2.8B,2800
+Pythia 6.9B,EleutherAI-pythia-6.9b,6.9B Pythia,14.63146877,Pythia 6.9B | ppl: 14.63,Pythia,6.9B,6900
+GPT-2 117M,gpt2,117M GPT-2,28.29255486,GPT-2-small 117M | ppl: 28.29,GPT-2,117M,117
+GPT-2 345M,gpt2-large,774M GPT-2,18.75500488,GPT-2-large 774M | ppl: 18.76,GPT-2,774M,774
+GPT-2 774M,gpt2-medium,345M GPT-2,21.35455704,GPT-2-medium 345M | ppl: 21.35,GPT-2,345M,345
+GPT-2 1558M,gpt2-xl,1558M GPT-2,16.90029144,GPT-2-xl 1558M | ppl: 16.9,GPT-2,1558M,1558
+GPT-J 6B,EleutherAI-gpt-j-6B,6B GPT-J,14.77170849,GPT-J 6B | ppl: 14.77,GPT-J,6B,6000
+GPT-Neo 125M,EleutherAI-gpt-neo-1.3B,1.3B GPT-Neo,19.5767231,GPT-Neo 1.3B | ppl: 19.58,GPT-Neo,1.3B,1300
+GPT-Neo 1.3B,EleutherAI-gpt-neo-125M,125M GPT-Neo,33.20341873,GPT-Neo 125M | ppl: 33.2,GPT-Neo,125M,125
+GPT-Neo 2.7B,EleutherAI-gpt-neo-2.7B,2.7B GPT-Neo,17.53156853,GPT-Neo 2.7B | ppl: 17.53,GPT-Neo,2.7B,270
+Llama-2 7B,meta-llama-Llama-2-7b-hf,7B Llama-2,9.047883987,Llama-2 7B | ppl: 9.05,Llama-2,7B,7000
+Llama-2-chat 7B,meta-llama-Llama-2-7b-chat-hf,7B Llama-2 Chat,12.89552402,Llama-2 Chat 7B | ppl: 12.9,Llama-2,7B,7000
+Llama-2 13B,meta-llama-Llama-2-13b-hf,13B Llama-2,8.399461746,Llama-2 13B | ppl: 8.4,Llama-2,13B,13000
+Llama-2-chat 13B,meta-llama-Llama-2-13b-chat-hf,13B Llama-2 Chat,11.08721638,Llama-2 Chat 13B | ppl: 11.09,Llama-2,13B,13000
+Llama-2 70B,meta-llama-Llama-2-70b-hf,70B Llama-2,7.203119278,Llama-2 70B | ppl: 7.2,Llama-2,70B,70000
+OPT 350M,facebook-opt-350m,350M OPT,25.54099083,OPT 350M | ppl: 25.54,OPT,350M,350
+OPT 1.3B,facebook-opt-1.3b,1.3B OPT,18.31653595,OPT 1.3B | ppl: 18.32,OPT,1.3B,1300
+OPT 2.7B,facebook-opt-2.7b,2.7B OPT,16.73641205,OPT 2.7B | ppl: 16.74,OPT,2.7B,2700
+OPT 6.7B,facebook-opt-6.7b,6.7B OPT,15.08069801,OPT 6.7B | ppl: 15.08,OPT,6.7B,6700
+Mistral-v0.1 7B,mistralai-Mistral-7B-v0.1,7B Mistral v0.1,9.21091938,Mistral-v0.1 7B | ppl: 9.21,Mistral,7B,7000
+Mistral-v0.3 7B,mistralai-Mistral-7B-v0.3,7B Mistral v0.3,9.309397697,Mistral-v0.3 7B | ppl: 9.3,Mistral,7B,7000
+Mistral-Instruct-v0.3 7B,mistralai-Mistral-7B-Instruct-v0.3,7B Mistral Instruct v0.3,9.899505615,Mistral-Instruct-v0.3 7B | ppl: 9.89,Mistral,7B,7000
+Gemma 7B,google-gemma-7b,7B Gemma,11.55463696,Gemma 7B | ppl: 11.55,Gemma,7B,7000
+Gemma-2 9B,google-gemma-2-9b,9B Gemma-2,12.08234501,Gemma-2 9B | ppl: 12.08,Gemma,9B,9000
+Recurrent-Gemma 9B,google-recurrentgemma-9b,9B Recurrent Gemma,11.76820755,Recurrent-Gemma 9B | ppl:11.76,Gemma,9B,9000
+RWKV-4 169M,RWKV-rwkv-4-169m-pile,169M RWKV-4,28.06411552,RWKV-4 169M | ppl: 28.06,RWKV,169M,169
+RWKV-4 430M,RWKV-rwkv-4-3b-pile,3B RWKV-4,15.3683672,RWKV-4 3B | ppl: 15.37,RWKV,3B,3000
+RWKV-4 3B,RWKV-rwkv-4-430m-pile,430M RWKV-4,21.53947258,RWKV-4 430M | ppl: 21.54,RWKV,430M,430
+RWKV-4 7B,RWKV-rwkv-4-7b-pile,7B RWKV-4,13.94214535,RWKV-4 7B | ppl: 13.94,RWKV,7B,7000
+Mamba 370M,state-spaces-mamba-370m-hf,370M Mamba,19.91588211,Mamba 370M | ppl: 19.92,Mamba,370M,370
+Mamba 790M,state-spaces-mamba-790m-hf,790M Mamba,17.34632111,Mamba 790M | ppl: 17.35,Mamba,790M,790
+Mamba 1.4B,state-spaces-mamba-1.4b-hf,1.4B Mamba,15.91989517,Mamba 1.4B | ppl: 15.92,Mamba,1.4B,1400
+Mamba 2.8B,state-spaces-mamba-2.8b-hf,2.8B Mamba,14.42111588,Mamba 2.8B | ppl: 14.42,Mamba,2.8B,2800
