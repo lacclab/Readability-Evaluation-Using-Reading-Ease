@@ -2,11 +2,12 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from src.Correlations.define_cols import TEXT_COLS_FULL_LABELS
 
-OVERLEAF_PATH_1 = Path('/data/home/gkeren/66e12f60cd9d9e737ca6d75a/Plots/all') # ARR
-OVERLEAF_PATH_2 = Path('/data/home/gkeren/68998e16eecd06d41561b8a3/Plots/all') # PNAS
-OVERLEAF_PATH_3 = Path('/data/home/gkeren/68aac4893381c1f962751f07/Plots/all') # PNAS SI
+OVERLEAF_PATH_1 = Path('~/66e12f60cd9d9e737ca6d75a/Plots/all').expanduser() # ARR
+OVERLEAF_PATH_2 = Path('~/68998e16eecd06d41561b8a3/Plots/all').expanduser() # PNAS
+OVERLEAF_PATH_3 = Path('~/68aac4893381c1f962751f07/Plots/all').expanduser() # PNAS SI
+OVERLEAF_PATH_4 = Path('~/695a3ba742696807861e77f6/Plots/all').expanduser() # CL Journal
 
-OVERLEAF_PATHS = [OVERLEAF_PATH_1, OVERLEAF_PATH_2]
+OVERLEAF_PATHS = [OVERLEAF_PATH_4]
 # OVERLEAF_PATHS = [OVERLEAF_PATH_1, OVERLEAF_PATH_2, OVERLEAF_PATH_3]
 
 def _save_file_to_all_paths(resolution, reader_type, reading_regime, output_file, pred_cols, text_cols, corr_to_plot, src_path, est_strategy):
@@ -20,7 +21,7 @@ def _save_file_to_all_paths(resolution, reader_type, reading_regime, output_file
         new_output_file = _update_name_by_est_strategy_and_del_legacy(
             est_strategy, output_file, results_dir, overleaf_dir
             )
-        plt.savefig(overleaf_dir / new_output_file)
+        plt.savefig(overleaf_dir / new_output_file, bbox_inches='tight')
         
         # call save_latex_figure
         save_latex_figure(
@@ -34,7 +35,7 @@ def _save_file_to_all_paths(resolution, reader_type, reading_regime, output_file
             reader_type=reader_type
         )
     
-    plt.savefig(results_dir / new_output_file)
+    plt.savefig(results_dir / new_output_file, bbox_inches='tight')
     plt.close()
     
 def _update_name_by_est_strategy_and_del_legacy(

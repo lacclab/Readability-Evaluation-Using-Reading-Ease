@@ -109,3 +109,13 @@ def _single_corr_between_readability_measures(
     ax.set_xticklabels(col_short, rotation=90, fontsize=axes_fontsize)
     ax.set_yticklabels(row_short, fontsize=axes_fontsize)
     
+    # if LevelxSenPar:
+    #     # if col_index == 0:
+    #     #     level_type_labels = {'Adv': 'Original\n', 'Ele': 'Simplified\n', 'diff': f'{DELTA}: Original - Simplified\n'}
+    #     #     y_axis_str = f"{level_type_labels[level_type]}\n\n"
+    #     #     ax.set_ylabel(y_axis_str, fontsize=axes_fontsize+1, fontweight='bold')    
+    #     if row_index == 0:
+    #         y_labels = {'sentence': 'Sentences\n\n', 'paragraph': 'Passages\n\n'}
+    #         y_axis_str = f"{y_labels[resolution]}\n\n"
+    #         ax.set_ylabel(y_axis_str, fontsize=axes_fontsize+1, fontweight='bold')    
+    

@@ -12,6 +12,8 @@ MODERN_MEASURES = [
     "CAREC", # 2019
     "CARES", # 2019
     "SBERT", # 2023
+    "PPL Pythia 70M",
+    "total_slor_pythia",
 ]
 
 SYSTEMS_MEASURES = [
@@ -24,12 +26,16 @@ TEXT_COL_TO_YEAR = {
     "dale_chall_score": 1948,
     "gunning_fog_index": 1952,
     "ARI": 1967,
+    "smog_index": 1969,
     "coleman_liau_index": 1975,
     "flesch_kincaid_grade_score": 1975,
     "CML2RI": 2008,
+    "total_slor_pythia": 2018,
     "CAREC": 2019,
     "CARES": 2019,
     "SBERT": 2023,
+    # "lexile": '1996-2025',
+    # "text_evaluator": 2025,
 }
 
 LLMS_PROMPT_1 = [
@@ -52,6 +58,7 @@ LLMS_PROMPT_3 = [
     "llama-3.3-70b-versatile_clear_prompt",
     "gpt-4o_clear_prompt",
     "gpt-5_clear_prompt",
+    # "o3-mini_clear_prompt",
     "gemini-2.0-flash_clear_prompt",
     "gemini-2.5-pro_clear_prompt",
     "claude-sonnet-4-0_clear_prompt"
@@ -60,6 +67,7 @@ LLMS_PROMPT_4 = [
     "llama-3.3-70b-versatile_clear_specific_prompt",
     "gpt-4o_clear_specific_prompt",
     "gpt-5_clear_specific_prompt",
+    # "o3-mini_clear_specific_prompt",
     "gemini-2.0-flash_clear_specific_prompt",
     "gemini-2.5-pro_clear_specific_prompt",
     "claude-sonnet-4-0_clear_specific_prompt"
@@ -76,7 +84,7 @@ PROMPT_NAMES_BY_NUMBER = {
     3: "clear_prompt",
     4: "clear_specific_prompt"
 }
-MAIN_LLM_PROMPT_NUMBER = 3
+MAIN_LLM_PROMPT_NUMBER = 2
 
 LLM_TO_YEAR = {
     "llama-3.3-70b-versatile": 2024,
@@ -117,18 +125,73 @@ LLM_COL_TO_YEAR = {
 TEXT_COL_TO_YEAR.update(LLM_COL_TO_YEAR)
 
 MAIN_PLL_COL = 'PLL_bert-base-uncased'
-SM_PLL_COLS = [ 
+SM_PLL_COLS = [
+    'PLL_bert-large-uncased', 
     'PLL_roberta-base', 
     'PLL_roberta-large'
+    # 'PLL_microsoft_deberta-v3-base',
+    # 'PLL_xlm-roberta-base'
 ]
 
 PSYCHOLINGUISTIC_MEASURES = [
-    "cpidr_density", 
-    "avg_integration_cost", 
-    "avg_embedding_depth", 
+    "cpidr_density",
+    "avg_integration_cost",
+    # "max_integration_cost",
+    "avg_embedding_depth",
+    # "max_embedding_depth",
     MAIN_PLL_COL,
+    "avg_UID_var_lang_pythia",
     "mean_entropy_pythia",
-    "word_length", "wordFreq_frequency", 
+    "word_length", 
+    "wordFreq_frequency",
+]
+
+UID_COLS = [
+    'UID_superlin_1.25_gpt2',
+    'UID_superlin_1.5_gpt2',
+    'UID_superlin_2_gpt2',
+    'UID_var_sent_gpt2',
+    'UID_var_lang_gpt2',
+    'UID_local-var_gpt2',
+    'UID_max_gpt2',
+    'UID_superlin_1.25_pythia',
+    'UID_superlin_1.5_pythia',
+    'UID_superlin_2_pythia',
+    'UID_var_sent_pythia',
+    'UID_var_lang_pythia',
+    'UID_local-var_pythia',
+    'UID_max_pythia',
+    'avg_UID_superlin_1.25_gpt2',
+    'avg_UID_superlin_1.5_gpt2',
+    'avg_UID_superlin_2_gpt2',
+    'avg_UID_var_sent_gpt2',
+    'avg_UID_var_lang_gpt2',
+    'avg_UID_local-var_gpt2',
+    'avg_UID_max_gpt2',
+    'avg_UID_superlin_1.25_pythia',
+    'avg_UID_superlin_1.5_pythia',
+    'avg_UID_superlin_2_pythia',
+    'avg_UID_var_sent_pythia',
+    'avg_UID_var_lang_pythia',
+    'avg_UID_local-var_pythia',
+    'avg_UID_max_pythia'
+]
+
+SLOR_COLS = [
+    'total_slor_gpt2',
+    'average_slor_gpt2',
+    'total_slor_pythia',
+    'average_slor_pythia'
+]
+
+SM_UID_COLS = [
+    'avg_UID_superlin_1.25_pythia',
+    'avg_UID_superlin_1.5_pythia',
+    'avg_UID_superlin_2_pythia',
+    'avg_UID_var_sent_pythia',
+    'avg_UID_var_lang_pythia',
+    'avg_UID_local-var_pythia',
+    'avg_UID_max_pythia',
 ]
 
 
@@ -148,20 +211,27 @@ MAIN_TEXT_COLS = (
 )
 
 SM_TEXT_COLS = [
-    "depid_density", 
+    # "n_words", "sentence_count", "syllable_count_textstats", 
+    
+    # "depid_density", 
+    # "avg_embedding_depth",
     "max_embedding_depth",
-    "max_integration_cost",
-    "total_integration_cost", 
-    "CAREC_M", 
-    "mean_entropy_gpt2"
+    # "avg_integration_cost",
+    # "max_integration_cost",
+    # "total_integration_cost", 
+    # "CAREC_M", 
+    # "mean_entropy_gpt2",
+    # "smog_index", # 1969
 ]
-SM_TEXT_COLS += SM_PLL_COLS
+# SM_TEXT_COLS += SM_PLL_COLS
+SM_TEXT_COLS += UID_COLS
+SM_TEXT_COLS += SLOR_COLS
 
 MAIN_RT_COLS = ['mean_nonzero_TF', 'SkipRateTotal', 'RegRateTotal']
 
-SM_RT_COLS_SET1 = ['mean_NF', 'mean_FirstPassGD', 'mean_GD']
-SM_RT_COLS_SET2 = ['mean_nonzero_FF', 'mean_FD', 'mean_HigherPassFixation']
-SM_RT_COLS_SET3 = ['reading_speed' ,'SkipRateFirstPass', 'RegRateFirstPass']
+SM_RT_COLS_SET1 = ['mean_nonzero_FF', 'mean_FD', 'mean_NF'] # single fixation measures
+SM_RT_COLS_SET2 = ['mean_FirstPassGD', 'SkipRateFirstPass', 'RegRateFirstPass'] # first pass measures
+SM_RT_COLS_SET3 = ['mean_GD', 'mean_HigherPassFixation', 'reading_speed'] # late measures
 SM_RT_COLS = SM_RT_COLS_SET1 + SM_RT_COLS_SET2 + SM_RT_COLS_SET3
 
 READING_COMPREHENSION_COLS = [
@@ -175,8 +245,8 @@ OPPOSITE_DIRECTION_METRICS = [
     "fernansex_huerta",
     "szigriszt_pazos",
     "gutierrez_polini",
-    "wordFreq_frequency",
-    "lexicon_count"
+    "lexicon_count",
+    "SBERT"
 ]
 
 TEXT_COLS_FULL_LABELS = {
@@ -185,6 +255,7 @@ TEXT_COLS_FULL_LABELS = {
         "dale_chall_score": 'Dale-Chall',
         "gunning_fog_index": 'Gunning Fog',
         "coleman_liau_index": 'Coleman-Liau',
+        "smog_index": 'SMOG',
         "ARI": 'ARI',
         
         "CAREC": 'CAREC',
@@ -194,7 +265,7 @@ TEXT_COLS_FULL_LABELS = {
         
         "SBERT": 'SBERT', 
         "lexile": 'Lexile', 
-        "text_evaluator": 'Text Evaluator',
+        "text_evaluator": 'TextEvaluator',
         
         "word_length": 'Word Length',
         "wordFreq_frequency": 'Word Frequency',
@@ -239,6 +310,43 @@ TEXT_COLS_FULL_LABELS = {
         'PLL_bert-large-uncased': 'PLL BERT Large',
         'PLL_roberta-base': 'PLL RoBERTa Base',
         'PLL_roberta-large': 'PLL RoBERTa Large',
+
+        "PPL Pythia 70M": 'PPL',
+
+        'UID_superlin_1.25_gpt2': 'UID Superlin 1.25 GPT-2',
+        'UID_superlin_1.5_gpt2': 'UID Superlin 1.5 GPT-2',
+        'UID_superlin_2_gpt2': 'UID Superlin 2 GPT-2',
+        'UID_var_sent_gpt2': 'UID Var Sent GPT-2',
+        'UID_var_lang_gpt2': 'UID Var Lang GPT-2',
+        'UID_local-var_gpt2': 'UID Local-Var GPT-2',
+        'UID_max_gpt2': 'UID Max GPT-2',
+        'UID_superlin_1.25_pythia': 'UID Superlin 1.25 Pythia',
+        'UID_superlin_1.5_pythia': 'UID Superlin 1.5 Pythia',
+        'UID_superlin_2_pythia': 'UID Superlin 2 Pythia',
+        'UID_var_sent_pythia': 'UID Var Sent Pythia',
+        'UID_var_lang_pythia': 'UID Var Lang Pythia',
+        'UID_local-var_pythia': 'UID Local-Var Pythia',
+        'UID_max_pythia': 'UID Max Pythia',
+        'avg_UID_superlin_1.25_gpt2': 'Avg UID Superlin 1.25 GPT-2',
+        'avg_UID_superlin_1.5_gpt2': 'Avg UID Superlin 1.5 GPT-2',
+        'avg_UID_superlin_2_gpt2': 'Avg UID Superlin 2 GPT-2',
+        'avg_UID_var_sent_gpt2': 'Avg UID Var Sent GPT-2',
+        'avg_UID_var_lang_gpt2': 'Avg UID Var Lang GPT-2',
+        'avg_UID_local-var_gpt2': 'Avg UID Local-Var GPT-2',
+        'avg_UID_max_gpt2': 'Avg UID Max GPT-2',
+        'avg_UID_superlin_1.25_pythia': 'Super-Linear UID (k=1.25)',
+        'avg_UID_superlin_1.5_pythia': 'Super-Linear UID (k=1.5)',
+        'avg_UID_superlin_2_pythia': 'Super-Linear UID (k=2)',
+        'avg_UID_var_sent_pythia': 'Global Variance UID (sentence)',
+        'avg_UID_var_lang_pythia': 'UID',
+        'avg_UID_local-var_pythia': 'Local Variance UID',
+        'avg_UID_max_pythia': 'Maximum UID',
+
+        'total_slor_gpt2': 'Total SLOR GPT-2',
+        'average_slor_gpt2': 'Average SLOR GPT-2',
+        'total_slor_pythia': 'SLOR',
+        'average_slor_pythia': 'Average SLOR Pythia',
+
 }
 
 GRADE_PROMPT_LABEL = 'Grade'
@@ -283,7 +391,15 @@ PROMPT_COLS_FULL_LABELS = {
     "claude-sonnet-4-0_clear_specific_prompt": f'Claude Sonnet 4.0 {SCORE_SPECIFIC_PROMPT_LABEL}',
 }
 
+NOT_USED_TEXT_COLS = [
+    "linsear_formula",
+    "char_count", "letter_count", "polysyllabcount", "monosyllabcount",
+    "fernansex_huerta", "szigriszt_pazos", "gutierrez_polini", "crawford", 
+    "raw_wordFreq_frequency",
+]
+
 SURP_COLS_TO_SHORT_NAMES = {
+    # 7 models
     'EleutherAI/pythia-70m': 'Pythia 70M', 
     'EleutherAI/pythia-160m': 'Pythia 160M', 
     'EleutherAI/pythia-410m': 'Pythia 410M', 
@@ -291,27 +407,42 @@ SURP_COLS_TO_SHORT_NAMES = {
     'EleutherAI/pythia-1.4b': 'Pythia 1.4B', 
     'EleutherAI/pythia-2.8b': 'Pythia 2.8B', 
     'EleutherAI/pythia-6.9b': 'Pythia 6.9B', 
+    # 4 models
     'gpt2': 'GPT-2 117M', 
     'gpt2-medium': 'GPT-2 345M', 
     'gpt2-large': 'GPT-2 774M', 
     'gpt2-xl': 'GPT-2 1558M', 
+    # 1 model
     'EleutherAI/gpt-j-6B': 'GPT-J 6B', 
+    # 3 models
     'EleutherAI/gpt-neo-125M': 'GPT-Neo 125M', 
     'EleutherAI/gpt-neo-1.3B': 'GPT-Neo 1.3B', 
     'EleutherAI/gpt-neo-2.7B': 'GPT-Neo 2.7B', 
+    # 2 models
     'meta-llama/Llama-2-7b-hf': 'Llama-2 7B', 
-    'meta-llama/Llama-2-13b-hf': 'Llama-2 13B',
+    'meta-llama/Llama-2-13b-hf': 'Llama-2 13B', 
+    # 4 models
     'facebook/opt-350m': 'OPT 350M', 
     'facebook/opt-1.3b': 'OPT 1.3B',
     'facebook/opt-2.7b': 'OPT 2.7B', 
-    'facebook/opt-6.7b': 'OPT 6.7B',
+    'facebook/opt-6.7b': 'OPT 6.7B', 
+    # 2 models
     'mistralai/Mistral-7B-v0.1': 'Mistral-v0.1 7B', 
     'mistralai/Mistral-7B-v0.3': 'Mistral-v0.3 7B', 
+    # 'mistralai/Mistral-7B-Instruct-v0.3': 'Mistral-Instruct-v0.3 7B', 
+    # 3 models
     'google/gemma-7b': 'Gemma 7B', 
-    'google/gemma-2-9b': 'Gemma-2 9B',  
+    'google/gemma-2-9b': 'Gemma-2 9B', 
+    # 'google/gemma-2-27b': 'Gemma-2 27B', 
+    # 1 model
     'google/recurrentgemma-9b': 'Recurrent-Gemma 9B', 
+    # 4 models
     'RWKV/rwkv-4-169m-pile': 'RWKV-4 169M', 
     'RWKV/rwkv-4-430m-pile': 'RWKV-4 430M', 
+    # 'RWKV/rwkv-4-3b-pile': 'RWKV-4 3B', 
+    # 'RWKV/rwkv-4-7b-pile': 'RWKV-4 7B', 
+    # 'RWKV/v5-EagleX-v2-7B-HF': 'RWKV-EagleX-v2 7B',
+    # 4 models
     'state-spaces/mamba-370m-hf': 'Mamba 370M', 
     'state-spaces/mamba-790m-hf': 'Mamba 790M', 
     'state-spaces/mamba-1.4b-hf': 'Mamba 1.4B', 

@@ -3,12 +3,14 @@ import pandas as pd
 from typing import List, Literal
 from tqdm import tqdm
 from loguru import logger
+from pathlib import Path
 
 from src.utils.plot_utils import DELTA
 from src.utils.stat_analysis.stat_utils import add_p_val_symbols
 from src.Correlations.utils import _save_file_to_all_paths
-from src.Correlations.plots_code.single_correlation_by_ppl_plot import _single_corr_by_perplexity_plot, _get_models_data, _build_legend_ppl_plot
-   
+from src.Correlations.plots_code.single_correlation_by_ppl_plot import _single_corr_by_perplexity_plot, _build_legend_ppl_plot
+from src.Correlations.analysis.ppl_trend.models_ppl import _get_models_data
+
 def plot_corr_by_perplexity_all_levels(
     src_path: str,
     resolution: Literal["sentence", "paragraph", "article"],
@@ -21,7 +23,8 @@ def plot_corr_by_perplexity_all_levels(
     est_strategy: Literal["Regular", "CV", "Bootstrap"] = 'Regular',
     fontsize_title=20,
     fontsize_legend_text=16,
-    markzise_legend=12
+    markzise_legend=12,
+    all_and_diff=False
 ):
     # corr_df has columns: pred_col, text_col, level_type, pearson_corr, spearman_corr,
     #   pearson_p_symbol, spearman_p_symbol
@@ -33,8 +36,10 @@ def plot_corr_by_perplexity_all_levels(
     # filter text_cols
     corr_df = corr_df[corr_df['text_col'].isin(surp_cols)]
     
-    # define level types
-    level_types = ['Adv', 'Ele', 'diff']
+    if all_and_diff:
+        level_types = ['all', 'diff']
+    else:
+        level_types = ['Adv', 'Ele', 'diff']
     
     n_rows = len(pred_cols)
     n_cols = len(level_types)
@@ -42,7 +47,11 @@ def plot_corr_by_perplexity_all_levels(
 
     # Set y-label on the left column, set column titles on top row
     for j, level_type in enumerate(level_types):
-        level_type_labels = {'Adv': 'Original\n', 'Ele': 'Simplified\n', 'diff': f'{DELTA}: Original - Simplified\n'}
+        if all_and_diff:
+            level_type_labels = {'all': 'Reading Ease\n\n\n', 'diff': f'{DELTA} Reading Ease\n(Original - Simplified)\n\n'}
+        else:
+            level_type_labels = {'Adv': 'Original\n', 'Ele': 'Simplified\n', 'diff': f'{DELTA}: Original - Simplified\n'}
+        
         axs[0, j].set_title(level_type_labels[level_type], fontsize=fontsize_title, fontweight='bold')
     
     comp_res = []
@@ -81,3 +90,6 @@ def plot_corr_by_perplexity_all_levels(
         text_cols=surp_cols, 
         corr_to_plot=corr_to_plot, src_path=src_path, est_strategy=est_strategy
         )
+
+
+    

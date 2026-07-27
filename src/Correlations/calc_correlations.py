@@ -4,11 +4,13 @@ import pandas as pd
 from typing import List, Literal
 from scipy.stats import pearsonr, spearmanr
 from tqdm import tqdm
+import numpy as np
 from loguru import logger
 import os
 from src.utils.stat_analysis.stat_utils import add_p_val_symbols, get_mean_ci, p_to_star
 from src.utils.data_utils import get_text_id_cols, add_id_cols, add_reading_regime_col
 from src.utils.files_utils import replace_results_in_file
+from src.readability_metrics.add_metrics_utils import merge_and_save
 from src.Correlations.define_cols import (
     MAIN_RT_COLS, MAIN_TEXT_COLS, MAIN_SURP_COLS, ALL_SURP_COLS, SM_TEXT_COLS, SM_RT_COLS, SM_SURP_COLS, SM_PROMPT_COLS, READING_COMPREHENSION_COLS, OPPOSITE_DIRECTION_METRICS
 )
@@ -36,6 +38,8 @@ def calc_correlations(
     
     if pred_type == "RT":
         pred_cols = MAIN_RT_COLS + SM_RT_COLS
+    elif pred_type == "comprehension":
+        pred_cols = READING_COMPREHENSION_COLS
     
     if run_for_all_surp:
         surp_cols_to_run = list(ALL_SURP_COLS)
@@ -50,14 +54,24 @@ def calc_correlations(
         run_for_text_cols = run_for_specific_text_cols
     else:
         run_for_text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + existing_surp_cols
-    all_cols = pred_cols + run_for_text_cols
+    # dedupe while preserving order (MAIN_TEXT_COLS and SM_TEXT_COLS may overlap)
+    run_for_text_cols = list(dict.fromkeys(run_for_text_cols))
+    all_cols = list(dict.fromkeys(pred_cols + run_for_text_cols))
     
     # add diff metrics
     all_metrics_df = _add_diff_metrics(resolution, all_cols, level_metrics_df)
     
     # save all_metrics_df
-    if not run_for_specific_text_cols:
-        all_metrics_df.to_csv(results_dir / f"{pred_type}_all_metrics_df_{resolution}.csv", index=False)
+    # When running with specific text cols, merge into the existing CSV so we replace
+    # overlapping cols and add new ones without losing previously-computed cols.
+    # When running with the full col set, overwrite (the new df is authoritative).
+    csv_path = results_dir / f"{pred_type}_all_metrics_df_{resolution}.csv"
+    if run_for_specific_text_cols and csv_path.exists():
+        merge_keys = get_text_id_cols(resolution)
+        logger.info(f"Merging {len(all_metrics_df.columns)} cols into existing {csv_path.name} (merge_on={merge_keys})")
+        merge_and_save(all_metrics_df, csv_path, merge_on=merge_keys)
+    else:
+        all_metrics_df.to_csv(csv_path, index=False)
     
     # --- Calculate Correlations ---
     corr_df = _get_corr_df(resolution, all_metrics_df, run_for_text_cols, reading_regime, pred_cols, results_dir, include_bootstrap)
@@ -71,12 +85,10 @@ def calc_correlations(
             os.remove(legacy_file)
         replace_results_in_file(results_dir / f"correlations_{resolution}_{pred_col}.csv", corr_df[corr_df['pred_col'] == pred_col], second_col='text_col')
 
-def agg_folds_correlations(src_path, resolution, L1_or_L2, reading_regime, include_bootstrap):
+def agg_folds_correlations(src_path, resolution, L1_or_L2, reading_regime, include_bootstrap, pred_cols):
     results_dir = src_path / f"Correlations/{L1_or_L2}/{reading_regime}"
     results_dir.mkdir(parents=True, exist_ok=True)
     logger.info(f"{resolution=} | {reading_regime=}")
-    
-    pred_cols = MAIN_RT_COLS + SM_RT_COLS
     
     # groupby corr_df by pred_col, text_col, level_type
     agg_corr_dfs = []
@@ -90,6 +102,10 @@ def agg_folds_correlations(src_path, resolution, L1_or_L2, reading_regime, inclu
             pearson_p_all = group_df_all['pearson_p'].item()
             spearman_p_all = group_df_all['spearman_p'].item()
             
+            # agg CV results
+            # filter out fold=all
+            # CV_df = group_df[(group_df['fold'] != 'all') & (group_df['fold'] != 'bootstrap_all')]
+            # agged_CV = _agg_over_groups(CV_df)
             
             # bootstrap results]
             if include_bootstrap:
@@ -119,6 +135,15 @@ def agg_folds_correlations(src_path, resolution, L1_or_L2, reading_regime, inclu
                 'pearson_p_all': pearson_p_all,
                 'spearman_p_all': spearman_p_all,
                 
+                # 'pearson_corr_CV': agged_CV['pearson_corr'],
+                # 'spearman_corr_CV': agged_CV['spearman_corr'],
+                # 'pearson_p_CV': agged_CV['pearson_p'],
+                # 'spearman_p_CV': agged_CV['spearman_p'],
+                # 'std_pearson_corr_CV': agged_CV['std_pearson_corr'],
+                # 'std_spearman_corr_CV': agged_CV['std_spearman_corr'],
+                # 'CI_yerr_pearson_CV': agged_CV['CI_yerr_pearson'],
+                # 'CI_yerr_spearman_CV': agged_CV['CI_yerr_spearman'],
+                
                 'n_bootstraps': agged_boot['n_bootstraps'],
                 'pearson_corr_boot': agged_boot['pearson_corr'],
                 'spearman_corr_boot': agged_boot['spearman_corr'],
@@ -142,11 +167,15 @@ def agg_folds_correlations(src_path, resolution, L1_or_L2, reading_regime, inclu
     # add symbols
     agg_corr_df = add_p_val_symbols(agg_corr_df, 'pearson_p_all')
     agg_corr_df = add_p_val_symbols(agg_corr_df, 'spearman_p_all')
+    # agg_corr_df = add_p_val_symbols(agg_corr_df, 'pearson_p_CV')
+    # agg_corr_df = add_p_val_symbols(agg_corr_df, 'spearman_p_CV')
     agg_corr_df = add_p_val_symbols(agg_corr_df, 'pearson_p_boot')
     agg_corr_df = add_p_val_symbols(agg_corr_df, 'spearman_p_boot')
     
     agg_corr_df['pearson_corr_all'] = agg_corr_df['pearson_corr_all'].abs()
     agg_corr_df['spearman_corr_all'] = agg_corr_df['spearman_corr_all'].abs()
+    # agg_corr_df['pearson_corr_CV'] = agg_corr_df['pearson_corr_CV'].abs()
+    # agg_corr_df['spearman_corr_CV'] = agg_corr_df['spearman_corr_CV'].abs()
     agg_corr_df['pearson_corr_boot'] = agg_corr_df['pearson_corr_boot'].abs()
     agg_corr_df['spearman_corr_boot'] = agg_corr_df['spearman_corr_boot'].abs()
     
@@ -193,13 +222,20 @@ def calc_RT_corr_for_pair_plots(src_path, resolution):
 
 def calc_corr_between_formulas_for_pair_plots(src_path, resolution):
     text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + MAIN_SURP_COLS + SM_SURP_COLS
-    
+    # dedupe (MAIN_TEXT_COLS and SM_TEXT_COLS may overlap)
+    text_cols = list(dict.fromkeys(text_cols))
+
     text_id_cols = get_text_id_cols(resolution)
     merge_cols = text_id_cols + ["level"]
     metrics_df = _load_readability_metrics(src_path, resolution)
-    metrics_df, exisiting_surp_cols = _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, MAIN_SURP_COLS)
+    # PPL Pythia 70M is derived from 'Pythia 70M Mean' — ensure it's merged in.
+    surp_cols_for_this_call = list(MAIN_SURP_COLS)
+    if "PPL Pythia 70M" in text_cols and "Pythia 70M Mean" not in surp_cols_for_this_call:
+        surp_cols_for_this_call.append("Pythia 70M Mean")
+    metrics_df, exisiting_surp_cols = _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, surp_cols_for_this_call)
+    metrics_df = _add_ppl_metrics(metrics_df)
     metrics_df = _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols)
-    metrics_df = _add_ppl_metrics(src_path, metrics_df, resolution, merge_cols)
+    metrics_df = _add_pll_metrics(src_path, metrics_df, resolution, merge_cols)
     
     # add diff metrics
     metrics_df = _add_diff_metrics(
@@ -241,7 +277,7 @@ def calc_corr_between_formulas_for_pair_plots(src_path, resolution):
     corrs = pd.DataFrame(corrs)
     corrs['resolution'] = resolution
     # save corrs
-    results_dir = src_path / "readability_metrics"
+    results_dir = src_path / "readability_metrics/correlations_between_formulas"
     corrs.to_csv(results_dir / f"formulas_corrs_{resolution}.csv", index=False)
 
 # -------             
@@ -290,20 +326,28 @@ def _get_ele_adv_metrics_df(
     merge_cols = text_id_cols + ["level"]
     logger.info(f"Loading metrics for resolution={resolution} | merge_keys={merge_cols}")
 
+    # PPL Pythia 70M is a main col derived from 'Pythia 70M Mean' (surp col) — ensure it gets merged.
+    if "PPL Pythia 70M" in MAIN_TEXT_COLS and "Pythia 70M Mean" not in surp_cols_to_run:
+        surp_cols_to_run = list(surp_cols_to_run) + ["Pythia 70M Mean"]
+
     metrics_df = _load_readability_metrics(src_path, resolution)
     metrics_df, exisiting_surp_cols = _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, surp_cols_to_run)
+    metrics_df = _add_ppl_metrics(metrics_df)
     metrics_df = _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols)
-    metrics_df = _add_ppl_metrics(src_path, metrics_df, resolution, merge_cols)
+    metrics_df = _add_pll_metrics(src_path, metrics_df, resolution, merge_cols)
     metrics_df = _add_eye_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
     metrics_df = _add_reading_speed_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
 
     if resolution != "sentence" and pred_type == "comprehension":
-        metrics_df = _add_reading_comprehension_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols) 
-        # select cols 
+        metrics_df = _add_reading_comprehension_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols)
+        # select cols
         select_cols = merge_cols + MAIN_TEXT_COLS + SM_TEXT_COLS + MAIN_RT_COLS + SM_RT_COLS + SM_PROMPT_COLS + exisiting_surp_cols + READING_COMPREHENSION_COLS
     else:
         select_cols = merge_cols + MAIN_TEXT_COLS + SM_TEXT_COLS + MAIN_RT_COLS + SM_RT_COLS + SM_PROMPT_COLS + exisiting_surp_cols
-    
+
+    # dedupe while preserving order (MAIN_TEXT_COLS and SM_TEXT_COLS may overlap)
+    select_cols = list(dict.fromkeys(select_cols))
+
     return metrics_df[select_cols].sort_values(by=merge_cols)
 
 
@@ -359,6 +403,11 @@ def _add_surprisal_metrics(src_path, metrics_df, resolution, merge_cols, surp_co
     
     return metrics_df, exisiting_surp_cols
 
+def _add_ppl_metrics( metrics_df):
+    if 'Pythia 70M Mean' in metrics_df.columns: 
+        metrics_df['PPL Pythia 70M'] = np.exp(metrics_df['Pythia 70M Mean']) # calc using exp of mean surprisal
+    return metrics_df
+
 def _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols):
     integ_df = pd.read_csv(src_path / f"Linguistic_Metrics/integration_cost/results/{resolution}s_df_cleaned_results.csv")
     metrics_df = metrics_df.merge(integ_df, on=merge_cols, how="left")
@@ -367,9 +416,9 @@ def _add_integration_cost_metrics(src_path, metrics_df, resolution, merge_cols):
         logger.warning(f"Null values in avg_integration_cost: {metrics_df['avg_integration_cost'].isna().sum()}")
     return metrics_df
 
-def _add_ppl_metrics(src_path, metrics_df, resolution, merge_cols):
-    ppl_df = pd.read_csv(src_path / f"Linguistic_Metrics/pseudo_cloze/data/{resolution}s_df_cleaned_with_PLL.csv")
-    metrics_df = metrics_df.merge(ppl_df, on=merge_cols, how="left")
+def _add_pll_metrics(src_path, metrics_df, resolution, merge_cols):
+    pll_df = pd.read_csv(src_path / f"Linguistic_Metrics/pseudo_cloze/data/{resolution}s_df_cleaned_with_PLL.csv")
+    metrics_df = metrics_df.merge(pll_df, on=merge_cols, how="left")
     return metrics_df
 
 def _add_eye_metrics(src_path, metrics_df, resolution, reading_regime, reader_type, merge_cols):
@@ -378,7 +427,11 @@ def _add_eye_metrics(src_path, metrics_df, resolution, reading_regime, reader_ty
         if reader_type == "general_reader":
             eye_metric_df = pd.read_csv(src_path / f"Cognitive_Model/data/{reader_type}/{reading_regime}/{resolution}_{eye_col}_df.csv")
         else:
-            eye_metric_df = pd.read_csv(src_path / f"Eye_metrics/data/{reader_type}/{reading_regime}/{resolution}_{eye_col}_df.csv")
+            eye_metric_df = pd.read_csv(src_path / f"Eye_metrics/data/{reader_type}/{reading_regime}/metric_tables/{resolution}_{eye_col}_df.csv")
+        
+        # remove cols n_subjects n_rows from eye_metric_df if exist
+        if "n_subjects" in eye_metric_df.columns:
+            eye_metric_df = eye_metric_df.drop(columns=["n_subjects", "n_rows"])
         
         metrics_df = metrics_df.merge(eye_metric_df, on=merge_cols, how="left")
     return metrics_df
@@ -404,11 +457,10 @@ def _add_reading_comprehension_metrics(src_path, metrics_df, resolution, reading
     if resolution == "article":
         comprehension_df = add_id_cols(comprehension_df, de_unique_article_id=True)
     # filter by reading_regime
-    comprehension_df = add_reading_regime_col(comprehension_df)
     comprehension_df = comprehension_df[comprehension_df['reading_regime'] == reading_regime]
     metrics_df = metrics_df.merge(comprehension_df[merge_cols+["comprehension_score"]], on=merge_cols, how="left")
     # QA_RT
-    qa_rt_df = pd.read_csv(src_path / f"Eye_metrics/data/{reader_type}/{reading_regime}/{resolution}_QA_RT_df.csv")
+    qa_rt_df = pd.read_csv(src_path / f"Eye_metrics/data/{reader_type}/{reading_regime}/metric_tables/{resolution}_QA_RT_df.csv")
     metrics_df = metrics_df.merge(qa_rt_df, on=merge_cols, how="left")
     return metrics_df
 
@@ -545,8 +597,14 @@ def _get_corr_df(resolution, all_metrics_df, text_cols, reading_regime, pred_col
     
     # create fold column by article_id
     all_metrics_df['fold'] = all_metrics_df['article_id'].astype(int)
-    # order by fold
-    all_metrics_df = all_metrics_df.sort_values(by=['fold'])
+    # Order by a UNIQUE row key (fold + text id, + sentence align_idx where present) and reset the
+    # index, so the seeded bootstrap resample below (sample(random_state=...)) is REPRODUCIBLE from
+    # the saved RT_all_metrics. Sorting by the non-unique 'fold' alone left ties ordered
+    # non-deterministically, so the resample couldn't be reproduced. Only the bootstrap depends on
+    # row order; fold='all' and per-CV-fold correlations are order-invariant, so this changes no
+    # point estimate (only which rows each bootstrap draw picks, which is arbitrary anyway).
+    sort_keys = ['fold', text_id_col] + (['align_idx'] if 'align_idx' in all_metrics_df.columns else [])
+    all_metrics_df = all_metrics_df.sort_values(by=sort_keys).reset_index(drop=True)
     
     # Initialize lists to store results
     corr_dfs = []

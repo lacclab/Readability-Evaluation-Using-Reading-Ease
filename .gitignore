@@ -1,0 +1,10 @@
+*__pycache__*
+*.DS_Store
+*.pyc
+*cpython-310*
+colorized_texts.html
+.claude/settings.json
+debug/*
+
+# Marker files written by run_task.py after a task completes
+src/Correlations/run_wrappers/.done/

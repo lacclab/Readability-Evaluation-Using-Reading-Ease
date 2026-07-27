@@ -1,0 +1,664 @@
+======================================================================
+Paradigm Divergence: RT_vs_QA_RT
+paragraph resolution, L1_and_L2, FirstReading
+======================================================================
+
+----------------------------------------------------------------------
+  Total Fixation Time vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.363, p=2.06e-06
+
+  High Total Fixation Time, Low QA Response Time (top 5):
+         2_2_4  Total Fixation Time=+112.2724  QA Response Time=+416.2579
+        1_10_1  Total Fixation Time=+51.1610  QA Response Time=-2074.2474
+         1_2_6  Total Fixation Time=+97.7726  QA Response Time=+338.2604
+         1_4_3  Total Fixation Time=+54.0628  QA Response Time=-917.6704
+        1_10_3  Total Fixation Time=+90.1828  QA Response Time=+898.0417
+
+  Low Total Fixation Time, High QA Response Time (top 5):
+         2_3_3  Total Fixation Time=+28.5537  QA Response Time=+5296.0065
+         3_1_2  Total Fixation Time=-46.5032  QA Response Time=+1203.1492
+        2_10_2  Total Fixation Time=-15.4363  QA Response Time=+1444.3520
+         2_2_1  Total Fixation Time=-15.4102  QA Response Time=+1104.9046
+         3_2_1  Total Fixation Time=-6.2892  QA Response Time=+1476.9215
+
+  |Total Fixation Time| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.124, p=0.115
+
+  High |Total Fixation Time|, Low |QA Response Time| (top 5):
+         2_2_4  |Total Fixation Time|=+112.2724  |QA Response Time|=+416.2579
+         1_2_6  |Total Fixation Time|=+97.7726  |QA Response Time|=+338.2604
+        1_10_3  |Total Fixation Time|=+90.1828  |QA Response Time|=+898.0417
+         1_1_1  |Total Fixation Time|=+54.3399  |QA Response Time|=+84.6754
+         3_4_1  |Total Fixation Time|=+62.7616  |QA Response Time|=+514.9731
+
+  Low |Total Fixation Time|, High |QA Response Time| (top 5):
+         2_3_3  |Total Fixation Time|=+28.5537  |QA Response Time|=+5296.0065
+         2_6_3  |Total Fixation Time|=+2.5280  |QA Response Time|=+2772.2115
+         2_5_4  |Total Fixation Time|=+13.9955  |QA Response Time|=+2665.9854
+         1_4_5  |Total Fixation Time|=+1.8093  |QA Response Time|=+1995.1848
+         1_2_5  |Total Fixation Time|=+0.2689  |QA Response Time|=+1867.2650
+
+  Total Fixation Time (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.363, p=2.06e-06
+
+  High Total Fixation Time (z), Low QA Response Time (z) (top 5):
+         2_3_3  Total Fixation Time (z)=+0.3145  QA Response Time (z)=-4.0692
+         2_4_2  Total Fixation Time (z)=+1.6402  QA Response Time (z)=-2.2917
+         2_2_4  Total Fixation Time (z)=+3.4277  QA Response Time (z)=-0.0169
+         2_6_2  Total Fixation Time (z)=+2.1643  QA Response Time (z)=-1.2419
+         2_5_3  Total Fixation Time (z)=+1.9299  QA Response Time (z)=-1.4621
+
+  Low Total Fixation Time (z), High QA Response Time (z) (top 5):
+         2_7_3  Total Fixation Time (z)=-2.7360  QA Response Time (z)=+1.5410
+         2_6_1  Total Fixation Time (z)=-1.8874  QA Response Time (z)=+2.2389
+         2_5_4  Total Fixation Time (z)=-1.2678  QA Response Time (z)=+2.5427
+         2_6_3  Total Fixation Time (z)=-0.6533  QA Response Time (z)=+2.6309
+         2_7_4  Total Fixation Time (z)=-1.1516  QA Response Time (z)=+1.7899
+
+----------------------------------------------------------------------
+  Skip Rate vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.503, p=9.51e-12
+
+  High Skip Rate, Low QA Response Time (top 5):
+         2_3_2  Skip Rate=+0.0561  QA Response Time=-1896.7641
+        2_10_1  Skip Rate=+0.0499  QA Response Time=-2136.4661
+         2_6_1  Skip Rate=+0.0448  QA Response Time=-2300.1581
+         2_5_4  Skip Rate=+0.0326  QA Response Time=-2665.9854
+         2_1_4  Skip Rate=+0.0534  QA Response Time=-1102.4034
+
+  Low Skip Rate, High QA Response Time (top 5):
+         2_3_3  Skip Rate=-0.0327  QA Response Time=+5296.0065
+         2_6_2  Skip Rate=-0.0786  QA Response Time=+1891.3636
+         2_8_4  Skip Rate=-0.0401  QA Response Time=+3378.0957
+         2_7_5  Skip Rate=-0.0488  QA Response Time=+2881.7778
+         2_4_2  Skip Rate=-0.0437  QA Response Time=+3155.5619
+
+  |Skip Rate| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.202, p=0.0098
+
+  High |Skip Rate|, Low |QA Response Time| (top 5):
+         2_2_4  |Skip Rate|=+0.0777  |QA Response Time|=+416.2579
+         2_2_3  |Skip Rate|=+0.0622  |QA Response Time|=+228.3387
+         2_9_6  |Skip Rate|=+0.0644  |QA Response Time|=+441.7347
+         2_5_5  |Skip Rate|=+0.0604  |QA Response Time|=+500.8140
+         2_6_2  |Skip Rate|=+0.0786  |QA Response Time|=+1891.3636
+
+  Low |Skip Rate|, High |QA Response Time| (top 5):
+         2_3_3  |Skip Rate|=+0.0327  |QA Response Time|=+5296.0065
+         1_4_5  |Skip Rate|=+0.0007  |QA Response Time|=+1995.1848
+        1_10_1  |Skip Rate|=+0.0035  |QA Response Time|=+2074.2474
+         3_8_4  |Skip Rate|=+0.0084  |QA Response Time|=+2315.9808
+         2_6_3  |Skip Rate|=+0.0170  |QA Response Time|=+2772.2115
+
+  Skip Rate (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.503, p=9.51e-12
+
+  High Skip Rate (z), Low QA Response Time (z) (top 5):
+         2_3_3  Skip Rate (z)=+0.9716  QA Response Time (z)=-4.0692
+         2_6_2  Skip Rate (z)=+2.5321  QA Response Time (z)=-1.2419
+         2_8_4  Skip Rate (z)=+1.2251  QA Response Time (z)=-2.4765
+         2_7_5  Skip Rate (z)=+1.5196  QA Response Time (z)=-2.0643
+         2_4_2  Skip Rate (z)=+1.3456  QA Response Time (z)=-2.2917
+
+  Low Skip Rate (z), High QA Response Time (z) (top 5):
+         2_3_2  Skip Rate (z)=-2.0487  QA Response Time (z)=+1.9039
+        2_10_1  Skip Rate (z)=-1.8365  QA Response Time (z)=+2.1030
+         2_6_1  Skip Rate (z)=-1.6636  QA Response Time (z)=+2.2389
+         2_5_4  Skip Rate (z)=-1.2466  QA Response Time (z)=+2.5427
+         2_1_4  Skip Rate (z)=-1.9562  QA Response Time (z)=+1.2443
+
+----------------------------------------------------------------------
+  Regression Rate vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.281, p=2.85e-04
+
+  High Regression Rate, Low QA Response Time (top 5):
+         3_6_7  Regression Rate=+0.0991  QA Response Time=+807.2334
+         2_2_4  Regression Rate=+0.0899  QA Response Time=+416.2579
+         1_6_2  Regression Rate=+0.0286  QA Response Time=-1687.9320
+         2_5_4  Regression Rate=+0.0045  QA Response Time=-2665.9854
+        1_10_1  Regression Rate=+0.0175  QA Response Time=-2074.2474
+
+  Low Regression Rate, High QA Response Time (top 5):
+         3_1_2  Regression Rate=-0.0897  QA Response Time=+1203.1492
+         2_3_3  Regression Rate=+0.0444  QA Response Time=+5296.0065
+         2_4_4  Regression Rate=-0.0454  QA Response Time=+993.6037
+        2_10_2  Regression Rate=-0.0340  QA Response Time=+1444.3520
+         2_4_2  Regression Rate=+0.0070  QA Response Time=+3155.5619
+
+  |Regression Rate| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.031, p=0.695
+
+  High |Regression Rate|, Low |QA Response Time| (top 5):
+         3_6_7  |Regression Rate|=+0.0991  |QA Response Time|=+807.2334
+         2_2_4  |Regression Rate|=+0.0899  |QA Response Time|=+416.2579
+         3_1_2  |Regression Rate|=+0.0897  |QA Response Time|=+1203.1492
+         1_1_1  |Regression Rate|=+0.0633  |QA Response Time|=+84.6754
+         1_2_6  |Regression Rate|=+0.0616  |QA Response Time|=+338.2604
+
+  Low |Regression Rate|, High |QA Response Time| (top 5):
+         2_3_3  |Regression Rate|=+0.0444  |QA Response Time|=+5296.0065
+         2_4_2  |Regression Rate|=+0.0070  |QA Response Time|=+3155.5619
+         2_7_5  |Regression Rate|=+0.0031  |QA Response Time|=+2881.7778
+         2_5_4  |Regression Rate|=+0.0045  |QA Response Time|=+2665.9854
+         2_6_3  |Regression Rate|=+0.0083  |QA Response Time|=+2772.2115
+
+  Regression Rate (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.281, p=2.85e-04
+
+  High Regression Rate (z), Low QA Response Time (z) (top 5):
+         2_3_3  Regression Rate (z)=+1.3549  QA Response Time (z)=-4.0692
+         3_6_7  Regression Rate (z)=+3.3057  QA Response Time (z)=-0.3416
+         2_8_4  Regression Rate (z)=+0.8666  QA Response Time (z)=-2.4765
+         3_4_5  Regression Rate (z)=+2.1633  QA Response Time (z)=-1.1354
+         2_2_4  Regression Rate (z)=+2.9785  QA Response Time (z)=-0.0169
+
+  Low Regression Rate (z), High QA Response Time (z) (top 5):
+         2_6_1  Regression Rate (z)=-1.6284  QA Response Time (z)=+2.2389
+         2_7_3  Regression Rate (z)=-1.7970  QA Response Time (z)=+1.5410
+         2_3_2  Regression Rate (z)=-1.2755  QA Response Time (z)=+1.9039
+         1_2_5  Regression Rate (z)=-1.2970  QA Response Time (z)=+1.8794
+         2_6_3  Regression Rate (z)=-0.5216  QA Response Time (z)=+2.6309
+
+----------------------------------------------------------------------
+  First Fixation Duration vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.393, p=2.31e-07
+
+  High First Fixation Duration, Low QA Response Time (top 5):
+        1_10_1  First Fixation Duration=+10.9448  QA Response Time=-2074.2474
+         2_2_4  First Fixation Duration=+17.6023  QA Response Time=+416.2579
+         2_9_3  First Fixation Duration=+10.3348  QA Response Time=-292.8645
+         1_4_3  First Fixation Duration=+7.6246  QA Response Time=-917.6704
+         2_9_1  First Fixation Duration=+12.7834  QA Response Time=+719.5258
+
+  Low First Fixation Duration, High QA Response Time (top 5):
+         3_8_3  First Fixation Duration=-6.9131  QA Response Time=+1204.0267
+         2_2_1  First Fixation Duration=-6.6876  QA Response Time=+1104.9046
+         1_2_3  First Fixation Duration=-8.1722  QA Response Time=+475.6727
+         2_3_3  First Fixation Duration=+7.7323  QA Response Time=+5296.0065
+         1_3_5  First Fixation Duration=-0.8014  QA Response Time=+2611.9658
+
+  |First Fixation Duration| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.211, p=0.0069
+
+  High |First Fixation Duration|, Low |QA Response Time| (top 5):
+         2_2_4  |First Fixation Duration|=+17.6023  |QA Response Time|=+416.2579
+         2_9_1  |First Fixation Duration|=+12.7834  |QA Response Time|=+719.5258
+         2_6_4  |First Fixation Duration|=+13.5863  |QA Response Time|=+1104.0342
+         2_9_3  |First Fixation Duration|=+10.3348  |QA Response Time|=+292.8645
+         3_4_1  |First Fixation Duration|=+10.4217  |QA Response Time|=+514.9731
+
+  Low |First Fixation Duration|, High |QA Response Time| (top 5):
+         2_3_3  |First Fixation Duration|=+7.7323  |QA Response Time|=+5296.0065
+         1_3_5  |First Fixation Duration|=+0.8014  |QA Response Time|=+2611.9658
+         3_8_4  |First Fixation Duration|=+0.7798  |QA Response Time|=+2315.9808
+         2_6_3  |First Fixation Duration|=+2.4941  |QA Response Time|=+2772.2115
+         2_8_4  |First Fixation Duration|=+5.1021  |QA Response Time|=+3378.0957
+
+  First Fixation Duration (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.393, p=2.31e-07
+
+  High First Fixation Duration (z), Low QA Response Time (z) (top 5):
+         2_3_3  First Fixation Duration (z)=+0.9641  QA Response Time (z)=-4.0692
+         2_4_2  First Fixation Duration (z)=+2.0177  QA Response Time (z)=-2.2917
+         2_2_4  First Fixation Duration (z)=+2.8235  QA Response Time (z)=-0.0169
+         2_7_5  First Fixation Duration (z)=+1.2673  QA Response Time (z)=-2.0643
+         2_5_3  First Fixation Duration (z)=+1.7030  QA Response Time (z)=-1.4621
+
+  Low First Fixation Duration (z), High QA Response Time (z) (top 5):
+         2_6_1  First Fixation Duration (z)=-1.7901  QA Response Time (z)=+2.2389
+         2_5_4  First Fixation Duration (z)=-1.5306  QA Response Time (z)=+2.5427
+         2_6_3  First Fixation Duration (z)=-0.9624  QA Response Time (z)=+2.6309
+         2_3_2  First Fixation Duration (z)=-1.3862  QA Response Time (z)=+1.9039
+         2_7_4  First Fixation Duration (z)=-1.4196  QA Response Time (z)=+1.7899
+
+----------------------------------------------------------------------
+  Fixation Duration vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.299, p=1.08e-04
+
+  High Fixation Duration, Low QA Response Time (top 5):
+        1_10_1  Fixation Duration=+14.0510  QA Response Time=-2074.2474
+        2_10_1  Fixation Duration=+6.4557  QA Response Time=-2136.4661
+         1_5_2  Fixation Duration=+9.5633  QA Response Time=-749.7688
+         2_9_3  Fixation Duration=+10.2620  QA Response Time=-292.8645
+        1_10_3  Fixation Duration=+13.2576  QA Response Time=+898.0417
+
+  Low Fixation Duration, High QA Response Time (top 5):
+         2_3_3  Fixation Duration=+2.2899  QA Response Time=+5296.0065
+         1_3_5  Fixation Duration=-5.7479  QA Response Time=+2611.9658
+         1_5_3  Fixation Duration=-5.1746  QA Response Time=+1517.0039
+         3_8_3  Fixation Duration=-5.8108  QA Response Time=+1204.0267
+         1_2_3  Fixation Duration=-7.7874  QA Response Time=+475.6727
+
+  |Fixation Duration| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.167, p=0.034
+
+  High |Fixation Duration|, Low |QA Response Time| (top 5):
+        1_10_3  |Fixation Duration|=+13.2576  |QA Response Time|=+898.0417
+         1_9_3  |Fixation Duration|=+16.3547  |QA Response Time|=+1955.8759
+         1_2_6  |Fixation Duration|=+11.1138  |QA Response Time|=+338.2604
+         2_5_3  |Fixation Duration|=+16.8807  |QA Response Time|=+2156.6046
+         2_9_3  |Fixation Duration|=+10.2620  |QA Response Time|=+292.8645
+
+  Low |Fixation Duration|, High |QA Response Time| (top 5):
+         2_3_3  |Fixation Duration|=+2.2899  |QA Response Time|=+5296.0065
+         2_6_3  |Fixation Duration|=+0.1772  |QA Response Time|=+2772.2115
+         2_8_4  |Fixation Duration|=+3.9972  |QA Response Time|=+3378.0957
+         3_8_4  |Fixation Duration|=+0.8508  |QA Response Time|=+2315.9808
+         1_2_5  |Fixation Duration|=+1.1164  |QA Response Time|=+1867.2650
+
+  Fixation Duration (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.299, p=1.08e-04
+
+  High Fixation Duration (z), Low QA Response Time (z) (top 5):
+         2_5_3  Fixation Duration (z)=+2.8489  QA Response Time (z)=-1.4621
+         2_4_2  Fixation Duration (z)=+2.0720  QA Response Time (z)=-2.2917
+         1_9_3  Fixation Duration (z)=+2.7409  QA Response Time (z)=-1.2954
+         2_3_3  Fixation Duration (z)=-0.1472  QA Response Time (z)=-4.0692
+         2_1_6  Fixation Duration (z)=+1.7967  QA Response Time (z)=-1.0231
+
+  Low Fixation Duration (z), High QA Response Time (z) (top 5):
+         2_5_4  Fixation Duration (z)=-1.5237  QA Response Time (z)=+2.5427
+         2_6_1  Fixation Duration (z)=-1.4549  QA Response Time (z)=+2.2389
+         1_4_5  Fixation Duration (z)=-1.3773  QA Response Time (z)=+1.9857
+         2_6_3  Fixation Duration (z)=-0.6538  QA Response Time (z)=+2.6309
+         1_6_2  Fixation Duration (z)=-1.2484  QA Response Time (z)=+1.7305
+
+----------------------------------------------------------------------
+  Number of Fixations vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.443, p=3.61e-09
+
+  High Number of Fixations, Low QA Response Time (top 5):
+         2_2_4  Number of Fixations=+0.5192  QA Response Time=+416.2579
+         1_2_6  Number of Fixations=+0.3665  QA Response Time=+338.2604
+         1_4_3  Number of Fixations=+0.2147  QA Response Time=-917.6704
+        1_10_1  Number of Fixations=+0.0888  QA Response Time=-2074.2474
+         3_7_1  Number of Fixations=+0.2089  QA Response Time=-512.9621
+
+  Low Number of Fixations, High QA Response Time (top 5):
+         2_3_3  Number of Fixations=+0.1457  QA Response Time=+5296.0065
+         3_1_2  Number of Fixations=-0.2385  QA Response Time=+1203.1492
+        2_10_2  Number of Fixations=-0.0858  QA Response Time=+1444.3520
+         2_2_1  Number of Fixations=-0.1045  QA Response Time=+1104.9046
+         3_8_5  Number of Fixations=-0.1606  QA Response Time=+404.5860
+
+  |Number of Fixations| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.208, p=0.0080
+
+  High |Number of Fixations|, Low |QA Response Time| (top 5):
+         2_2_4  |Number of Fixations|=+0.5192  |QA Response Time|=+416.2579
+         1_2_6  |Number of Fixations|=+0.3665  |QA Response Time|=+338.2604
+        1_10_3  |Number of Fixations|=+0.3346  |QA Response Time|=+898.0417
+         1_1_1  |Number of Fixations|=+0.2392  |QA Response Time|=+84.6754
+         3_6_7  |Number of Fixations|=+0.2959  |QA Response Time|=+807.2334
+
+  Low |Number of Fixations|, High |QA Response Time| (top 5):
+         2_3_3  |Number of Fixations|=+0.1457  |QA Response Time|=+5296.0065
+         2_6_3  |Number of Fixations|=+0.0181  |QA Response Time|=+2772.2115
+         2_5_4  |Number of Fixations|=+0.0756  |QA Response Time|=+2665.9854
+        2_10_1  |Number of Fixations|=+0.0364  |QA Response Time|=+2136.4661
+         1_4_5  |Number of Fixations|=+0.0229  |QA Response Time|=+1995.1848
+
+  Number of Fixations (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.443, p=3.61e-09
+
+  High Number of Fixations (z), Low QA Response Time (z) (top 5):
+         2_3_3  Number of Fixations (z)=+0.6605  QA Response Time (z)=-4.0692
+         2_4_2  Number of Fixations (z)=+1.6471  QA Response Time (z)=-2.2917
+         2_2_4  Number of Fixations (z)=+3.6970  QA Response Time (z)=-0.0169
+         2_6_2  Number of Fixations (z)=+2.5631  QA Response Time (z)=-1.2419
+         2_8_4  Number of Fixations (z)=+1.1656  QA Response Time (z)=-2.4765
+
+  Low Number of Fixations (z), High QA Response Time (z) (top 5):
+         2_6_1  Number of Fixations (z)=-1.8091  QA Response Time (z)=+2.2389
+         2_7_3  Number of Fixations (z)=-2.4286  QA Response Time (z)=+1.5410
+         2_5_4  Number of Fixations (z)=-1.1395  QA Response Time (z)=+2.5427
+         2_3_2  Number of Fixations (z)=-1.3770  QA Response Time (z)=+1.9039
+         2_6_3  Number of Fixations (z)=-0.6715  QA Response Time (z)=+2.6309
+
+----------------------------------------------------------------------
+  First Pass Gaze Duration vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.391, p=2.69e-07
+
+  High First Pass Gaze Duration, Low QA Response Time (top 5):
+        1_10_1  First Pass Gaze Duration=+20.5586  QA Response Time=-2074.2474
+         1_4_3  First Pass Gaze Duration=+29.3575  QA Response Time=-917.6704
+        2_10_1  First Pass Gaze Duration=+12.6196  QA Response Time=-2136.4661
+         3_6_4  First Pass Gaze Duration=+17.5804  QA Response Time=-1357.5737
+         2_9_3  First Pass Gaze Duration=+24.9504  QA Response Time=-292.8645
+
+  Low First Pass Gaze Duration, High QA Response Time (top 5):
+         2_3_3  First Pass Gaze Duration=+13.2378  QA Response Time=+5296.0065
+         1_3_5  First Pass Gaze Duration=-2.5964  QA Response Time=+2611.9658
+         2_8_4  First Pass Gaze Duration=+4.0917  QA Response Time=+3378.0957
+         1_9_6  First Pass Gaze Duration=-3.0177  QA Response Time=+1577.7294
+         3_1_2  First Pass Gaze Duration=-6.1461  QA Response Time=+1203.1492
+
+  |First Pass Gaze Duration| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.221, p=0.0047
+
+  High |First Pass Gaze Duration|, Low |QA Response Time| (top 5):
+         2_2_4  |First Pass Gaze Duration|=+28.3782  |QA Response Time|=+416.2579
+         1_2_6  |First Pass Gaze Duration|=+27.4242  |QA Response Time|=+338.2604
+         2_6_2  |First Pass Gaze Duration|=+42.4493  |QA Response Time|=+1891.3636
+         2_9_3  |First Pass Gaze Duration|=+24.9504  |QA Response Time|=+292.8645
+         3_4_1  |First Pass Gaze Duration|=+26.2134  |QA Response Time|=+514.9731
+
+  Low |First Pass Gaze Duration|, High |QA Response Time| (top 5):
+         2_3_3  |First Pass Gaze Duration|=+13.2378  |QA Response Time|=+5296.0065
+         2_8_4  |First Pass Gaze Duration|=+4.0917  |QA Response Time|=+3378.0957
+         2_6_3  |First Pass Gaze Duration|=+1.4472  |QA Response Time|=+2772.2115
+         1_3_5  |First Pass Gaze Duration|=+2.5964  |QA Response Time|=+2611.9658
+         3_5_3  |First Pass Gaze Duration|=+2.9253  |QA Response Time|=+2153.0814
+
+  First Pass Gaze Duration (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.391, p=2.69e-07
+
+  High First Pass Gaze Duration (z), Low QA Response Time (z) (top 5):
+         2_4_2  First Pass Gaze Duration (z)=+3.9193  QA Response Time (z)=-2.2917
+         2_6_2  First Pass Gaze Duration (z)=+3.0312  QA Response Time (z)=-1.2419
+         2_3_3  First Pass Gaze Duration (z)=+0.3490  QA Response Time (z)=-4.0692
+         2_5_3  First Pass Gaze Duration (z)=+1.9678  QA Response Time (z)=-1.4621
+         2_9_5  First Pass Gaze Duration (z)=+1.7814  QA Response Time (z)=-1.4724
+
+  Low First Pass Gaze Duration (z), High QA Response Time (z) (top 5):
+         2_5_4  First Pass Gaze Duration (z)=-1.7028  QA Response Time (z)=+2.5427
+         2_6_1  First Pass Gaze Duration (z)=-1.9253  QA Response Time (z)=+2.2389
+         2_1_4  First Pass Gaze Duration (z)=-2.3666  QA Response Time (z)=+1.2443
+         2_6_3  First Pass Gaze Duration (z)=-0.9994  QA Response Time (z)=+2.6309
+         2_7_4  First Pass Gaze Duration (z)=-1.5702  QA Response Time (z)=+1.7899
+
+----------------------------------------------------------------------
+  First Pass Skip Rate vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.435, p=7.38e-09
+
+  High First Pass Skip Rate, Low QA Response Time (top 5):
+         2_5_4  First Pass Skip Rate=+0.0621  QA Response Time=-2665.9854
+         2_6_3  First Pass Skip Rate=+0.0526  QA Response Time=-2772.2115
+         2_1_4  First Pass Skip Rate=+0.0770  QA Response Time=-1102.4034
+        2_10_1  First Pass Skip Rate=+0.0567  QA Response Time=-2136.4661
+         2_3_2  First Pass Skip Rate=+0.0562  QA Response Time=-1896.7641
+
+  Low First Pass Skip Rate, High QA Response Time (top 5):
+         2_6_2  First Pass Skip Rate=-0.0804  QA Response Time=+1891.3636
+         2_4_2  First Pass Skip Rate=-0.0533  QA Response Time=+3155.5619
+         2_3_3  First Pass Skip Rate=-0.0072  QA Response Time=+5296.0065
+         2_5_3  First Pass Skip Rate=-0.0637  QA Response Time=+2156.6046
+         2_1_1  First Pass Skip Rate=-0.0566  QA Response Time=+1955.2623
+
+  |First Pass Skip Rate| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.118, p=0.136
+
+  High |First Pass Skip Rate|, Low |QA Response Time| (top 5):
+         2_2_3  |First Pass Skip Rate|=+0.0777  |QA Response Time|=+228.3387
+         2_4_5  |First Pass Skip Rate|=+0.0772  |QA Response Time|=+383.5884
+         2_3_4  |First Pass Skip Rate|=+0.0731  |QA Response Time|=+564.9952
+         2_1_4  |First Pass Skip Rate|=+0.0770  |QA Response Time|=+1102.4034
+         2_2_4  |First Pass Skip Rate|=+0.0623  |QA Response Time|=+416.2579
+
+  Low |First Pass Skip Rate|, High |QA Response Time| (top 5):
+         2_3_3  |First Pass Skip Rate|=+0.0072  |QA Response Time|=+5296.0065
+         2_8_4  |First Pass Skip Rate|=+0.0058  |QA Response Time|=+3378.0957
+         1_3_5  |First Pass Skip Rate|=+0.0055  |QA Response Time|=+2611.9658
+         3_5_3  |First Pass Skip Rate|=+0.0009  |QA Response Time|=+2153.0814
+        1_10_1  |First Pass Skip Rate|=+0.0024  |QA Response Time|=+2074.2474
+
+  First Pass Skip Rate (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.435, p=7.38e-09
+
+  High First Pass Skip Rate (z), Low QA Response Time (z) (top 5):
+         2_6_2  First Pass Skip Rate (z)=+2.6286  QA Response Time (z)=-1.2419
+         2_4_2  First Pass Skip Rate (z)=+1.7794  QA Response Time (z)=-2.2917
+         2_3_3  First Pass Skip Rate (z)=+0.3379  QA Response Time (z)=-4.0692
+         2_5_3  First Pass Skip Rate (z)=+2.1064  QA Response Time (z)=-1.4621
+         2_1_1  First Pass Skip Rate (z)=+1.8840  QA Response Time (z)=-1.2949
+
+  Low First Pass Skip Rate (z), High QA Response Time (z) (top 5):
+         2_5_4  First Pass Skip Rate (z)=-1.8324  QA Response Time (z)=+2.5427
+         2_6_3  First Pass Skip Rate (z)=-1.5337  QA Response Time (z)=+2.6309
+         2_1_4  First Pass Skip Rate (z)=-2.2970  QA Response Time (z)=+1.2443
+        2_10_1  First Pass Skip Rate (z)=-1.6616  QA Response Time (z)=+2.1030
+         2_3_2  First Pass Skip Rate (z)=-1.6477  QA Response Time (z)=+1.9039
+
+----------------------------------------------------------------------
+  First Pass Regression Rate vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.028, p=0.725
+
+  High First Pass Regression Rate, Low QA Response Time (top 5):
+         2_5_4  First Pass Regression Rate=+0.0256  QA Response Time=-2665.9854
+        2_10_1  First Pass Regression Rate=+0.0231  QA Response Time=-2136.4661
+        1_10_1  First Pass Regression Rate=+0.0230  QA Response Time=-2074.2474
+         2_6_3  First Pass Regression Rate=+0.0073  QA Response Time=-2772.2115
+         3_6_7  First Pass Regression Rate=+0.0580  QA Response Time=+807.2334
+
+  Low First Pass Regression Rate, High QA Response Time (top 5):
+         2_4_4  First Pass Regression Rate=-0.0662  QA Response Time=+993.6037
+         2_4_2  First Pass Regression Rate=-0.0210  QA Response Time=+3155.5619
+         2_3_3  First Pass Regression Rate=+0.0218  QA Response Time=+5296.0065
+         2_7_5  First Pass Regression Rate=-0.0121  QA Response Time=+2881.7778
+        2_10_2  First Pass Regression Rate=-0.0282  QA Response Time=+1444.3520
+
+  |First Pass Regression Rate| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=-0.079, p=0.318
+
+  High |First Pass Regression Rate|, Low |QA Response Time| (top 5):
+         2_4_4  |First Pass Regression Rate|=+0.0662  |QA Response Time|=+993.6037
+         3_6_7  |First Pass Regression Rate|=+0.0580  |QA Response Time|=+807.2334
+         3_1_5  |First Pass Regression Rate|=+0.0505  |QA Response Time|=+499.7988
+         3_4_3  |First Pass Regression Rate|=+0.0446  |QA Response Time|=+41.1395
+         1_1_1  |First Pass Regression Rate|=+0.0433  |QA Response Time|=+84.6754
+
+  Low |First Pass Regression Rate|, High |QA Response Time| (top 5):
+         2_3_3  |First Pass Regression Rate|=+0.0218  |QA Response Time|=+5296.0065
+         2_8_4  |First Pass Regression Rate|=+0.0137  |QA Response Time|=+3378.0957
+         2_6_3  |First Pass Regression Rate|=+0.0073  |QA Response Time|=+2772.2115
+         1_3_5  |First Pass Regression Rate|=+0.0076  |QA Response Time|=+2611.9658
+         2_7_2  |First Pass Regression Rate|=+0.0012  |QA Response Time|=+2058.4825
+
+  First Pass Regression Rate (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.028, p=0.725
+
+  High First Pass Regression Rate (z), Low QA Response Time (z) (top 5):
+         2_3_3  First Pass Regression Rate (z)=+0.8345  QA Response Time (z)=-4.0692
+         3_6_7  First Pass Regression Rate (z)=+2.6882  QA Response Time (z)=-0.3416
+         3_8_4  First Pass Regression Rate (z)=+1.3659  QA Response Time (z)=-1.5945
+         2_8_4  First Pass Regression Rate (z)=+0.4205  QA Response Time (z)=-2.4765
+         3_1_5  First Pass Regression Rate (z)=+2.3060  QA Response Time (z)=-0.0863
+
+  Low First Pass Regression Rate (z), High QA Response Time (z) (top 5):
+         1_2_5  First Pass Regression Rate (z)=-2.2466  QA Response Time (z)=+1.8794
+         2_4_4  First Pass Regression Rate (z)=-3.6743  QA Response Time (z)=-0.4963
+         2_3_2  First Pass Regression Rate (z)=-0.9048  QA Response Time (z)=+1.9039
+         2_6_1  First Pass Regression Rate (z)=-0.5004  QA Response Time (z)=+2.2389
+         1_4_5  First Pass Regression Rate (z)=-0.6572  QA Response Time (z)=+1.9857
+
+----------------------------------------------------------------------
+  Gaze Duration vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.504, p=7.94e-12
+
+  High Gaze Duration, Low QA Response Time (top 5):
+         2_2_4  Gaze Duration=+41.6101  QA Response Time=+416.2579
+         1_4_3  Gaze Duration=+25.9757  QA Response Time=-917.6704
+         2_6_2  Gaze Duration=+44.5437  QA Response Time=+1891.3636
+        1_10_1  Gaze Duration=+10.1005  QA Response Time=-2074.2474
+         1_2_6  Gaze Duration=+28.6138  QA Response Time=+338.2604
+
+  Low Gaze Duration, High QA Response Time (top 5):
+         2_3_3  Gaze Duration=+16.3988  QA Response Time=+5296.0065
+         1_3_5  Gaze Duration=+2.1084  QA Response Time=+2611.9658
+         2_1_3  Gaze Duration=-12.6949  QA Response Time=+675.8642
+         2_2_1  Gaze Duration=-8.9534  QA Response Time=+1104.9046
+        2_10_2  Gaze Duration=-5.7988  QA Response Time=+1444.3520
+
+  |Gaze Duration| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.302, p=9.30e-05
+
+  High |Gaze Duration|, Low |QA Response Time| (top 5):
+         2_2_4  |Gaze Duration|=+41.6101  |QA Response Time|=+416.2579
+         2_6_2  |Gaze Duration|=+44.5437  |QA Response Time|=+1891.3636
+         1_2_6  |Gaze Duration|=+28.6138  |QA Response Time|=+338.2604
+         2_9_1  |Gaze Duration|=+28.0090  |QA Response Time|=+719.5258
+        2_10_3  |Gaze Duration|=+23.9776  |QA Response Time|=+258.8036
+
+  Low |Gaze Duration|, High |QA Response Time| (top 5):
+         2_3_3  |Gaze Duration|=+16.3988  |QA Response Time|=+5296.0065
+         1_3_5  |Gaze Duration|=+2.1084  |QA Response Time|=+2611.9658
+         2_6_3  |Gaze Duration|=+4.6737  |QA Response Time|=+2772.2115
+         1_4_5  |Gaze Duration|=+0.4125  |QA Response Time|=+1995.1848
+         3_8_4  |Gaze Duration|=+4.7024  |QA Response Time|=+2315.9808
+
+  Gaze Duration (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.504, p=7.94e-12
+
+  High Gaze Duration (z), Low QA Response Time (z) (top 5):
+         2_4_2  Gaze Duration (z)=+2.8853  QA Response Time (z)=-2.2917
+         2_6_2  Gaze Duration (z)=+2.9226  QA Response Time (z)=-1.2419
+         2_3_3  Gaze Duration (z)=+0.7347  QA Response Time (z)=-4.0692
+         2_9_5  Gaze Duration (z)=+2.0431  QA Response Time (z)=-1.4724
+         2_5_3  Gaze Duration (z)=+1.9967  QA Response Time (z)=-1.4621
+
+  Low Gaze Duration (z), High QA Response Time (z) (top 5):
+         2_5_4  Gaze Duration (z)=-1.7047  QA Response Time (z)=+2.5427
+         2_6_1  Gaze Duration (z)=-1.9149  QA Response Time (z)=+2.2389
+         2_3_2  Gaze Duration (z)=-1.9122  QA Response Time (z)=+1.9039
+         2_1_4  Gaze Duration (z)=-2.0971  QA Response Time (z)=+1.2443
+         2_6_3  Gaze Duration (z)=-0.9035  QA Response Time (z)=+2.6309
+
+----------------------------------------------------------------------
+  Higher Pass Fixation vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.293, p=1.54e-04
+
+  High Higher Pass Fixation, Low QA Response Time (top 5):
+         2_2_4  Higher Pass Fixation=+101.1884  QA Response Time=+416.2579
+         1_2_6  Higher Pass Fixation=+95.3815  QA Response Time=+338.2604
+        1_10_1  Higher Pass Fixation=+47.6126  QA Response Time=-2074.2474
+        1_10_3  Higher Pass Fixation=+83.9799  QA Response Time=+898.0417
+         3_2_2  Higher Pass Fixation=+82.2114  QA Response Time=+1247.1410
+
+  Low Higher Pass Fixation, High QA Response Time (top 5):
+         2_3_3  Higher Pass Fixation=+26.5634  QA Response Time=+5296.0065
+         3_1_2  Higher Pass Fixation=-37.8090  QA Response Time=+1203.1492
+         2_7_5  Higher Pass Fixation=-4.8669  QA Response Time=+2881.7778
+         2_7_2  Higher Pass Fixation=-8.6724  QA Response Time=+2058.4825
+        2_10_2  Higher Pass Fixation=-18.3693  QA Response Time=+1444.3520
+
+  |Higher Pass Fixation| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.057, p=0.469
+
+  High |Higher Pass Fixation|, Low |QA Response Time| (top 5):
+         2_2_4  |Higher Pass Fixation|=+101.1884  |QA Response Time|=+416.2579
+         1_2_6  |Higher Pass Fixation|=+95.3815  |QA Response Time|=+338.2604
+        1_10_3  |Higher Pass Fixation|=+83.9799  |QA Response Time|=+898.0417
+         3_2_2  |Higher Pass Fixation|=+82.2114  |QA Response Time|=+1247.1410
+         1_1_1  |Higher Pass Fixation|=+59.5332  |QA Response Time|=+84.6754
+
+  Low |Higher Pass Fixation|, High |QA Response Time| (top 5):
+         2_3_3  |Higher Pass Fixation|=+26.5634  |QA Response Time|=+5296.0065
+         2_7_5  |Higher Pass Fixation|=+4.8669  |QA Response Time|=+2881.7778
+         2_6_3  |Higher Pass Fixation|=+3.5726  |QA Response Time|=+2772.2115
+         2_5_4  |Higher Pass Fixation|=+11.5546  |QA Response Time|=+2665.9854
+         2_1_1  |Higher Pass Fixation|=+0.3510  |QA Response Time|=+1955.2623
+
+  Higher Pass Fixation (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.293, p=1.54e-04
+
+  High Higher Pass Fixation (z), Low QA Response Time (z) (top 5):
+         2_3_3  Higher Pass Fixation (z)=+0.4135  QA Response Time (z)=-4.0692
+         2_5_3  Higher Pass Fixation (z)=+2.2429  QA Response Time (z)=-1.4621
+         2_2_4  Higher Pass Fixation (z)=+3.2581  QA Response Time (z)=-0.0169
+         3_2_2  Higher Pass Fixation (z)=+2.5347  QA Response Time (z)=-0.7069
+         2_7_1  Higher Pass Fixation (z)=+2.0907  QA Response Time (z)=-1.2416
+
+  Low Higher Pass Fixation (z), High QA Response Time (z) (top 5):
+         2_7_3  Higher Pass Fixation (z)=-1.8984  QA Response Time (z)=+1.5410
+         2_6_1  Higher Pass Fixation (z)=-1.2951  QA Response Time (z)=+2.2389
+         2_5_4  Higher Pass Fixation (z)=-1.0395  QA Response Time (z)=+2.5427
+         2_6_3  Higher Pass Fixation (z)=-0.7352  QA Response Time (z)=+2.6309
+         2_9_6  Higher Pass Fixation (z)=-2.2879  QA Response Time (z)=+0.6956
+
+----------------------------------------------------------------------
+  Reading Speed vs QA Response Time
+  [Diff (row 1, col 2)]
+  Pearson r=-0.450, p=1.86e-09
+
+  High Reading Speed, Low QA Response Time (top 5):
+         2_6_1  Reading Speed=+0.4574  QA Response Time=-2300.1581
+         2_7_3  Reading Speed=+0.5442  QA Response Time=-1459.7870
+         2_7_4  Reading Speed=+0.3851  QA Response Time=-1759.4554
+         2_5_4  Reading Speed=+0.1540  QA Response Time=-2665.9854
+         2_1_4  Reading Speed=+0.4564  QA Response Time=-1102.4034
+
+  Low Reading Speed, High QA Response Time (top 5):
+         2_6_2  Reading Speed=-1.1963  QA Response Time=+1891.3636
+         2_3_3  Reading Speed=-0.3945  QA Response Time=+5296.0065
+         2_4_2  Reading Speed=-0.7212  QA Response Time=+3155.5619
+         2_5_3  Reading Speed=-0.8761  QA Response Time=+2156.6046
+         2_7_1  Reading Speed=-0.8629  QA Response Time=+1891.0386
+
+  |Reading Speed| vs |QA Response Time|
+  [Absolute Diff (row 1, col 3)]
+  Pearson r=0.179, p=0.022
+
+  High |Reading Speed|, Low |QA Response Time| (top 5):
+         1_2_6  |Reading Speed|=+0.9660  |QA Response Time|=+338.2604
+         3_4_1  |Reading Speed|=+0.9222  |QA Response Time|=+514.9731
+         2_6_2  |Reading Speed|=+1.1963  |QA Response Time|=+1891.3636
+         2_2_4  |Reading Speed|=+0.8339  |QA Response Time|=+416.2579
+        1_10_3  |Reading Speed|=+0.8968  |QA Response Time|=+898.0417
+
+  Low |Reading Speed|, High |QA Response Time| (top 5):
+         2_3_3  |Reading Speed|=+0.3945  |QA Response Time|=+5296.0065
+         2_6_3  |Reading Speed|=+0.0058  |QA Response Time|=+2772.2115
+         2_5_4  |Reading Speed|=+0.1540  |QA Response Time|=+2665.9854
+        2_10_1  |Reading Speed|=+0.0367  |QA Response Time|=+2136.4661
+         1_4_5  |Reading Speed|=+0.0141  |QA Response Time|=+1995.1848
+
+  Reading Speed (z) vs QA Response Time (z)
+  [Diff z-scored (row 2, col 2)]
+  Pearson r=-0.450, p=1.86e-09
+
+  High Reading Speed (z), Low QA Response Time (z) (top 5):
+         2_6_2  Reading Speed (z)=+2.9991  QA Response Time (z)=-1.2419
+         2_3_3  Reading Speed (z)=+0.5657  QA Response Time (z)=-4.0692
+         2_4_2  Reading Speed (z)=+1.5573  QA Response Time (z)=-2.2917
+         2_5_3  Reading Speed (z)=+2.0274  QA Response Time (z)=-1.4621
+         2_7_1  Reading Speed (z)=+1.9874  QA Response Time (z)=-1.2416
+
+  Low Reading Speed (z), High QA Response Time (z) (top 5):
+         2_6_1  Reading Speed (z)=-2.0196  QA Response Time (z)=+2.2389
+         2_7_3  Reading Speed (z)=-2.2830  QA Response Time (z)=+1.5410
+         2_7_4  Reading Speed (z)=-1.8000  QA Response Time (z)=+1.7899
+         2_5_4  Reading Speed (z)=-1.0986  QA Response Time (z)=+2.5427
+         2_1_4  Reading Speed (z)=-2.0164  QA Response Time (z)=+1.2443

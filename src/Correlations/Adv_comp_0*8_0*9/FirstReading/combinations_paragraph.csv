@@ -1,0 +1,2845 @@
+pred_col,text_col,level_type
+mean_nonzero_TF,flesch_reading_ease,Adv
+mean_nonzero_TF,flesch_reading_ease,Ele
+mean_nonzero_TF,flesch_reading_ease,diff
+mean_nonzero_TF,dale_chall_score,Adv
+mean_nonzero_TF,dale_chall_score,Ele
+mean_nonzero_TF,dale_chall_score,diff
+mean_nonzero_TF,gunning_fog_index,Adv
+mean_nonzero_TF,gunning_fog_index,Ele
+mean_nonzero_TF,gunning_fog_index,diff
+mean_nonzero_TF,ARI,Adv
+mean_nonzero_TF,ARI,Ele
+mean_nonzero_TF,ARI,diff
+mean_nonzero_TF,smog_index,Adv
+mean_nonzero_TF,smog_index,Ele
+mean_nonzero_TF,smog_index,diff
+mean_nonzero_TF,coleman_liau_index,Adv
+mean_nonzero_TF,coleman_liau_index,Ele
+mean_nonzero_TF,coleman_liau_index,diff
+mean_nonzero_TF,flesch_kincaid_grade_score,Adv
+mean_nonzero_TF,flesch_kincaid_grade_score,Ele
+mean_nonzero_TF,flesch_kincaid_grade_score,diff
+mean_nonzero_TF,CML2RI,Adv
+mean_nonzero_TF,CML2RI,Ele
+mean_nonzero_TF,CML2RI,diff
+mean_nonzero_TF,CAREC,Adv
+mean_nonzero_TF,CAREC,Ele
+mean_nonzero_TF,CAREC,diff
+mean_nonzero_TF,CARES,Adv
+mean_nonzero_TF,CARES,Ele
+mean_nonzero_TF,CARES,diff
+mean_nonzero_TF,SBERT,Adv
+mean_nonzero_TF,SBERT,Ele
+mean_nonzero_TF,SBERT,diff
+mean_nonzero_TF,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_nonzero_TF,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_nonzero_TF,llama-3.3-70b-versatile_clear_prompt,diff
+mean_nonzero_TF,gpt-4o_clear_prompt,Adv
+mean_nonzero_TF,gpt-4o_clear_prompt,Ele
+mean_nonzero_TF,gpt-4o_clear_prompt,diff
+mean_nonzero_TF,gpt-5_clear_prompt,Adv
+mean_nonzero_TF,gpt-5_clear_prompt,Ele
+mean_nonzero_TF,gpt-5_clear_prompt,diff
+mean_nonzero_TF,gemini-2.0-flash_clear_prompt,Adv
+mean_nonzero_TF,gemini-2.0-flash_clear_prompt,Ele
+mean_nonzero_TF,gemini-2.0-flash_clear_prompt,diff
+mean_nonzero_TF,gemini-2.5-pro_clear_prompt,Adv
+mean_nonzero_TF,gemini-2.5-pro_clear_prompt,Ele
+mean_nonzero_TF,gemini-2.5-pro_clear_prompt,diff
+mean_nonzero_TF,claude-sonnet-4-0_clear_prompt,Adv
+mean_nonzero_TF,claude-sonnet-4-0_clear_prompt,Ele
+mean_nonzero_TF,claude-sonnet-4-0_clear_prompt,diff
+mean_nonzero_TF,text_evaluator,Adv
+mean_nonzero_TF,text_evaluator,Ele
+mean_nonzero_TF,text_evaluator,diff
+mean_nonzero_TF,lexile,Adv
+mean_nonzero_TF,lexile,Ele
+mean_nonzero_TF,lexile,diff
+mean_nonzero_TF,PLL_bert-base-uncased,Adv
+mean_nonzero_TF,PLL_bert-base-uncased,Ele
+mean_nonzero_TF,PLL_bert-base-uncased,diff
+mean_nonzero_TF,cpidr_density,Adv
+mean_nonzero_TF,cpidr_density,Ele
+mean_nonzero_TF,cpidr_density,diff
+mean_nonzero_TF,avg_integration_cost,Adv
+mean_nonzero_TF,avg_integration_cost,Ele
+mean_nonzero_TF,avg_integration_cost,diff
+mean_nonzero_TF,avg_embedding_depth,Adv
+mean_nonzero_TF,avg_embedding_depth,Ele
+mean_nonzero_TF,avg_embedding_depth,diff
+mean_nonzero_TF,mean_entropy_pythia,Adv
+mean_nonzero_TF,mean_entropy_pythia,Ele
+mean_nonzero_TF,mean_entropy_pythia,diff
+mean_nonzero_TF,word_length,Adv
+mean_nonzero_TF,word_length,Ele
+mean_nonzero_TF,word_length,diff
+mean_nonzero_TF,wordFreq_frequency,Adv
+mean_nonzero_TF,wordFreq_frequency,Ele
+mean_nonzero_TF,wordFreq_frequency,diff
+mean_nonzero_TF,depid_density,Adv
+mean_nonzero_TF,depid_density,Ele
+mean_nonzero_TF,depid_density,diff
+mean_nonzero_TF,max_embedding_depth,Adv
+mean_nonzero_TF,max_embedding_depth,Ele
+mean_nonzero_TF,max_embedding_depth,diff
+mean_nonzero_TF,max_integration_cost,Adv
+mean_nonzero_TF,max_integration_cost,Ele
+mean_nonzero_TF,max_integration_cost,diff
+mean_nonzero_TF,total_integration_cost,Adv
+mean_nonzero_TF,total_integration_cost,Ele
+mean_nonzero_TF,total_integration_cost,diff
+mean_nonzero_TF,CAREC_M,Adv
+mean_nonzero_TF,CAREC_M,Ele
+mean_nonzero_TF,CAREC_M,diff
+mean_nonzero_TF,mean_entropy_gpt2,Adv
+mean_nonzero_TF,mean_entropy_gpt2,Ele
+mean_nonzero_TF,mean_entropy_gpt2,diff
+mean_nonzero_TF,PLL_bert-large-uncased,Adv
+mean_nonzero_TF,PLL_bert-large-uncased,Ele
+mean_nonzero_TF,PLL_bert-large-uncased,diff
+mean_nonzero_TF,PLL_roberta-base,Adv
+mean_nonzero_TF,PLL_roberta-base,Ele
+mean_nonzero_TF,PLL_roberta-base,diff
+mean_nonzero_TF,PLL_roberta-large,Adv
+mean_nonzero_TF,PLL_roberta-large,Ele
+mean_nonzero_TF,PLL_roberta-large,diff
+mean_nonzero_TF,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_nonzero_TF,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_nonzero_TF,llama-3.3-70b-versatile_simple_prompt,diff
+mean_nonzero_TF,gpt-4o_simple_prompt,Adv
+mean_nonzero_TF,gpt-4o_simple_prompt,Ele
+mean_nonzero_TF,gpt-4o_simple_prompt,diff
+mean_nonzero_TF,gpt-5_simple_prompt,Adv
+mean_nonzero_TF,gpt-5_simple_prompt,Ele
+mean_nonzero_TF,gpt-5_simple_prompt,diff
+mean_nonzero_TF,gemini-2.0-flash_simple_prompt,Adv
+mean_nonzero_TF,gemini-2.0-flash_simple_prompt,Ele
+mean_nonzero_TF,gemini-2.0-flash_simple_prompt,diff
+mean_nonzero_TF,gemini-2.5-pro_simple_prompt,Adv
+mean_nonzero_TF,gemini-2.5-pro_simple_prompt,Ele
+mean_nonzero_TF,gemini-2.5-pro_simple_prompt,diff
+mean_nonzero_TF,claude-sonnet-4-0_simple_prompt,Adv
+mean_nonzero_TF,claude-sonnet-4-0_simple_prompt,Ele
+mean_nonzero_TF,claude-sonnet-4-0_simple_prompt,diff
+mean_nonzero_TF,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_nonzero_TF,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_nonzero_TF,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_nonzero_TF,gpt-4o_clear_specific_prompt,Adv
+mean_nonzero_TF,gpt-4o_clear_specific_prompt,Ele
+mean_nonzero_TF,gpt-4o_clear_specific_prompt,diff
+mean_nonzero_TF,gpt-5_clear_specific_prompt,Adv
+mean_nonzero_TF,gpt-5_clear_specific_prompt,Ele
+mean_nonzero_TF,gpt-5_clear_specific_prompt,diff
+mean_nonzero_TF,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_nonzero_TF,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_nonzero_TF,gemini-2.0-flash_clear_specific_prompt,diff
+mean_nonzero_TF,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_nonzero_TF,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_nonzero_TF,gemini-2.5-pro_clear_specific_prompt,diff
+mean_nonzero_TF,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_nonzero_TF,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_nonzero_TF,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_nonzero_TF,Pythia 70M Mean,Adv
+mean_nonzero_TF,Pythia 70M Mean,Ele
+mean_nonzero_TF,Pythia 70M Mean,diff
+mean_nonzero_TF,Pythia 160M Mean,Adv
+mean_nonzero_TF,Pythia 160M Mean,Ele
+mean_nonzero_TF,Pythia 160M Mean,diff
+mean_nonzero_TF,Pythia 410M Mean,Adv
+mean_nonzero_TF,Pythia 410M Mean,Ele
+mean_nonzero_TF,Pythia 410M Mean,diff
+mean_nonzero_TF,Pythia 1B Mean,Adv
+mean_nonzero_TF,Pythia 1B Mean,Ele
+mean_nonzero_TF,Pythia 1B Mean,diff
+mean_nonzero_TF,Pythia 1.4B Mean,Adv
+mean_nonzero_TF,Pythia 1.4B Mean,Ele
+mean_nonzero_TF,Pythia 1.4B Mean,diff
+mean_nonzero_TF,Pythia 2.8B Mean,Adv
+mean_nonzero_TF,Pythia 2.8B Mean,Ele
+mean_nonzero_TF,Pythia 2.8B Mean,diff
+mean_nonzero_TF,Pythia 6.9B Mean,Adv
+mean_nonzero_TF,Pythia 6.9B Mean,Ele
+mean_nonzero_TF,Pythia 6.9B Mean,diff
+mean_nonzero_TF,GPT-2 117M Mean,Adv
+mean_nonzero_TF,GPT-2 117M Mean,Ele
+mean_nonzero_TF,GPT-2 117M Mean,diff
+mean_nonzero_TF,GPT-2 345M Mean,Adv
+mean_nonzero_TF,GPT-2 345M Mean,Ele
+mean_nonzero_TF,GPT-2 345M Mean,diff
+mean_nonzero_TF,GPT-2 774M Mean,Adv
+mean_nonzero_TF,GPT-2 774M Mean,Ele
+mean_nonzero_TF,GPT-2 774M Mean,diff
+mean_nonzero_TF,GPT-2 1558M Mean,Adv
+mean_nonzero_TF,GPT-2 1558M Mean,Ele
+mean_nonzero_TF,GPT-2 1558M Mean,diff
+mean_nonzero_TF,GPT-J 6B Mean,Adv
+mean_nonzero_TF,GPT-J 6B Mean,Ele
+mean_nonzero_TF,GPT-J 6B Mean,diff
+mean_nonzero_TF,GPT-Neo 125M Mean,Adv
+mean_nonzero_TF,GPT-Neo 125M Mean,Ele
+mean_nonzero_TF,GPT-Neo 125M Mean,diff
+mean_nonzero_TF,GPT-Neo 1.3B Mean,Adv
+mean_nonzero_TF,GPT-Neo 1.3B Mean,Ele
+mean_nonzero_TF,GPT-Neo 1.3B Mean,diff
+mean_nonzero_TF,GPT-Neo 2.7B Mean,Adv
+mean_nonzero_TF,GPT-Neo 2.7B Mean,Ele
+mean_nonzero_TF,GPT-Neo 2.7B Mean,diff
+mean_nonzero_TF,Llama-2 7B Mean,Adv
+mean_nonzero_TF,Llama-2 7B Mean,Ele
+mean_nonzero_TF,Llama-2 7B Mean,diff
+mean_nonzero_TF,Llama-2 13B Mean,Adv
+mean_nonzero_TF,Llama-2 13B Mean,Ele
+mean_nonzero_TF,Llama-2 13B Mean,diff
+mean_nonzero_TF,OPT 350M Mean,Adv
+mean_nonzero_TF,OPT 350M Mean,Ele
+mean_nonzero_TF,OPT 350M Mean,diff
+mean_nonzero_TF,OPT 1.3B Mean,Adv
+mean_nonzero_TF,OPT 1.3B Mean,Ele
+mean_nonzero_TF,OPT 1.3B Mean,diff
+mean_nonzero_TF,OPT 2.7B Mean,Adv
+mean_nonzero_TF,OPT 2.7B Mean,Ele
+mean_nonzero_TF,OPT 2.7B Mean,diff
+mean_nonzero_TF,OPT 6.7B Mean,Adv
+mean_nonzero_TF,OPT 6.7B Mean,Ele
+mean_nonzero_TF,OPT 6.7B Mean,diff
+mean_nonzero_TF,Mistral-v0.1 7B Mean,Adv
+mean_nonzero_TF,Mistral-v0.1 7B Mean,Ele
+mean_nonzero_TF,Mistral-v0.1 7B Mean,diff
+mean_nonzero_TF,Mistral-v0.3 7B Mean,Adv
+mean_nonzero_TF,Mistral-v0.3 7B Mean,Ele
+mean_nonzero_TF,Mistral-v0.3 7B Mean,diff
+mean_nonzero_TF,Gemma 7B Mean,Adv
+mean_nonzero_TF,Gemma 7B Mean,Ele
+mean_nonzero_TF,Gemma 7B Mean,diff
+mean_nonzero_TF,Gemma-2 9B Mean,Adv
+mean_nonzero_TF,Gemma-2 9B Mean,Ele
+mean_nonzero_TF,Gemma-2 9B Mean,diff
+mean_nonzero_TF,Recurrent-Gemma 9B Mean,Adv
+mean_nonzero_TF,Recurrent-Gemma 9B Mean,Ele
+mean_nonzero_TF,Recurrent-Gemma 9B Mean,diff
+mean_nonzero_TF,RWKV-4 169M Mean,Adv
+mean_nonzero_TF,RWKV-4 169M Mean,Ele
+mean_nonzero_TF,RWKV-4 169M Mean,diff
+mean_nonzero_TF,RWKV-4 430M Mean,Adv
+mean_nonzero_TF,RWKV-4 430M Mean,Ele
+mean_nonzero_TF,RWKV-4 430M Mean,diff
+mean_nonzero_TF,Mamba 370M Mean,Adv
+mean_nonzero_TF,Mamba 370M Mean,Ele
+mean_nonzero_TF,Mamba 370M Mean,diff
+mean_nonzero_TF,Mamba 790M Mean,Adv
+mean_nonzero_TF,Mamba 790M Mean,Ele
+mean_nonzero_TF,Mamba 790M Mean,diff
+mean_nonzero_TF,Mamba 1.4B Mean,Adv
+mean_nonzero_TF,Mamba 1.4B Mean,Ele
+mean_nonzero_TF,Mamba 1.4B Mean,diff
+mean_nonzero_TF,Mamba 2.8B Mean,Adv
+mean_nonzero_TF,Mamba 2.8B Mean,Ele
+mean_nonzero_TF,Mamba 2.8B Mean,diff
+SkipRateTotal,flesch_reading_ease,Adv
+SkipRateTotal,flesch_reading_ease,Ele
+SkipRateTotal,flesch_reading_ease,diff
+SkipRateTotal,dale_chall_score,Adv
+SkipRateTotal,dale_chall_score,Ele
+SkipRateTotal,dale_chall_score,diff
+SkipRateTotal,gunning_fog_index,Adv
+SkipRateTotal,gunning_fog_index,Ele
+SkipRateTotal,gunning_fog_index,diff
+SkipRateTotal,ARI,Adv
+SkipRateTotal,ARI,Ele
+SkipRateTotal,ARI,diff
+SkipRateTotal,smog_index,Adv
+SkipRateTotal,smog_index,Ele
+SkipRateTotal,smog_index,diff
+SkipRateTotal,coleman_liau_index,Adv
+SkipRateTotal,coleman_liau_index,Ele
+SkipRateTotal,coleman_liau_index,diff
+SkipRateTotal,flesch_kincaid_grade_score,Adv
+SkipRateTotal,flesch_kincaid_grade_score,Ele
+SkipRateTotal,flesch_kincaid_grade_score,diff
+SkipRateTotal,CML2RI,Adv
+SkipRateTotal,CML2RI,Ele
+SkipRateTotal,CML2RI,diff
+SkipRateTotal,CAREC,Adv
+SkipRateTotal,CAREC,Ele
+SkipRateTotal,CAREC,diff
+SkipRateTotal,CARES,Adv
+SkipRateTotal,CARES,Ele
+SkipRateTotal,CARES,diff
+SkipRateTotal,SBERT,Adv
+SkipRateTotal,SBERT,Ele
+SkipRateTotal,SBERT,diff
+SkipRateTotal,llama-3.3-70b-versatile_clear_prompt,Adv
+SkipRateTotal,llama-3.3-70b-versatile_clear_prompt,Ele
+SkipRateTotal,llama-3.3-70b-versatile_clear_prompt,diff
+SkipRateTotal,gpt-4o_clear_prompt,Adv
+SkipRateTotal,gpt-4o_clear_prompt,Ele
+SkipRateTotal,gpt-4o_clear_prompt,diff
+SkipRateTotal,gpt-5_clear_prompt,Adv
+SkipRateTotal,gpt-5_clear_prompt,Ele
+SkipRateTotal,gpt-5_clear_prompt,diff
+SkipRateTotal,gemini-2.0-flash_clear_prompt,Adv
+SkipRateTotal,gemini-2.0-flash_clear_prompt,Ele
+SkipRateTotal,gemini-2.0-flash_clear_prompt,diff
+SkipRateTotal,gemini-2.5-pro_clear_prompt,Adv
+SkipRateTotal,gemini-2.5-pro_clear_prompt,Ele
+SkipRateTotal,gemini-2.5-pro_clear_prompt,diff
+SkipRateTotal,claude-sonnet-4-0_clear_prompt,Adv
+SkipRateTotal,claude-sonnet-4-0_clear_prompt,Ele
+SkipRateTotal,claude-sonnet-4-0_clear_prompt,diff
+SkipRateTotal,text_evaluator,Adv
+SkipRateTotal,text_evaluator,Ele
+SkipRateTotal,text_evaluator,diff
+SkipRateTotal,lexile,Adv
+SkipRateTotal,lexile,Ele
+SkipRateTotal,lexile,diff
+SkipRateTotal,PLL_bert-base-uncased,Adv
+SkipRateTotal,PLL_bert-base-uncased,Ele
+SkipRateTotal,PLL_bert-base-uncased,diff
+SkipRateTotal,cpidr_density,Adv
+SkipRateTotal,cpidr_density,Ele
+SkipRateTotal,cpidr_density,diff
+SkipRateTotal,avg_integration_cost,Adv
+SkipRateTotal,avg_integration_cost,Ele
+SkipRateTotal,avg_integration_cost,diff
+SkipRateTotal,avg_embedding_depth,Adv
+SkipRateTotal,avg_embedding_depth,Ele
+SkipRateTotal,avg_embedding_depth,diff
+SkipRateTotal,mean_entropy_pythia,Adv
+SkipRateTotal,mean_entropy_pythia,Ele
+SkipRateTotal,mean_entropy_pythia,diff
+SkipRateTotal,word_length,Adv
+SkipRateTotal,word_length,Ele
+SkipRateTotal,word_length,diff
+SkipRateTotal,wordFreq_frequency,Adv
+SkipRateTotal,wordFreq_frequency,Ele
+SkipRateTotal,wordFreq_frequency,diff
+SkipRateTotal,depid_density,Adv
+SkipRateTotal,depid_density,Ele
+SkipRateTotal,depid_density,diff
+SkipRateTotal,max_embedding_depth,Adv
+SkipRateTotal,max_embedding_depth,Ele
+SkipRateTotal,max_embedding_depth,diff
+SkipRateTotal,max_integration_cost,Adv
+SkipRateTotal,max_integration_cost,Ele
+SkipRateTotal,max_integration_cost,diff
+SkipRateTotal,total_integration_cost,Adv
+SkipRateTotal,total_integration_cost,Ele
+SkipRateTotal,total_integration_cost,diff
+SkipRateTotal,CAREC_M,Adv
+SkipRateTotal,CAREC_M,Ele
+SkipRateTotal,CAREC_M,diff
+SkipRateTotal,mean_entropy_gpt2,Adv
+SkipRateTotal,mean_entropy_gpt2,Ele
+SkipRateTotal,mean_entropy_gpt2,diff
+SkipRateTotal,PLL_bert-large-uncased,Adv
+SkipRateTotal,PLL_bert-large-uncased,Ele
+SkipRateTotal,PLL_bert-large-uncased,diff
+SkipRateTotal,PLL_roberta-base,Adv
+SkipRateTotal,PLL_roberta-base,Ele
+SkipRateTotal,PLL_roberta-base,diff
+SkipRateTotal,PLL_roberta-large,Adv
+SkipRateTotal,PLL_roberta-large,Ele
+SkipRateTotal,PLL_roberta-large,diff
+SkipRateTotal,llama-3.3-70b-versatile_simple_prompt,Adv
+SkipRateTotal,llama-3.3-70b-versatile_simple_prompt,Ele
+SkipRateTotal,llama-3.3-70b-versatile_simple_prompt,diff
+SkipRateTotal,gpt-4o_simple_prompt,Adv
+SkipRateTotal,gpt-4o_simple_prompt,Ele
+SkipRateTotal,gpt-4o_simple_prompt,diff
+SkipRateTotal,gpt-5_simple_prompt,Adv
+SkipRateTotal,gpt-5_simple_prompt,Ele
+SkipRateTotal,gpt-5_simple_prompt,diff
+SkipRateTotal,gemini-2.0-flash_simple_prompt,Adv
+SkipRateTotal,gemini-2.0-flash_simple_prompt,Ele
+SkipRateTotal,gemini-2.0-flash_simple_prompt,diff
+SkipRateTotal,gemini-2.5-pro_simple_prompt,Adv
+SkipRateTotal,gemini-2.5-pro_simple_prompt,Ele
+SkipRateTotal,gemini-2.5-pro_simple_prompt,diff
+SkipRateTotal,claude-sonnet-4-0_simple_prompt,Adv
+SkipRateTotal,claude-sonnet-4-0_simple_prompt,Ele
+SkipRateTotal,claude-sonnet-4-0_simple_prompt,diff
+SkipRateTotal,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+SkipRateTotal,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+SkipRateTotal,llama-3.3-70b-versatile_clear_specific_prompt,diff
+SkipRateTotal,gpt-4o_clear_specific_prompt,Adv
+SkipRateTotal,gpt-4o_clear_specific_prompt,Ele
+SkipRateTotal,gpt-4o_clear_specific_prompt,diff
+SkipRateTotal,gpt-5_clear_specific_prompt,Adv
+SkipRateTotal,gpt-5_clear_specific_prompt,Ele
+SkipRateTotal,gpt-5_clear_specific_prompt,diff
+SkipRateTotal,gemini-2.0-flash_clear_specific_prompt,Adv
+SkipRateTotal,gemini-2.0-flash_clear_specific_prompt,Ele
+SkipRateTotal,gemini-2.0-flash_clear_specific_prompt,diff
+SkipRateTotal,gemini-2.5-pro_clear_specific_prompt,Adv
+SkipRateTotal,gemini-2.5-pro_clear_specific_prompt,Ele
+SkipRateTotal,gemini-2.5-pro_clear_specific_prompt,diff
+SkipRateTotal,claude-sonnet-4-0_clear_specific_prompt,Adv
+SkipRateTotal,claude-sonnet-4-0_clear_specific_prompt,Ele
+SkipRateTotal,claude-sonnet-4-0_clear_specific_prompt,diff
+SkipRateTotal,Pythia 70M Mean,Adv
+SkipRateTotal,Pythia 70M Mean,Ele
+SkipRateTotal,Pythia 70M Mean,diff
+SkipRateTotal,Pythia 160M Mean,Adv
+SkipRateTotal,Pythia 160M Mean,Ele
+SkipRateTotal,Pythia 160M Mean,diff
+SkipRateTotal,Pythia 410M Mean,Adv
+SkipRateTotal,Pythia 410M Mean,Ele
+SkipRateTotal,Pythia 410M Mean,diff
+SkipRateTotal,Pythia 1B Mean,Adv
+SkipRateTotal,Pythia 1B Mean,Ele
+SkipRateTotal,Pythia 1B Mean,diff
+SkipRateTotal,Pythia 1.4B Mean,Adv
+SkipRateTotal,Pythia 1.4B Mean,Ele
+SkipRateTotal,Pythia 1.4B Mean,diff
+SkipRateTotal,Pythia 2.8B Mean,Adv
+SkipRateTotal,Pythia 2.8B Mean,Ele
+SkipRateTotal,Pythia 2.8B Mean,diff
+SkipRateTotal,Pythia 6.9B Mean,Adv
+SkipRateTotal,Pythia 6.9B Mean,Ele
+SkipRateTotal,Pythia 6.9B Mean,diff
+SkipRateTotal,GPT-2 117M Mean,Adv
+SkipRateTotal,GPT-2 117M Mean,Ele
+SkipRateTotal,GPT-2 117M Mean,diff
+SkipRateTotal,GPT-2 345M Mean,Adv
+SkipRateTotal,GPT-2 345M Mean,Ele
+SkipRateTotal,GPT-2 345M Mean,diff
+SkipRateTotal,GPT-2 774M Mean,Adv
+SkipRateTotal,GPT-2 774M Mean,Ele
+SkipRateTotal,GPT-2 774M Mean,diff
+SkipRateTotal,GPT-2 1558M Mean,Adv
+SkipRateTotal,GPT-2 1558M Mean,Ele
+SkipRateTotal,GPT-2 1558M Mean,diff
+SkipRateTotal,GPT-J 6B Mean,Adv
+SkipRateTotal,GPT-J 6B Mean,Ele
+SkipRateTotal,GPT-J 6B Mean,diff
+SkipRateTotal,GPT-Neo 125M Mean,Adv
+SkipRateTotal,GPT-Neo 125M Mean,Ele
+SkipRateTotal,GPT-Neo 125M Mean,diff
+SkipRateTotal,GPT-Neo 1.3B Mean,Adv
+SkipRateTotal,GPT-Neo 1.3B Mean,Ele
+SkipRateTotal,GPT-Neo 1.3B Mean,diff
+SkipRateTotal,GPT-Neo 2.7B Mean,Adv
+SkipRateTotal,GPT-Neo 2.7B Mean,Ele
+SkipRateTotal,GPT-Neo 2.7B Mean,diff
+SkipRateTotal,Llama-2 7B Mean,Adv
+SkipRateTotal,Llama-2 7B Mean,Ele
+SkipRateTotal,Llama-2 7B Mean,diff
+SkipRateTotal,Llama-2 13B Mean,Adv
+SkipRateTotal,Llama-2 13B Mean,Ele
+SkipRateTotal,Llama-2 13B Mean,diff
+SkipRateTotal,OPT 350M Mean,Adv
+SkipRateTotal,OPT 350M Mean,Ele
+SkipRateTotal,OPT 350M Mean,diff
+SkipRateTotal,OPT 1.3B Mean,Adv
+SkipRateTotal,OPT 1.3B Mean,Ele
+SkipRateTotal,OPT 1.3B Mean,diff
+SkipRateTotal,OPT 2.7B Mean,Adv
+SkipRateTotal,OPT 2.7B Mean,Ele
+SkipRateTotal,OPT 2.7B Mean,diff
+SkipRateTotal,OPT 6.7B Mean,Adv
+SkipRateTotal,OPT 6.7B Mean,Ele
+SkipRateTotal,OPT 6.7B Mean,diff
+SkipRateTotal,Mistral-v0.1 7B Mean,Adv
+SkipRateTotal,Mistral-v0.1 7B Mean,Ele
+SkipRateTotal,Mistral-v0.1 7B Mean,diff
+SkipRateTotal,Mistral-v0.3 7B Mean,Adv
+SkipRateTotal,Mistral-v0.3 7B Mean,Ele
+SkipRateTotal,Mistral-v0.3 7B Mean,diff
+SkipRateTotal,Gemma 7B Mean,Adv
+SkipRateTotal,Gemma 7B Mean,Ele
+SkipRateTotal,Gemma 7B Mean,diff
+SkipRateTotal,Gemma-2 9B Mean,Adv
+SkipRateTotal,Gemma-2 9B Mean,Ele
+SkipRateTotal,Gemma-2 9B Mean,diff
+SkipRateTotal,Recurrent-Gemma 9B Mean,Adv
+SkipRateTotal,Recurrent-Gemma 9B Mean,Ele
+SkipRateTotal,Recurrent-Gemma 9B Mean,diff
+SkipRateTotal,RWKV-4 169M Mean,Adv
+SkipRateTotal,RWKV-4 169M Mean,Ele
+SkipRateTotal,RWKV-4 169M Mean,diff
+SkipRateTotal,RWKV-4 430M Mean,Adv
+SkipRateTotal,RWKV-4 430M Mean,Ele
+SkipRateTotal,RWKV-4 430M Mean,diff
+SkipRateTotal,Mamba 370M Mean,Adv
+SkipRateTotal,Mamba 370M Mean,Ele
+SkipRateTotal,Mamba 370M Mean,diff
+SkipRateTotal,Mamba 790M Mean,Adv
+SkipRateTotal,Mamba 790M Mean,Ele
+SkipRateTotal,Mamba 790M Mean,diff
+SkipRateTotal,Mamba 1.4B Mean,Adv
+SkipRateTotal,Mamba 1.4B Mean,Ele
+SkipRateTotal,Mamba 1.4B Mean,diff
+SkipRateTotal,Mamba 2.8B Mean,Adv
+SkipRateTotal,Mamba 2.8B Mean,Ele
+SkipRateTotal,Mamba 2.8B Mean,diff
+RegRateTotal,flesch_reading_ease,Adv
+RegRateTotal,flesch_reading_ease,Ele
+RegRateTotal,flesch_reading_ease,diff
+RegRateTotal,dale_chall_score,Adv
+RegRateTotal,dale_chall_score,Ele
+RegRateTotal,dale_chall_score,diff
+RegRateTotal,gunning_fog_index,Adv
+RegRateTotal,gunning_fog_index,Ele
+RegRateTotal,gunning_fog_index,diff
+RegRateTotal,ARI,Adv
+RegRateTotal,ARI,Ele
+RegRateTotal,ARI,diff
+RegRateTotal,smog_index,Adv
+RegRateTotal,smog_index,Ele
+RegRateTotal,smog_index,diff
+RegRateTotal,coleman_liau_index,Adv
+RegRateTotal,coleman_liau_index,Ele
+RegRateTotal,coleman_liau_index,diff
+RegRateTotal,flesch_kincaid_grade_score,Adv
+RegRateTotal,flesch_kincaid_grade_score,Ele
+RegRateTotal,flesch_kincaid_grade_score,diff
+RegRateTotal,CML2RI,Adv
+RegRateTotal,CML2RI,Ele
+RegRateTotal,CML2RI,diff
+RegRateTotal,CAREC,Adv
+RegRateTotal,CAREC,Ele
+RegRateTotal,CAREC,diff
+RegRateTotal,CARES,Adv
+RegRateTotal,CARES,Ele
+RegRateTotal,CARES,diff
+RegRateTotal,SBERT,Adv
+RegRateTotal,SBERT,Ele
+RegRateTotal,SBERT,diff
+RegRateTotal,llama-3.3-70b-versatile_clear_prompt,Adv
+RegRateTotal,llama-3.3-70b-versatile_clear_prompt,Ele
+RegRateTotal,llama-3.3-70b-versatile_clear_prompt,diff
+RegRateTotal,gpt-4o_clear_prompt,Adv
+RegRateTotal,gpt-4o_clear_prompt,Ele
+RegRateTotal,gpt-4o_clear_prompt,diff
+RegRateTotal,gpt-5_clear_prompt,Adv
+RegRateTotal,gpt-5_clear_prompt,Ele
+RegRateTotal,gpt-5_clear_prompt,diff
+RegRateTotal,gemini-2.0-flash_clear_prompt,Adv
+RegRateTotal,gemini-2.0-flash_clear_prompt,Ele
+RegRateTotal,gemini-2.0-flash_clear_prompt,diff
+RegRateTotal,gemini-2.5-pro_clear_prompt,Adv
+RegRateTotal,gemini-2.5-pro_clear_prompt,Ele
+RegRateTotal,gemini-2.5-pro_clear_prompt,diff
+RegRateTotal,claude-sonnet-4-0_clear_prompt,Adv
+RegRateTotal,claude-sonnet-4-0_clear_prompt,Ele
+RegRateTotal,claude-sonnet-4-0_clear_prompt,diff
+RegRateTotal,text_evaluator,Adv
+RegRateTotal,text_evaluator,Ele
+RegRateTotal,text_evaluator,diff
+RegRateTotal,lexile,Adv
+RegRateTotal,lexile,Ele
+RegRateTotal,lexile,diff
+RegRateTotal,PLL_bert-base-uncased,Adv
+RegRateTotal,PLL_bert-base-uncased,Ele
+RegRateTotal,PLL_bert-base-uncased,diff
+RegRateTotal,cpidr_density,Adv
+RegRateTotal,cpidr_density,Ele
+RegRateTotal,cpidr_density,diff
+RegRateTotal,avg_integration_cost,Adv
+RegRateTotal,avg_integration_cost,Ele
+RegRateTotal,avg_integration_cost,diff
+RegRateTotal,avg_embedding_depth,Adv
+RegRateTotal,avg_embedding_depth,Ele
+RegRateTotal,avg_embedding_depth,diff
+RegRateTotal,mean_entropy_pythia,Adv
+RegRateTotal,mean_entropy_pythia,Ele
+RegRateTotal,mean_entropy_pythia,diff
+RegRateTotal,word_length,Adv
+RegRateTotal,word_length,Ele
+RegRateTotal,word_length,diff
+RegRateTotal,wordFreq_frequency,Adv
+RegRateTotal,wordFreq_frequency,Ele
+RegRateTotal,wordFreq_frequency,diff
+RegRateTotal,depid_density,Adv
+RegRateTotal,depid_density,Ele
+RegRateTotal,depid_density,diff
+RegRateTotal,max_embedding_depth,Adv
+RegRateTotal,max_embedding_depth,Ele
+RegRateTotal,max_embedding_depth,diff
+RegRateTotal,max_integration_cost,Adv
+RegRateTotal,max_integration_cost,Ele
+RegRateTotal,max_integration_cost,diff
+RegRateTotal,total_integration_cost,Adv
+RegRateTotal,total_integration_cost,Ele
+RegRateTotal,total_integration_cost,diff
+RegRateTotal,CAREC_M,Adv
+RegRateTotal,CAREC_M,Ele
+RegRateTotal,CAREC_M,diff
+RegRateTotal,mean_entropy_gpt2,Adv
+RegRateTotal,mean_entropy_gpt2,Ele
+RegRateTotal,mean_entropy_gpt2,diff
+RegRateTotal,PLL_bert-large-uncased,Adv
+RegRateTotal,PLL_bert-large-uncased,Ele
+RegRateTotal,PLL_bert-large-uncased,diff
+RegRateTotal,PLL_roberta-base,Adv
+RegRateTotal,PLL_roberta-base,Ele
+RegRateTotal,PLL_roberta-base,diff
+RegRateTotal,PLL_roberta-large,Adv
+RegRateTotal,PLL_roberta-large,Ele
+RegRateTotal,PLL_roberta-large,diff
+RegRateTotal,llama-3.3-70b-versatile_simple_prompt,Adv
+RegRateTotal,llama-3.3-70b-versatile_simple_prompt,Ele
+RegRateTotal,llama-3.3-70b-versatile_simple_prompt,diff
+RegRateTotal,gpt-4o_simple_prompt,Adv
+RegRateTotal,gpt-4o_simple_prompt,Ele
+RegRateTotal,gpt-4o_simple_prompt,diff
+RegRateTotal,gpt-5_simple_prompt,Adv
+RegRateTotal,gpt-5_simple_prompt,Ele
+RegRateTotal,gpt-5_simple_prompt,diff
+RegRateTotal,gemini-2.0-flash_simple_prompt,Adv
+RegRateTotal,gemini-2.0-flash_simple_prompt,Ele
+RegRateTotal,gemini-2.0-flash_simple_prompt,diff
+RegRateTotal,gemini-2.5-pro_simple_prompt,Adv
+RegRateTotal,gemini-2.5-pro_simple_prompt,Ele
+RegRateTotal,gemini-2.5-pro_simple_prompt,diff
+RegRateTotal,claude-sonnet-4-0_simple_prompt,Adv
+RegRateTotal,claude-sonnet-4-0_simple_prompt,Ele
+RegRateTotal,claude-sonnet-4-0_simple_prompt,diff
+RegRateTotal,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+RegRateTotal,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+RegRateTotal,llama-3.3-70b-versatile_clear_specific_prompt,diff
+RegRateTotal,gpt-4o_clear_specific_prompt,Adv
+RegRateTotal,gpt-4o_clear_specific_prompt,Ele
+RegRateTotal,gpt-4o_clear_specific_prompt,diff
+RegRateTotal,gpt-5_clear_specific_prompt,Adv
+RegRateTotal,gpt-5_clear_specific_prompt,Ele
+RegRateTotal,gpt-5_clear_specific_prompt,diff
+RegRateTotal,gemini-2.0-flash_clear_specific_prompt,Adv
+RegRateTotal,gemini-2.0-flash_clear_specific_prompt,Ele
+RegRateTotal,gemini-2.0-flash_clear_specific_prompt,diff
+RegRateTotal,gemini-2.5-pro_clear_specific_prompt,Adv
+RegRateTotal,gemini-2.5-pro_clear_specific_prompt,Ele
+RegRateTotal,gemini-2.5-pro_clear_specific_prompt,diff
+RegRateTotal,claude-sonnet-4-0_clear_specific_prompt,Adv
+RegRateTotal,claude-sonnet-4-0_clear_specific_prompt,Ele
+RegRateTotal,claude-sonnet-4-0_clear_specific_prompt,diff
+RegRateTotal,Pythia 70M Mean,Adv
+RegRateTotal,Pythia 70M Mean,Ele
+RegRateTotal,Pythia 70M Mean,diff
+RegRateTotal,Pythia 160M Mean,Adv
+RegRateTotal,Pythia 160M Mean,Ele
+RegRateTotal,Pythia 160M Mean,diff
+RegRateTotal,Pythia 410M Mean,Adv
+RegRateTotal,Pythia 410M Mean,Ele
+RegRateTotal,Pythia 410M Mean,diff
+RegRateTotal,Pythia 1B Mean,Adv
+RegRateTotal,Pythia 1B Mean,Ele
+RegRateTotal,Pythia 1B Mean,diff
+RegRateTotal,Pythia 1.4B Mean,Adv
+RegRateTotal,Pythia 1.4B Mean,Ele
+RegRateTotal,Pythia 1.4B Mean,diff
+RegRateTotal,Pythia 2.8B Mean,Adv
+RegRateTotal,Pythia 2.8B Mean,Ele
+RegRateTotal,Pythia 2.8B Mean,diff
+RegRateTotal,Pythia 6.9B Mean,Adv
+RegRateTotal,Pythia 6.9B Mean,Ele
+RegRateTotal,Pythia 6.9B Mean,diff
+RegRateTotal,GPT-2 117M Mean,Adv
+RegRateTotal,GPT-2 117M Mean,Ele
+RegRateTotal,GPT-2 117M Mean,diff
+RegRateTotal,GPT-2 345M Mean,Adv
+RegRateTotal,GPT-2 345M Mean,Ele
+RegRateTotal,GPT-2 345M Mean,diff
+RegRateTotal,GPT-2 774M Mean,Adv
+RegRateTotal,GPT-2 774M Mean,Ele
+RegRateTotal,GPT-2 774M Mean,diff
+RegRateTotal,GPT-2 1558M Mean,Adv
+RegRateTotal,GPT-2 1558M Mean,Ele
+RegRateTotal,GPT-2 1558M Mean,diff
+RegRateTotal,GPT-J 6B Mean,Adv
+RegRateTotal,GPT-J 6B Mean,Ele
+RegRateTotal,GPT-J 6B Mean,diff
+RegRateTotal,GPT-Neo 125M Mean,Adv
+RegRateTotal,GPT-Neo 125M Mean,Ele
+RegRateTotal,GPT-Neo 125M Mean,diff
+RegRateTotal,GPT-Neo 1.3B Mean,Adv
+RegRateTotal,GPT-Neo 1.3B Mean,Ele
+RegRateTotal,GPT-Neo 1.3B Mean,diff
+RegRateTotal,GPT-Neo 2.7B Mean,Adv
+RegRateTotal,GPT-Neo 2.7B Mean,Ele
+RegRateTotal,GPT-Neo 2.7B Mean,diff
+RegRateTotal,Llama-2 7B Mean,Adv
+RegRateTotal,Llama-2 7B Mean,Ele
+RegRateTotal,Llama-2 7B Mean,diff
+RegRateTotal,Llama-2 13B Mean,Adv
+RegRateTotal,Llama-2 13B Mean,Ele
+RegRateTotal,Llama-2 13B Mean,diff
+RegRateTotal,OPT 350M Mean,Adv
+RegRateTotal,OPT 350M Mean,Ele
+RegRateTotal,OPT 350M Mean,diff
+RegRateTotal,OPT 1.3B Mean,Adv
+RegRateTotal,OPT 1.3B Mean,Ele
+RegRateTotal,OPT 1.3B Mean,diff
+RegRateTotal,OPT 2.7B Mean,Adv
+RegRateTotal,OPT 2.7B Mean,Ele
+RegRateTotal,OPT 2.7B Mean,diff
+RegRateTotal,OPT 6.7B Mean,Adv
+RegRateTotal,OPT 6.7B Mean,Ele
+RegRateTotal,OPT 6.7B Mean,diff
+RegRateTotal,Mistral-v0.1 7B Mean,Adv
+RegRateTotal,Mistral-v0.1 7B Mean,Ele
+RegRateTotal,Mistral-v0.1 7B Mean,diff
+RegRateTotal,Mistral-v0.3 7B Mean,Adv
+RegRateTotal,Mistral-v0.3 7B Mean,Ele
+RegRateTotal,Mistral-v0.3 7B Mean,diff
+RegRateTotal,Gemma 7B Mean,Adv
+RegRateTotal,Gemma 7B Mean,Ele
+RegRateTotal,Gemma 7B Mean,diff
+RegRateTotal,Gemma-2 9B Mean,Adv
+RegRateTotal,Gemma-2 9B Mean,Ele
+RegRateTotal,Gemma-2 9B Mean,diff
+RegRateTotal,Recurrent-Gemma 9B Mean,Adv
+RegRateTotal,Recurrent-Gemma 9B Mean,Ele
+RegRateTotal,Recurrent-Gemma 9B Mean,diff
+RegRateTotal,RWKV-4 169M Mean,Adv
+RegRateTotal,RWKV-4 169M Mean,Ele
+RegRateTotal,RWKV-4 169M Mean,diff
+RegRateTotal,RWKV-4 430M Mean,Adv
+RegRateTotal,RWKV-4 430M Mean,Ele
+RegRateTotal,RWKV-4 430M Mean,diff
+RegRateTotal,Mamba 370M Mean,Adv
+RegRateTotal,Mamba 370M Mean,Ele
+RegRateTotal,Mamba 370M Mean,diff
+RegRateTotal,Mamba 790M Mean,Adv
+RegRateTotal,Mamba 790M Mean,Ele
+RegRateTotal,Mamba 790M Mean,diff
+RegRateTotal,Mamba 1.4B Mean,Adv
+RegRateTotal,Mamba 1.4B Mean,Ele
+RegRateTotal,Mamba 1.4B Mean,diff
+RegRateTotal,Mamba 2.8B Mean,Adv
+RegRateTotal,Mamba 2.8B Mean,Ele
+RegRateTotal,Mamba 2.8B Mean,diff
+mean_NF,flesch_reading_ease,Adv
+mean_NF,flesch_reading_ease,Ele
+mean_NF,flesch_reading_ease,diff
+mean_NF,dale_chall_score,Adv
+mean_NF,dale_chall_score,Ele
+mean_NF,dale_chall_score,diff
+mean_NF,gunning_fog_index,Adv
+mean_NF,gunning_fog_index,Ele
+mean_NF,gunning_fog_index,diff
+mean_NF,ARI,Adv
+mean_NF,ARI,Ele
+mean_NF,ARI,diff
+mean_NF,smog_index,Adv
+mean_NF,smog_index,Ele
+mean_NF,smog_index,diff
+mean_NF,coleman_liau_index,Adv
+mean_NF,coleman_liau_index,Ele
+mean_NF,coleman_liau_index,diff
+mean_NF,flesch_kincaid_grade_score,Adv
+mean_NF,flesch_kincaid_grade_score,Ele
+mean_NF,flesch_kincaid_grade_score,diff
+mean_NF,CML2RI,Adv
+mean_NF,CML2RI,Ele
+mean_NF,CML2RI,diff
+mean_NF,CAREC,Adv
+mean_NF,CAREC,Ele
+mean_NF,CAREC,diff
+mean_NF,CARES,Adv
+mean_NF,CARES,Ele
+mean_NF,CARES,diff
+mean_NF,SBERT,Adv
+mean_NF,SBERT,Ele
+mean_NF,SBERT,diff
+mean_NF,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_NF,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_NF,llama-3.3-70b-versatile_clear_prompt,diff
+mean_NF,gpt-4o_clear_prompt,Adv
+mean_NF,gpt-4o_clear_prompt,Ele
+mean_NF,gpt-4o_clear_prompt,diff
+mean_NF,gpt-5_clear_prompt,Adv
+mean_NF,gpt-5_clear_prompt,Ele
+mean_NF,gpt-5_clear_prompt,diff
+mean_NF,gemini-2.0-flash_clear_prompt,Adv
+mean_NF,gemini-2.0-flash_clear_prompt,Ele
+mean_NF,gemini-2.0-flash_clear_prompt,diff
+mean_NF,gemini-2.5-pro_clear_prompt,Adv
+mean_NF,gemini-2.5-pro_clear_prompt,Ele
+mean_NF,gemini-2.5-pro_clear_prompt,diff
+mean_NF,claude-sonnet-4-0_clear_prompt,Adv
+mean_NF,claude-sonnet-4-0_clear_prompt,Ele
+mean_NF,claude-sonnet-4-0_clear_prompt,diff
+mean_NF,text_evaluator,Adv
+mean_NF,text_evaluator,Ele
+mean_NF,text_evaluator,diff
+mean_NF,lexile,Adv
+mean_NF,lexile,Ele
+mean_NF,lexile,diff
+mean_NF,PLL_bert-base-uncased,Adv
+mean_NF,PLL_bert-base-uncased,Ele
+mean_NF,PLL_bert-base-uncased,diff
+mean_NF,cpidr_density,Adv
+mean_NF,cpidr_density,Ele
+mean_NF,cpidr_density,diff
+mean_NF,avg_integration_cost,Adv
+mean_NF,avg_integration_cost,Ele
+mean_NF,avg_integration_cost,diff
+mean_NF,avg_embedding_depth,Adv
+mean_NF,avg_embedding_depth,Ele
+mean_NF,avg_embedding_depth,diff
+mean_NF,mean_entropy_pythia,Adv
+mean_NF,mean_entropy_pythia,Ele
+mean_NF,mean_entropy_pythia,diff
+mean_NF,word_length,Adv
+mean_NF,word_length,Ele
+mean_NF,word_length,diff
+mean_NF,wordFreq_frequency,Adv
+mean_NF,wordFreq_frequency,Ele
+mean_NF,wordFreq_frequency,diff
+mean_NF,depid_density,Adv
+mean_NF,depid_density,Ele
+mean_NF,depid_density,diff
+mean_NF,max_embedding_depth,Adv
+mean_NF,max_embedding_depth,Ele
+mean_NF,max_embedding_depth,diff
+mean_NF,max_integration_cost,Adv
+mean_NF,max_integration_cost,Ele
+mean_NF,max_integration_cost,diff
+mean_NF,total_integration_cost,Adv
+mean_NF,total_integration_cost,Ele
+mean_NF,total_integration_cost,diff
+mean_NF,CAREC_M,Adv
+mean_NF,CAREC_M,Ele
+mean_NF,CAREC_M,diff
+mean_NF,mean_entropy_gpt2,Adv
+mean_NF,mean_entropy_gpt2,Ele
+mean_NF,mean_entropy_gpt2,diff
+mean_NF,PLL_bert-large-uncased,Adv
+mean_NF,PLL_bert-large-uncased,Ele
+mean_NF,PLL_bert-large-uncased,diff
+mean_NF,PLL_roberta-base,Adv
+mean_NF,PLL_roberta-base,Ele
+mean_NF,PLL_roberta-base,diff
+mean_NF,PLL_roberta-large,Adv
+mean_NF,PLL_roberta-large,Ele
+mean_NF,PLL_roberta-large,diff
+mean_NF,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_NF,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_NF,llama-3.3-70b-versatile_simple_prompt,diff
+mean_NF,gpt-4o_simple_prompt,Adv
+mean_NF,gpt-4o_simple_prompt,Ele
+mean_NF,gpt-4o_simple_prompt,diff
+mean_NF,gpt-5_simple_prompt,Adv
+mean_NF,gpt-5_simple_prompt,Ele
+mean_NF,gpt-5_simple_prompt,diff
+mean_NF,gemini-2.0-flash_simple_prompt,Adv
+mean_NF,gemini-2.0-flash_simple_prompt,Ele
+mean_NF,gemini-2.0-flash_simple_prompt,diff
+mean_NF,gemini-2.5-pro_simple_prompt,Adv
+mean_NF,gemini-2.5-pro_simple_prompt,Ele
+mean_NF,gemini-2.5-pro_simple_prompt,diff
+mean_NF,claude-sonnet-4-0_simple_prompt,Adv
+mean_NF,claude-sonnet-4-0_simple_prompt,Ele
+mean_NF,claude-sonnet-4-0_simple_prompt,diff
+mean_NF,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_NF,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_NF,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_NF,gpt-4o_clear_specific_prompt,Adv
+mean_NF,gpt-4o_clear_specific_prompt,Ele
+mean_NF,gpt-4o_clear_specific_prompt,diff
+mean_NF,gpt-5_clear_specific_prompt,Adv
+mean_NF,gpt-5_clear_specific_prompt,Ele
+mean_NF,gpt-5_clear_specific_prompt,diff
+mean_NF,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_NF,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_NF,gemini-2.0-flash_clear_specific_prompt,diff
+mean_NF,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_NF,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_NF,gemini-2.5-pro_clear_specific_prompt,diff
+mean_NF,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_NF,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_NF,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_NF,Pythia 70M Mean,Adv
+mean_NF,Pythia 70M Mean,Ele
+mean_NF,Pythia 70M Mean,diff
+mean_NF,Pythia 160M Mean,Adv
+mean_NF,Pythia 160M Mean,Ele
+mean_NF,Pythia 160M Mean,diff
+mean_NF,Pythia 410M Mean,Adv
+mean_NF,Pythia 410M Mean,Ele
+mean_NF,Pythia 410M Mean,diff
+mean_NF,Pythia 1B Mean,Adv
+mean_NF,Pythia 1B Mean,Ele
+mean_NF,Pythia 1B Mean,diff
+mean_NF,Pythia 1.4B Mean,Adv
+mean_NF,Pythia 1.4B Mean,Ele
+mean_NF,Pythia 1.4B Mean,diff
+mean_NF,Pythia 2.8B Mean,Adv
+mean_NF,Pythia 2.8B Mean,Ele
+mean_NF,Pythia 2.8B Mean,diff
+mean_NF,Pythia 6.9B Mean,Adv
+mean_NF,Pythia 6.9B Mean,Ele
+mean_NF,Pythia 6.9B Mean,diff
+mean_NF,GPT-2 117M Mean,Adv
+mean_NF,GPT-2 117M Mean,Ele
+mean_NF,GPT-2 117M Mean,diff
+mean_NF,GPT-2 345M Mean,Adv
+mean_NF,GPT-2 345M Mean,Ele
+mean_NF,GPT-2 345M Mean,diff
+mean_NF,GPT-2 774M Mean,Adv
+mean_NF,GPT-2 774M Mean,Ele
+mean_NF,GPT-2 774M Mean,diff
+mean_NF,GPT-2 1558M Mean,Adv
+mean_NF,GPT-2 1558M Mean,Ele
+mean_NF,GPT-2 1558M Mean,diff
+mean_NF,GPT-J 6B Mean,Adv
+mean_NF,GPT-J 6B Mean,Ele
+mean_NF,GPT-J 6B Mean,diff
+mean_NF,GPT-Neo 125M Mean,Adv
+mean_NF,GPT-Neo 125M Mean,Ele
+mean_NF,GPT-Neo 125M Mean,diff
+mean_NF,GPT-Neo 1.3B Mean,Adv
+mean_NF,GPT-Neo 1.3B Mean,Ele
+mean_NF,GPT-Neo 1.3B Mean,diff
+mean_NF,GPT-Neo 2.7B Mean,Adv
+mean_NF,GPT-Neo 2.7B Mean,Ele
+mean_NF,GPT-Neo 2.7B Mean,diff
+mean_NF,Llama-2 7B Mean,Adv
+mean_NF,Llama-2 7B Mean,Ele
+mean_NF,Llama-2 7B Mean,diff
+mean_NF,Llama-2 13B Mean,Adv
+mean_NF,Llama-2 13B Mean,Ele
+mean_NF,Llama-2 13B Mean,diff
+mean_NF,OPT 350M Mean,Adv
+mean_NF,OPT 350M Mean,Ele
+mean_NF,OPT 350M Mean,diff
+mean_NF,OPT 1.3B Mean,Adv
+mean_NF,OPT 1.3B Mean,Ele
+mean_NF,OPT 1.3B Mean,diff
+mean_NF,OPT 2.7B Mean,Adv
+mean_NF,OPT 2.7B Mean,Ele
+mean_NF,OPT 2.7B Mean,diff
+mean_NF,OPT 6.7B Mean,Adv
+mean_NF,OPT 6.7B Mean,Ele
+mean_NF,OPT 6.7B Mean,diff
+mean_NF,Mistral-v0.1 7B Mean,Adv
+mean_NF,Mistral-v0.1 7B Mean,Ele
+mean_NF,Mistral-v0.1 7B Mean,diff
+mean_NF,Mistral-v0.3 7B Mean,Adv
+mean_NF,Mistral-v0.3 7B Mean,Ele
+mean_NF,Mistral-v0.3 7B Mean,diff
+mean_NF,Gemma 7B Mean,Adv
+mean_NF,Gemma 7B Mean,Ele
+mean_NF,Gemma 7B Mean,diff
+mean_NF,Gemma-2 9B Mean,Adv
+mean_NF,Gemma-2 9B Mean,Ele
+mean_NF,Gemma-2 9B Mean,diff
+mean_NF,Recurrent-Gemma 9B Mean,Adv
+mean_NF,Recurrent-Gemma 9B Mean,Ele
+mean_NF,Recurrent-Gemma 9B Mean,diff
+mean_NF,RWKV-4 169M Mean,Adv
+mean_NF,RWKV-4 169M Mean,Ele
+mean_NF,RWKV-4 169M Mean,diff
+mean_NF,RWKV-4 430M Mean,Adv
+mean_NF,RWKV-4 430M Mean,Ele
+mean_NF,RWKV-4 430M Mean,diff
+mean_NF,Mamba 370M Mean,Adv
+mean_NF,Mamba 370M Mean,Ele
+mean_NF,Mamba 370M Mean,diff
+mean_NF,Mamba 790M Mean,Adv
+mean_NF,Mamba 790M Mean,Ele
+mean_NF,Mamba 790M Mean,diff
+mean_NF,Mamba 1.4B Mean,Adv
+mean_NF,Mamba 1.4B Mean,Ele
+mean_NF,Mamba 1.4B Mean,diff
+mean_NF,Mamba 2.8B Mean,Adv
+mean_NF,Mamba 2.8B Mean,Ele
+mean_NF,Mamba 2.8B Mean,diff
+mean_FirstPassGD,flesch_reading_ease,Adv
+mean_FirstPassGD,flesch_reading_ease,Ele
+mean_FirstPassGD,flesch_reading_ease,diff
+mean_FirstPassGD,dale_chall_score,Adv
+mean_FirstPassGD,dale_chall_score,Ele
+mean_FirstPassGD,dale_chall_score,diff
+mean_FirstPassGD,gunning_fog_index,Adv
+mean_FirstPassGD,gunning_fog_index,Ele
+mean_FirstPassGD,gunning_fog_index,diff
+mean_FirstPassGD,ARI,Adv
+mean_FirstPassGD,ARI,Ele
+mean_FirstPassGD,ARI,diff
+mean_FirstPassGD,smog_index,Adv
+mean_FirstPassGD,smog_index,Ele
+mean_FirstPassGD,smog_index,diff
+mean_FirstPassGD,coleman_liau_index,Adv
+mean_FirstPassGD,coleman_liau_index,Ele
+mean_FirstPassGD,coleman_liau_index,diff
+mean_FirstPassGD,flesch_kincaid_grade_score,Adv
+mean_FirstPassGD,flesch_kincaid_grade_score,Ele
+mean_FirstPassGD,flesch_kincaid_grade_score,diff
+mean_FirstPassGD,CML2RI,Adv
+mean_FirstPassGD,CML2RI,Ele
+mean_FirstPassGD,CML2RI,diff
+mean_FirstPassGD,CAREC,Adv
+mean_FirstPassGD,CAREC,Ele
+mean_FirstPassGD,CAREC,diff
+mean_FirstPassGD,CARES,Adv
+mean_FirstPassGD,CARES,Ele
+mean_FirstPassGD,CARES,diff
+mean_FirstPassGD,SBERT,Adv
+mean_FirstPassGD,SBERT,Ele
+mean_FirstPassGD,SBERT,diff
+mean_FirstPassGD,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_FirstPassGD,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_FirstPassGD,llama-3.3-70b-versatile_clear_prompt,diff
+mean_FirstPassGD,gpt-4o_clear_prompt,Adv
+mean_FirstPassGD,gpt-4o_clear_prompt,Ele
+mean_FirstPassGD,gpt-4o_clear_prompt,diff
+mean_FirstPassGD,gpt-5_clear_prompt,Adv
+mean_FirstPassGD,gpt-5_clear_prompt,Ele
+mean_FirstPassGD,gpt-5_clear_prompt,diff
+mean_FirstPassGD,gemini-2.0-flash_clear_prompt,Adv
+mean_FirstPassGD,gemini-2.0-flash_clear_prompt,Ele
+mean_FirstPassGD,gemini-2.0-flash_clear_prompt,diff
+mean_FirstPassGD,gemini-2.5-pro_clear_prompt,Adv
+mean_FirstPassGD,gemini-2.5-pro_clear_prompt,Ele
+mean_FirstPassGD,gemini-2.5-pro_clear_prompt,diff
+mean_FirstPassGD,claude-sonnet-4-0_clear_prompt,Adv
+mean_FirstPassGD,claude-sonnet-4-0_clear_prompt,Ele
+mean_FirstPassGD,claude-sonnet-4-0_clear_prompt,diff
+mean_FirstPassGD,text_evaluator,Adv
+mean_FirstPassGD,text_evaluator,Ele
+mean_FirstPassGD,text_evaluator,diff
+mean_FirstPassGD,lexile,Adv
+mean_FirstPassGD,lexile,Ele
+mean_FirstPassGD,lexile,diff
+mean_FirstPassGD,PLL_bert-base-uncased,Adv
+mean_FirstPassGD,PLL_bert-base-uncased,Ele
+mean_FirstPassGD,PLL_bert-base-uncased,diff
+mean_FirstPassGD,cpidr_density,Adv
+mean_FirstPassGD,cpidr_density,Ele
+mean_FirstPassGD,cpidr_density,diff
+mean_FirstPassGD,avg_integration_cost,Adv
+mean_FirstPassGD,avg_integration_cost,Ele
+mean_FirstPassGD,avg_integration_cost,diff
+mean_FirstPassGD,avg_embedding_depth,Adv
+mean_FirstPassGD,avg_embedding_depth,Ele
+mean_FirstPassGD,avg_embedding_depth,diff
+mean_FirstPassGD,mean_entropy_pythia,Adv
+mean_FirstPassGD,mean_entropy_pythia,Ele
+mean_FirstPassGD,mean_entropy_pythia,diff
+mean_FirstPassGD,word_length,Adv
+mean_FirstPassGD,word_length,Ele
+mean_FirstPassGD,word_length,diff
+mean_FirstPassGD,wordFreq_frequency,Adv
+mean_FirstPassGD,wordFreq_frequency,Ele
+mean_FirstPassGD,wordFreq_frequency,diff
+mean_FirstPassGD,depid_density,Adv
+mean_FirstPassGD,depid_density,Ele
+mean_FirstPassGD,depid_density,diff
+mean_FirstPassGD,max_embedding_depth,Adv
+mean_FirstPassGD,max_embedding_depth,Ele
+mean_FirstPassGD,max_embedding_depth,diff
+mean_FirstPassGD,max_integration_cost,Adv
+mean_FirstPassGD,max_integration_cost,Ele
+mean_FirstPassGD,max_integration_cost,diff
+mean_FirstPassGD,total_integration_cost,Adv
+mean_FirstPassGD,total_integration_cost,Ele
+mean_FirstPassGD,total_integration_cost,diff
+mean_FirstPassGD,CAREC_M,Adv
+mean_FirstPassGD,CAREC_M,Ele
+mean_FirstPassGD,CAREC_M,diff
+mean_FirstPassGD,mean_entropy_gpt2,Adv
+mean_FirstPassGD,mean_entropy_gpt2,Ele
+mean_FirstPassGD,mean_entropy_gpt2,diff
+mean_FirstPassGD,PLL_bert-large-uncased,Adv
+mean_FirstPassGD,PLL_bert-large-uncased,Ele
+mean_FirstPassGD,PLL_bert-large-uncased,diff
+mean_FirstPassGD,PLL_roberta-base,Adv
+mean_FirstPassGD,PLL_roberta-base,Ele
+mean_FirstPassGD,PLL_roberta-base,diff
+mean_FirstPassGD,PLL_roberta-large,Adv
+mean_FirstPassGD,PLL_roberta-large,Ele
+mean_FirstPassGD,PLL_roberta-large,diff
+mean_FirstPassGD,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_FirstPassGD,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_FirstPassGD,llama-3.3-70b-versatile_simple_prompt,diff
+mean_FirstPassGD,gpt-4o_simple_prompt,Adv
+mean_FirstPassGD,gpt-4o_simple_prompt,Ele
+mean_FirstPassGD,gpt-4o_simple_prompt,diff
+mean_FirstPassGD,gpt-5_simple_prompt,Adv
+mean_FirstPassGD,gpt-5_simple_prompt,Ele
+mean_FirstPassGD,gpt-5_simple_prompt,diff
+mean_FirstPassGD,gemini-2.0-flash_simple_prompt,Adv
+mean_FirstPassGD,gemini-2.0-flash_simple_prompt,Ele
+mean_FirstPassGD,gemini-2.0-flash_simple_prompt,diff
+mean_FirstPassGD,gemini-2.5-pro_simple_prompt,Adv
+mean_FirstPassGD,gemini-2.5-pro_simple_prompt,Ele
+mean_FirstPassGD,gemini-2.5-pro_simple_prompt,diff
+mean_FirstPassGD,claude-sonnet-4-0_simple_prompt,Adv
+mean_FirstPassGD,claude-sonnet-4-0_simple_prompt,Ele
+mean_FirstPassGD,claude-sonnet-4-0_simple_prompt,diff
+mean_FirstPassGD,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_FirstPassGD,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_FirstPassGD,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_FirstPassGD,gpt-4o_clear_specific_prompt,Adv
+mean_FirstPassGD,gpt-4o_clear_specific_prompt,Ele
+mean_FirstPassGD,gpt-4o_clear_specific_prompt,diff
+mean_FirstPassGD,gpt-5_clear_specific_prompt,Adv
+mean_FirstPassGD,gpt-5_clear_specific_prompt,Ele
+mean_FirstPassGD,gpt-5_clear_specific_prompt,diff
+mean_FirstPassGD,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_FirstPassGD,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_FirstPassGD,gemini-2.0-flash_clear_specific_prompt,diff
+mean_FirstPassGD,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_FirstPassGD,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_FirstPassGD,gemini-2.5-pro_clear_specific_prompt,diff
+mean_FirstPassGD,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_FirstPassGD,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_FirstPassGD,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_FirstPassGD,Pythia 70M Mean,Adv
+mean_FirstPassGD,Pythia 70M Mean,Ele
+mean_FirstPassGD,Pythia 70M Mean,diff
+mean_FirstPassGD,Pythia 160M Mean,Adv
+mean_FirstPassGD,Pythia 160M Mean,Ele
+mean_FirstPassGD,Pythia 160M Mean,diff
+mean_FirstPassGD,Pythia 410M Mean,Adv
+mean_FirstPassGD,Pythia 410M Mean,Ele
+mean_FirstPassGD,Pythia 410M Mean,diff
+mean_FirstPassGD,Pythia 1B Mean,Adv
+mean_FirstPassGD,Pythia 1B Mean,Ele
+mean_FirstPassGD,Pythia 1B Mean,diff
+mean_FirstPassGD,Pythia 1.4B Mean,Adv
+mean_FirstPassGD,Pythia 1.4B Mean,Ele
+mean_FirstPassGD,Pythia 1.4B Mean,diff
+mean_FirstPassGD,Pythia 2.8B Mean,Adv
+mean_FirstPassGD,Pythia 2.8B Mean,Ele
+mean_FirstPassGD,Pythia 2.8B Mean,diff
+mean_FirstPassGD,Pythia 6.9B Mean,Adv
+mean_FirstPassGD,Pythia 6.9B Mean,Ele
+mean_FirstPassGD,Pythia 6.9B Mean,diff
+mean_FirstPassGD,GPT-2 117M Mean,Adv
+mean_FirstPassGD,GPT-2 117M Mean,Ele
+mean_FirstPassGD,GPT-2 117M Mean,diff
+mean_FirstPassGD,GPT-2 345M Mean,Adv
+mean_FirstPassGD,GPT-2 345M Mean,Ele
+mean_FirstPassGD,GPT-2 345M Mean,diff
+mean_FirstPassGD,GPT-2 774M Mean,Adv
+mean_FirstPassGD,GPT-2 774M Mean,Ele
+mean_FirstPassGD,GPT-2 774M Mean,diff
+mean_FirstPassGD,GPT-2 1558M Mean,Adv
+mean_FirstPassGD,GPT-2 1558M Mean,Ele
+mean_FirstPassGD,GPT-2 1558M Mean,diff
+mean_FirstPassGD,GPT-J 6B Mean,Adv
+mean_FirstPassGD,GPT-J 6B Mean,Ele
+mean_FirstPassGD,GPT-J 6B Mean,diff
+mean_FirstPassGD,GPT-Neo 125M Mean,Adv
+mean_FirstPassGD,GPT-Neo 125M Mean,Ele
+mean_FirstPassGD,GPT-Neo 125M Mean,diff
+mean_FirstPassGD,GPT-Neo 1.3B Mean,Adv
+mean_FirstPassGD,GPT-Neo 1.3B Mean,Ele
+mean_FirstPassGD,GPT-Neo 1.3B Mean,diff
+mean_FirstPassGD,GPT-Neo 2.7B Mean,Adv
+mean_FirstPassGD,GPT-Neo 2.7B Mean,Ele
+mean_FirstPassGD,GPT-Neo 2.7B Mean,diff
+mean_FirstPassGD,Llama-2 7B Mean,Adv
+mean_FirstPassGD,Llama-2 7B Mean,Ele
+mean_FirstPassGD,Llama-2 7B Mean,diff
+mean_FirstPassGD,Llama-2 13B Mean,Adv
+mean_FirstPassGD,Llama-2 13B Mean,Ele
+mean_FirstPassGD,Llama-2 13B Mean,diff
+mean_FirstPassGD,OPT 350M Mean,Adv
+mean_FirstPassGD,OPT 350M Mean,Ele
+mean_FirstPassGD,OPT 350M Mean,diff
+mean_FirstPassGD,OPT 1.3B Mean,Adv
+mean_FirstPassGD,OPT 1.3B Mean,Ele
+mean_FirstPassGD,OPT 1.3B Mean,diff
+mean_FirstPassGD,OPT 2.7B Mean,Adv
+mean_FirstPassGD,OPT 2.7B Mean,Ele
+mean_FirstPassGD,OPT 2.7B Mean,diff
+mean_FirstPassGD,OPT 6.7B Mean,Adv
+mean_FirstPassGD,OPT 6.7B Mean,Ele
+mean_FirstPassGD,OPT 6.7B Mean,diff
+mean_FirstPassGD,Mistral-v0.1 7B Mean,Adv
+mean_FirstPassGD,Mistral-v0.1 7B Mean,Ele
+mean_FirstPassGD,Mistral-v0.1 7B Mean,diff
+mean_FirstPassGD,Mistral-v0.3 7B Mean,Adv
+mean_FirstPassGD,Mistral-v0.3 7B Mean,Ele
+mean_FirstPassGD,Mistral-v0.3 7B Mean,diff
+mean_FirstPassGD,Gemma 7B Mean,Adv
+mean_FirstPassGD,Gemma 7B Mean,Ele
+mean_FirstPassGD,Gemma 7B Mean,diff
+mean_FirstPassGD,Gemma-2 9B Mean,Adv
+mean_FirstPassGD,Gemma-2 9B Mean,Ele
+mean_FirstPassGD,Gemma-2 9B Mean,diff
+mean_FirstPassGD,Recurrent-Gemma 9B Mean,Adv
+mean_FirstPassGD,Recurrent-Gemma 9B Mean,Ele
+mean_FirstPassGD,Recurrent-Gemma 9B Mean,diff
+mean_FirstPassGD,RWKV-4 169M Mean,Adv
+mean_FirstPassGD,RWKV-4 169M Mean,Ele
+mean_FirstPassGD,RWKV-4 169M Mean,diff
+mean_FirstPassGD,RWKV-4 430M Mean,Adv
+mean_FirstPassGD,RWKV-4 430M Mean,Ele
+mean_FirstPassGD,RWKV-4 430M Mean,diff
+mean_FirstPassGD,Mamba 370M Mean,Adv
+mean_FirstPassGD,Mamba 370M Mean,Ele
+mean_FirstPassGD,Mamba 370M Mean,diff
+mean_FirstPassGD,Mamba 790M Mean,Adv
+mean_FirstPassGD,Mamba 790M Mean,Ele
+mean_FirstPassGD,Mamba 790M Mean,diff
+mean_FirstPassGD,Mamba 1.4B Mean,Adv
+mean_FirstPassGD,Mamba 1.4B Mean,Ele
+mean_FirstPassGD,Mamba 1.4B Mean,diff
+mean_FirstPassGD,Mamba 2.8B Mean,Adv
+mean_FirstPassGD,Mamba 2.8B Mean,Ele
+mean_FirstPassGD,Mamba 2.8B Mean,diff
+mean_GD,flesch_reading_ease,Adv
+mean_GD,flesch_reading_ease,Ele
+mean_GD,flesch_reading_ease,diff
+mean_GD,dale_chall_score,Adv
+mean_GD,dale_chall_score,Ele
+mean_GD,dale_chall_score,diff
+mean_GD,gunning_fog_index,Adv
+mean_GD,gunning_fog_index,Ele
+mean_GD,gunning_fog_index,diff
+mean_GD,ARI,Adv
+mean_GD,ARI,Ele
+mean_GD,ARI,diff
+mean_GD,smog_index,Adv
+mean_GD,smog_index,Ele
+mean_GD,smog_index,diff
+mean_GD,coleman_liau_index,Adv
+mean_GD,coleman_liau_index,Ele
+mean_GD,coleman_liau_index,diff
+mean_GD,flesch_kincaid_grade_score,Adv
+mean_GD,flesch_kincaid_grade_score,Ele
+mean_GD,flesch_kincaid_grade_score,diff
+mean_GD,CML2RI,Adv
+mean_GD,CML2RI,Ele
+mean_GD,CML2RI,diff
+mean_GD,CAREC,Adv
+mean_GD,CAREC,Ele
+mean_GD,CAREC,diff
+mean_GD,CARES,Adv
+mean_GD,CARES,Ele
+mean_GD,CARES,diff
+mean_GD,SBERT,Adv
+mean_GD,SBERT,Ele
+mean_GD,SBERT,diff
+mean_GD,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_GD,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_GD,llama-3.3-70b-versatile_clear_prompt,diff
+mean_GD,gpt-4o_clear_prompt,Adv
+mean_GD,gpt-4o_clear_prompt,Ele
+mean_GD,gpt-4o_clear_prompt,diff
+mean_GD,gpt-5_clear_prompt,Adv
+mean_GD,gpt-5_clear_prompt,Ele
+mean_GD,gpt-5_clear_prompt,diff
+mean_GD,gemini-2.0-flash_clear_prompt,Adv
+mean_GD,gemini-2.0-flash_clear_prompt,Ele
+mean_GD,gemini-2.0-flash_clear_prompt,diff
+mean_GD,gemini-2.5-pro_clear_prompt,Adv
+mean_GD,gemini-2.5-pro_clear_prompt,Ele
+mean_GD,gemini-2.5-pro_clear_prompt,diff
+mean_GD,claude-sonnet-4-0_clear_prompt,Adv
+mean_GD,claude-sonnet-4-0_clear_prompt,Ele
+mean_GD,claude-sonnet-4-0_clear_prompt,diff
+mean_GD,text_evaluator,Adv
+mean_GD,text_evaluator,Ele
+mean_GD,text_evaluator,diff
+mean_GD,lexile,Adv
+mean_GD,lexile,Ele
+mean_GD,lexile,diff
+mean_GD,PLL_bert-base-uncased,Adv
+mean_GD,PLL_bert-base-uncased,Ele
+mean_GD,PLL_bert-base-uncased,diff
+mean_GD,cpidr_density,Adv
+mean_GD,cpidr_density,Ele
+mean_GD,cpidr_density,diff
+mean_GD,avg_integration_cost,Adv
+mean_GD,avg_integration_cost,Ele
+mean_GD,avg_integration_cost,diff
+mean_GD,avg_embedding_depth,Adv
+mean_GD,avg_embedding_depth,Ele
+mean_GD,avg_embedding_depth,diff
+mean_GD,mean_entropy_pythia,Adv
+mean_GD,mean_entropy_pythia,Ele
+mean_GD,mean_entropy_pythia,diff
+mean_GD,word_length,Adv
+mean_GD,word_length,Ele
+mean_GD,word_length,diff
+mean_GD,wordFreq_frequency,Adv
+mean_GD,wordFreq_frequency,Ele
+mean_GD,wordFreq_frequency,diff
+mean_GD,depid_density,Adv
+mean_GD,depid_density,Ele
+mean_GD,depid_density,diff
+mean_GD,max_embedding_depth,Adv
+mean_GD,max_embedding_depth,Ele
+mean_GD,max_embedding_depth,diff
+mean_GD,max_integration_cost,Adv
+mean_GD,max_integration_cost,Ele
+mean_GD,max_integration_cost,diff
+mean_GD,total_integration_cost,Adv
+mean_GD,total_integration_cost,Ele
+mean_GD,total_integration_cost,diff
+mean_GD,CAREC_M,Adv
+mean_GD,CAREC_M,Ele
+mean_GD,CAREC_M,diff
+mean_GD,mean_entropy_gpt2,Adv
+mean_GD,mean_entropy_gpt2,Ele
+mean_GD,mean_entropy_gpt2,diff
+mean_GD,PLL_bert-large-uncased,Adv
+mean_GD,PLL_bert-large-uncased,Ele
+mean_GD,PLL_bert-large-uncased,diff
+mean_GD,PLL_roberta-base,Adv
+mean_GD,PLL_roberta-base,Ele
+mean_GD,PLL_roberta-base,diff
+mean_GD,PLL_roberta-large,Adv
+mean_GD,PLL_roberta-large,Ele
+mean_GD,PLL_roberta-large,diff
+mean_GD,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_GD,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_GD,llama-3.3-70b-versatile_simple_prompt,diff
+mean_GD,gpt-4o_simple_prompt,Adv
+mean_GD,gpt-4o_simple_prompt,Ele
+mean_GD,gpt-4o_simple_prompt,diff
+mean_GD,gpt-5_simple_prompt,Adv
+mean_GD,gpt-5_simple_prompt,Ele
+mean_GD,gpt-5_simple_prompt,diff
+mean_GD,gemini-2.0-flash_simple_prompt,Adv
+mean_GD,gemini-2.0-flash_simple_prompt,Ele
+mean_GD,gemini-2.0-flash_simple_prompt,diff
+mean_GD,gemini-2.5-pro_simple_prompt,Adv
+mean_GD,gemini-2.5-pro_simple_prompt,Ele
+mean_GD,gemini-2.5-pro_simple_prompt,diff
+mean_GD,claude-sonnet-4-0_simple_prompt,Adv
+mean_GD,claude-sonnet-4-0_simple_prompt,Ele
+mean_GD,claude-sonnet-4-0_simple_prompt,diff
+mean_GD,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_GD,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_GD,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_GD,gpt-4o_clear_specific_prompt,Adv
+mean_GD,gpt-4o_clear_specific_prompt,Ele
+mean_GD,gpt-4o_clear_specific_prompt,diff
+mean_GD,gpt-5_clear_specific_prompt,Adv
+mean_GD,gpt-5_clear_specific_prompt,Ele
+mean_GD,gpt-5_clear_specific_prompt,diff
+mean_GD,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_GD,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_GD,gemini-2.0-flash_clear_specific_prompt,diff
+mean_GD,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_GD,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_GD,gemini-2.5-pro_clear_specific_prompt,diff
+mean_GD,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_GD,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_GD,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_GD,Pythia 70M Mean,Adv
+mean_GD,Pythia 70M Mean,Ele
+mean_GD,Pythia 70M Mean,diff
+mean_GD,Pythia 160M Mean,Adv
+mean_GD,Pythia 160M Mean,Ele
+mean_GD,Pythia 160M Mean,diff
+mean_GD,Pythia 410M Mean,Adv
+mean_GD,Pythia 410M Mean,Ele
+mean_GD,Pythia 410M Mean,diff
+mean_GD,Pythia 1B Mean,Adv
+mean_GD,Pythia 1B Mean,Ele
+mean_GD,Pythia 1B Mean,diff
+mean_GD,Pythia 1.4B Mean,Adv
+mean_GD,Pythia 1.4B Mean,Ele
+mean_GD,Pythia 1.4B Mean,diff
+mean_GD,Pythia 2.8B Mean,Adv
+mean_GD,Pythia 2.8B Mean,Ele
+mean_GD,Pythia 2.8B Mean,diff
+mean_GD,Pythia 6.9B Mean,Adv
+mean_GD,Pythia 6.9B Mean,Ele
+mean_GD,Pythia 6.9B Mean,diff
+mean_GD,GPT-2 117M Mean,Adv
+mean_GD,GPT-2 117M Mean,Ele
+mean_GD,GPT-2 117M Mean,diff
+mean_GD,GPT-2 345M Mean,Adv
+mean_GD,GPT-2 345M Mean,Ele
+mean_GD,GPT-2 345M Mean,diff
+mean_GD,GPT-2 774M Mean,Adv
+mean_GD,GPT-2 774M Mean,Ele
+mean_GD,GPT-2 774M Mean,diff
+mean_GD,GPT-2 1558M Mean,Adv
+mean_GD,GPT-2 1558M Mean,Ele
+mean_GD,GPT-2 1558M Mean,diff
+mean_GD,GPT-J 6B Mean,Adv
+mean_GD,GPT-J 6B Mean,Ele
+mean_GD,GPT-J 6B Mean,diff
+mean_GD,GPT-Neo 125M Mean,Adv
+mean_GD,GPT-Neo 125M Mean,Ele
+mean_GD,GPT-Neo 125M Mean,diff
+mean_GD,GPT-Neo 1.3B Mean,Adv
+mean_GD,GPT-Neo 1.3B Mean,Ele
+mean_GD,GPT-Neo 1.3B Mean,diff
+mean_GD,GPT-Neo 2.7B Mean,Adv
+mean_GD,GPT-Neo 2.7B Mean,Ele
+mean_GD,GPT-Neo 2.7B Mean,diff
+mean_GD,Llama-2 7B Mean,Adv
+mean_GD,Llama-2 7B Mean,Ele
+mean_GD,Llama-2 7B Mean,diff
+mean_GD,Llama-2 13B Mean,Adv
+mean_GD,Llama-2 13B Mean,Ele
+mean_GD,Llama-2 13B Mean,diff
+mean_GD,OPT 350M Mean,Adv
+mean_GD,OPT 350M Mean,Ele
+mean_GD,OPT 350M Mean,diff
+mean_GD,OPT 1.3B Mean,Adv
+mean_GD,OPT 1.3B Mean,Ele
+mean_GD,OPT 1.3B Mean,diff
+mean_GD,OPT 2.7B Mean,Adv
+mean_GD,OPT 2.7B Mean,Ele
+mean_GD,OPT 2.7B Mean,diff
+mean_GD,OPT 6.7B Mean,Adv
+mean_GD,OPT 6.7B Mean,Ele
+mean_GD,OPT 6.7B Mean,diff
+mean_GD,Mistral-v0.1 7B Mean,Adv
+mean_GD,Mistral-v0.1 7B Mean,Ele
+mean_GD,Mistral-v0.1 7B Mean,diff
+mean_GD,Mistral-v0.3 7B Mean,Adv
+mean_GD,Mistral-v0.3 7B Mean,Ele
+mean_GD,Mistral-v0.3 7B Mean,diff
+mean_GD,Gemma 7B Mean,Adv
+mean_GD,Gemma 7B Mean,Ele
+mean_GD,Gemma 7B Mean,diff
+mean_GD,Gemma-2 9B Mean,Adv
+mean_GD,Gemma-2 9B Mean,Ele
+mean_GD,Gemma-2 9B Mean,diff
+mean_GD,Recurrent-Gemma 9B Mean,Adv
+mean_GD,Recurrent-Gemma 9B Mean,Ele
+mean_GD,Recurrent-Gemma 9B Mean,diff
+mean_GD,RWKV-4 169M Mean,Adv
+mean_GD,RWKV-4 169M Mean,Ele
+mean_GD,RWKV-4 169M Mean,diff
+mean_GD,RWKV-4 430M Mean,Adv
+mean_GD,RWKV-4 430M Mean,Ele
+mean_GD,RWKV-4 430M Mean,diff
+mean_GD,Mamba 370M Mean,Adv
+mean_GD,Mamba 370M Mean,Ele
+mean_GD,Mamba 370M Mean,diff
+mean_GD,Mamba 790M Mean,Adv
+mean_GD,Mamba 790M Mean,Ele
+mean_GD,Mamba 790M Mean,diff
+mean_GD,Mamba 1.4B Mean,Adv
+mean_GD,Mamba 1.4B Mean,Ele
+mean_GD,Mamba 1.4B Mean,diff
+mean_GD,Mamba 2.8B Mean,Adv
+mean_GD,Mamba 2.8B Mean,Ele
+mean_GD,Mamba 2.8B Mean,diff
+mean_nonzero_FF,flesch_reading_ease,Adv
+mean_nonzero_FF,flesch_reading_ease,Ele
+mean_nonzero_FF,flesch_reading_ease,diff
+mean_nonzero_FF,dale_chall_score,Adv
+mean_nonzero_FF,dale_chall_score,Ele
+mean_nonzero_FF,dale_chall_score,diff
+mean_nonzero_FF,gunning_fog_index,Adv
+mean_nonzero_FF,gunning_fog_index,Ele
+mean_nonzero_FF,gunning_fog_index,diff
+mean_nonzero_FF,ARI,Adv
+mean_nonzero_FF,ARI,Ele
+mean_nonzero_FF,ARI,diff
+mean_nonzero_FF,smog_index,Adv
+mean_nonzero_FF,smog_index,Ele
+mean_nonzero_FF,smog_index,diff
+mean_nonzero_FF,coleman_liau_index,Adv
+mean_nonzero_FF,coleman_liau_index,Ele
+mean_nonzero_FF,coleman_liau_index,diff
+mean_nonzero_FF,flesch_kincaid_grade_score,Adv
+mean_nonzero_FF,flesch_kincaid_grade_score,Ele
+mean_nonzero_FF,flesch_kincaid_grade_score,diff
+mean_nonzero_FF,CML2RI,Adv
+mean_nonzero_FF,CML2RI,Ele
+mean_nonzero_FF,CML2RI,diff
+mean_nonzero_FF,CAREC,Adv
+mean_nonzero_FF,CAREC,Ele
+mean_nonzero_FF,CAREC,diff
+mean_nonzero_FF,CARES,Adv
+mean_nonzero_FF,CARES,Ele
+mean_nonzero_FF,CARES,diff
+mean_nonzero_FF,SBERT,Adv
+mean_nonzero_FF,SBERT,Ele
+mean_nonzero_FF,SBERT,diff
+mean_nonzero_FF,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_nonzero_FF,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_nonzero_FF,llama-3.3-70b-versatile_clear_prompt,diff
+mean_nonzero_FF,gpt-4o_clear_prompt,Adv
+mean_nonzero_FF,gpt-4o_clear_prompt,Ele
+mean_nonzero_FF,gpt-4o_clear_prompt,diff
+mean_nonzero_FF,gpt-5_clear_prompt,Adv
+mean_nonzero_FF,gpt-5_clear_prompt,Ele
+mean_nonzero_FF,gpt-5_clear_prompt,diff
+mean_nonzero_FF,gemini-2.0-flash_clear_prompt,Adv
+mean_nonzero_FF,gemini-2.0-flash_clear_prompt,Ele
+mean_nonzero_FF,gemini-2.0-flash_clear_prompt,diff
+mean_nonzero_FF,gemini-2.5-pro_clear_prompt,Adv
+mean_nonzero_FF,gemini-2.5-pro_clear_prompt,Ele
+mean_nonzero_FF,gemini-2.5-pro_clear_prompt,diff
+mean_nonzero_FF,claude-sonnet-4-0_clear_prompt,Adv
+mean_nonzero_FF,claude-sonnet-4-0_clear_prompt,Ele
+mean_nonzero_FF,claude-sonnet-4-0_clear_prompt,diff
+mean_nonzero_FF,text_evaluator,Adv
+mean_nonzero_FF,text_evaluator,Ele
+mean_nonzero_FF,text_evaluator,diff
+mean_nonzero_FF,lexile,Adv
+mean_nonzero_FF,lexile,Ele
+mean_nonzero_FF,lexile,diff
+mean_nonzero_FF,PLL_bert-base-uncased,Adv
+mean_nonzero_FF,PLL_bert-base-uncased,Ele
+mean_nonzero_FF,PLL_bert-base-uncased,diff
+mean_nonzero_FF,cpidr_density,Adv
+mean_nonzero_FF,cpidr_density,Ele
+mean_nonzero_FF,cpidr_density,diff
+mean_nonzero_FF,avg_integration_cost,Adv
+mean_nonzero_FF,avg_integration_cost,Ele
+mean_nonzero_FF,avg_integration_cost,diff
+mean_nonzero_FF,avg_embedding_depth,Adv
+mean_nonzero_FF,avg_embedding_depth,Ele
+mean_nonzero_FF,avg_embedding_depth,diff
+mean_nonzero_FF,mean_entropy_pythia,Adv
+mean_nonzero_FF,mean_entropy_pythia,Ele
+mean_nonzero_FF,mean_entropy_pythia,diff
+mean_nonzero_FF,word_length,Adv
+mean_nonzero_FF,word_length,Ele
+mean_nonzero_FF,word_length,diff
+mean_nonzero_FF,wordFreq_frequency,Adv
+mean_nonzero_FF,wordFreq_frequency,Ele
+mean_nonzero_FF,wordFreq_frequency,diff
+mean_nonzero_FF,depid_density,Adv
+mean_nonzero_FF,depid_density,Ele
+mean_nonzero_FF,depid_density,diff
+mean_nonzero_FF,max_embedding_depth,Adv
+mean_nonzero_FF,max_embedding_depth,Ele
+mean_nonzero_FF,max_embedding_depth,diff
+mean_nonzero_FF,max_integration_cost,Adv
+mean_nonzero_FF,max_integration_cost,Ele
+mean_nonzero_FF,max_integration_cost,diff
+mean_nonzero_FF,total_integration_cost,Adv
+mean_nonzero_FF,total_integration_cost,Ele
+mean_nonzero_FF,total_integration_cost,diff
+mean_nonzero_FF,CAREC_M,Adv
+mean_nonzero_FF,CAREC_M,Ele
+mean_nonzero_FF,CAREC_M,diff
+mean_nonzero_FF,mean_entropy_gpt2,Adv
+mean_nonzero_FF,mean_entropy_gpt2,Ele
+mean_nonzero_FF,mean_entropy_gpt2,diff
+mean_nonzero_FF,PLL_bert-large-uncased,Adv
+mean_nonzero_FF,PLL_bert-large-uncased,Ele
+mean_nonzero_FF,PLL_bert-large-uncased,diff
+mean_nonzero_FF,PLL_roberta-base,Adv
+mean_nonzero_FF,PLL_roberta-base,Ele
+mean_nonzero_FF,PLL_roberta-base,diff
+mean_nonzero_FF,PLL_roberta-large,Adv
+mean_nonzero_FF,PLL_roberta-large,Ele
+mean_nonzero_FF,PLL_roberta-large,diff
+mean_nonzero_FF,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_nonzero_FF,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_nonzero_FF,llama-3.3-70b-versatile_simple_prompt,diff
+mean_nonzero_FF,gpt-4o_simple_prompt,Adv
+mean_nonzero_FF,gpt-4o_simple_prompt,Ele
+mean_nonzero_FF,gpt-4o_simple_prompt,diff
+mean_nonzero_FF,gpt-5_simple_prompt,Adv
+mean_nonzero_FF,gpt-5_simple_prompt,Ele
+mean_nonzero_FF,gpt-5_simple_prompt,diff
+mean_nonzero_FF,gemini-2.0-flash_simple_prompt,Adv
+mean_nonzero_FF,gemini-2.0-flash_simple_prompt,Ele
+mean_nonzero_FF,gemini-2.0-flash_simple_prompt,diff
+mean_nonzero_FF,gemini-2.5-pro_simple_prompt,Adv
+mean_nonzero_FF,gemini-2.5-pro_simple_prompt,Ele
+mean_nonzero_FF,gemini-2.5-pro_simple_prompt,diff
+mean_nonzero_FF,claude-sonnet-4-0_simple_prompt,Adv
+mean_nonzero_FF,claude-sonnet-4-0_simple_prompt,Ele
+mean_nonzero_FF,claude-sonnet-4-0_simple_prompt,diff
+mean_nonzero_FF,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_nonzero_FF,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_nonzero_FF,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_nonzero_FF,gpt-4o_clear_specific_prompt,Adv
+mean_nonzero_FF,gpt-4o_clear_specific_prompt,Ele
+mean_nonzero_FF,gpt-4o_clear_specific_prompt,diff
+mean_nonzero_FF,gpt-5_clear_specific_prompt,Adv
+mean_nonzero_FF,gpt-5_clear_specific_prompt,Ele
+mean_nonzero_FF,gpt-5_clear_specific_prompt,diff
+mean_nonzero_FF,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_nonzero_FF,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_nonzero_FF,gemini-2.0-flash_clear_specific_prompt,diff
+mean_nonzero_FF,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_nonzero_FF,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_nonzero_FF,gemini-2.5-pro_clear_specific_prompt,diff
+mean_nonzero_FF,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_nonzero_FF,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_nonzero_FF,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_nonzero_FF,Pythia 70M Mean,Adv
+mean_nonzero_FF,Pythia 70M Mean,Ele
+mean_nonzero_FF,Pythia 70M Mean,diff
+mean_nonzero_FF,Pythia 160M Mean,Adv
+mean_nonzero_FF,Pythia 160M Mean,Ele
+mean_nonzero_FF,Pythia 160M Mean,diff
+mean_nonzero_FF,Pythia 410M Mean,Adv
+mean_nonzero_FF,Pythia 410M Mean,Ele
+mean_nonzero_FF,Pythia 410M Mean,diff
+mean_nonzero_FF,Pythia 1B Mean,Adv
+mean_nonzero_FF,Pythia 1B Mean,Ele
+mean_nonzero_FF,Pythia 1B Mean,diff
+mean_nonzero_FF,Pythia 1.4B Mean,Adv
+mean_nonzero_FF,Pythia 1.4B Mean,Ele
+mean_nonzero_FF,Pythia 1.4B Mean,diff
+mean_nonzero_FF,Pythia 2.8B Mean,Adv
+mean_nonzero_FF,Pythia 2.8B Mean,Ele
+mean_nonzero_FF,Pythia 2.8B Mean,diff
+mean_nonzero_FF,Pythia 6.9B Mean,Adv
+mean_nonzero_FF,Pythia 6.9B Mean,Ele
+mean_nonzero_FF,Pythia 6.9B Mean,diff
+mean_nonzero_FF,GPT-2 117M Mean,Adv
+mean_nonzero_FF,GPT-2 117M Mean,Ele
+mean_nonzero_FF,GPT-2 117M Mean,diff
+mean_nonzero_FF,GPT-2 345M Mean,Adv
+mean_nonzero_FF,GPT-2 345M Mean,Ele
+mean_nonzero_FF,GPT-2 345M Mean,diff
+mean_nonzero_FF,GPT-2 774M Mean,Adv
+mean_nonzero_FF,GPT-2 774M Mean,Ele
+mean_nonzero_FF,GPT-2 774M Mean,diff
+mean_nonzero_FF,GPT-2 1558M Mean,Adv
+mean_nonzero_FF,GPT-2 1558M Mean,Ele
+mean_nonzero_FF,GPT-2 1558M Mean,diff
+mean_nonzero_FF,GPT-J 6B Mean,Adv
+mean_nonzero_FF,GPT-J 6B Mean,Ele
+mean_nonzero_FF,GPT-J 6B Mean,diff
+mean_nonzero_FF,GPT-Neo 125M Mean,Adv
+mean_nonzero_FF,GPT-Neo 125M Mean,Ele
+mean_nonzero_FF,GPT-Neo 125M Mean,diff
+mean_nonzero_FF,GPT-Neo 1.3B Mean,Adv
+mean_nonzero_FF,GPT-Neo 1.3B Mean,Ele
+mean_nonzero_FF,GPT-Neo 1.3B Mean,diff
+mean_nonzero_FF,GPT-Neo 2.7B Mean,Adv
+mean_nonzero_FF,GPT-Neo 2.7B Mean,Ele
+mean_nonzero_FF,GPT-Neo 2.7B Mean,diff
+mean_nonzero_FF,Llama-2 7B Mean,Adv
+mean_nonzero_FF,Llama-2 7B Mean,Ele
+mean_nonzero_FF,Llama-2 7B Mean,diff
+mean_nonzero_FF,Llama-2 13B Mean,Adv
+mean_nonzero_FF,Llama-2 13B Mean,Ele
+mean_nonzero_FF,Llama-2 13B Mean,diff
+mean_nonzero_FF,OPT 350M Mean,Adv
+mean_nonzero_FF,OPT 350M Mean,Ele
+mean_nonzero_FF,OPT 350M Mean,diff
+mean_nonzero_FF,OPT 1.3B Mean,Adv
+mean_nonzero_FF,OPT 1.3B Mean,Ele
+mean_nonzero_FF,OPT 1.3B Mean,diff
+mean_nonzero_FF,OPT 2.7B Mean,Adv
+mean_nonzero_FF,OPT 2.7B Mean,Ele
+mean_nonzero_FF,OPT 2.7B Mean,diff
+mean_nonzero_FF,OPT 6.7B Mean,Adv
+mean_nonzero_FF,OPT 6.7B Mean,Ele
+mean_nonzero_FF,OPT 6.7B Mean,diff
+mean_nonzero_FF,Mistral-v0.1 7B Mean,Adv
+mean_nonzero_FF,Mistral-v0.1 7B Mean,Ele
+mean_nonzero_FF,Mistral-v0.1 7B Mean,diff
+mean_nonzero_FF,Mistral-v0.3 7B Mean,Adv
+mean_nonzero_FF,Mistral-v0.3 7B Mean,Ele
+mean_nonzero_FF,Mistral-v0.3 7B Mean,diff
+mean_nonzero_FF,Gemma 7B Mean,Adv
+mean_nonzero_FF,Gemma 7B Mean,Ele
+mean_nonzero_FF,Gemma 7B Mean,diff
+mean_nonzero_FF,Gemma-2 9B Mean,Adv
+mean_nonzero_FF,Gemma-2 9B Mean,Ele
+mean_nonzero_FF,Gemma-2 9B Mean,diff
+mean_nonzero_FF,Recurrent-Gemma 9B Mean,Adv
+mean_nonzero_FF,Recurrent-Gemma 9B Mean,Ele
+mean_nonzero_FF,Recurrent-Gemma 9B Mean,diff
+mean_nonzero_FF,RWKV-4 169M Mean,Adv
+mean_nonzero_FF,RWKV-4 169M Mean,Ele
+mean_nonzero_FF,RWKV-4 169M Mean,diff
+mean_nonzero_FF,RWKV-4 430M Mean,Adv
+mean_nonzero_FF,RWKV-4 430M Mean,Ele
+mean_nonzero_FF,RWKV-4 430M Mean,diff
+mean_nonzero_FF,Mamba 370M Mean,Adv
+mean_nonzero_FF,Mamba 370M Mean,Ele
+mean_nonzero_FF,Mamba 370M Mean,diff
+mean_nonzero_FF,Mamba 790M Mean,Adv
+mean_nonzero_FF,Mamba 790M Mean,Ele
+mean_nonzero_FF,Mamba 790M Mean,diff
+mean_nonzero_FF,Mamba 1.4B Mean,Adv
+mean_nonzero_FF,Mamba 1.4B Mean,Ele
+mean_nonzero_FF,Mamba 1.4B Mean,diff
+mean_nonzero_FF,Mamba 2.8B Mean,Adv
+mean_nonzero_FF,Mamba 2.8B Mean,Ele
+mean_nonzero_FF,Mamba 2.8B Mean,diff
+mean_FD,flesch_reading_ease,Adv
+mean_FD,flesch_reading_ease,Ele
+mean_FD,flesch_reading_ease,diff
+mean_FD,dale_chall_score,Adv
+mean_FD,dale_chall_score,Ele
+mean_FD,dale_chall_score,diff
+mean_FD,gunning_fog_index,Adv
+mean_FD,gunning_fog_index,Ele
+mean_FD,gunning_fog_index,diff
+mean_FD,ARI,Adv
+mean_FD,ARI,Ele
+mean_FD,ARI,diff
+mean_FD,smog_index,Adv
+mean_FD,smog_index,Ele
+mean_FD,smog_index,diff
+mean_FD,coleman_liau_index,Adv
+mean_FD,coleman_liau_index,Ele
+mean_FD,coleman_liau_index,diff
+mean_FD,flesch_kincaid_grade_score,Adv
+mean_FD,flesch_kincaid_grade_score,Ele
+mean_FD,flesch_kincaid_grade_score,diff
+mean_FD,CML2RI,Adv
+mean_FD,CML2RI,Ele
+mean_FD,CML2RI,diff
+mean_FD,CAREC,Adv
+mean_FD,CAREC,Ele
+mean_FD,CAREC,diff
+mean_FD,CARES,Adv
+mean_FD,CARES,Ele
+mean_FD,CARES,diff
+mean_FD,SBERT,Adv
+mean_FD,SBERT,Ele
+mean_FD,SBERT,diff
+mean_FD,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_FD,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_FD,llama-3.3-70b-versatile_clear_prompt,diff
+mean_FD,gpt-4o_clear_prompt,Adv
+mean_FD,gpt-4o_clear_prompt,Ele
+mean_FD,gpt-4o_clear_prompt,diff
+mean_FD,gpt-5_clear_prompt,Adv
+mean_FD,gpt-5_clear_prompt,Ele
+mean_FD,gpt-5_clear_prompt,diff
+mean_FD,gemini-2.0-flash_clear_prompt,Adv
+mean_FD,gemini-2.0-flash_clear_prompt,Ele
+mean_FD,gemini-2.0-flash_clear_prompt,diff
+mean_FD,gemini-2.5-pro_clear_prompt,Adv
+mean_FD,gemini-2.5-pro_clear_prompt,Ele
+mean_FD,gemini-2.5-pro_clear_prompt,diff
+mean_FD,claude-sonnet-4-0_clear_prompt,Adv
+mean_FD,claude-sonnet-4-0_clear_prompt,Ele
+mean_FD,claude-sonnet-4-0_clear_prompt,diff
+mean_FD,text_evaluator,Adv
+mean_FD,text_evaluator,Ele
+mean_FD,text_evaluator,diff
+mean_FD,lexile,Adv
+mean_FD,lexile,Ele
+mean_FD,lexile,diff
+mean_FD,PLL_bert-base-uncased,Adv
+mean_FD,PLL_bert-base-uncased,Ele
+mean_FD,PLL_bert-base-uncased,diff
+mean_FD,cpidr_density,Adv
+mean_FD,cpidr_density,Ele
+mean_FD,cpidr_density,diff
+mean_FD,avg_integration_cost,Adv
+mean_FD,avg_integration_cost,Ele
+mean_FD,avg_integration_cost,diff
+mean_FD,avg_embedding_depth,Adv
+mean_FD,avg_embedding_depth,Ele
+mean_FD,avg_embedding_depth,diff
+mean_FD,mean_entropy_pythia,Adv
+mean_FD,mean_entropy_pythia,Ele
+mean_FD,mean_entropy_pythia,diff
+mean_FD,word_length,Adv
+mean_FD,word_length,Ele
+mean_FD,word_length,diff
+mean_FD,wordFreq_frequency,Adv
+mean_FD,wordFreq_frequency,Ele
+mean_FD,wordFreq_frequency,diff
+mean_FD,depid_density,Adv
+mean_FD,depid_density,Ele
+mean_FD,depid_density,diff
+mean_FD,max_embedding_depth,Adv
+mean_FD,max_embedding_depth,Ele
+mean_FD,max_embedding_depth,diff
+mean_FD,max_integration_cost,Adv
+mean_FD,max_integration_cost,Ele
+mean_FD,max_integration_cost,diff
+mean_FD,total_integration_cost,Adv
+mean_FD,total_integration_cost,Ele
+mean_FD,total_integration_cost,diff
+mean_FD,CAREC_M,Adv
+mean_FD,CAREC_M,Ele
+mean_FD,CAREC_M,diff
+mean_FD,mean_entropy_gpt2,Adv
+mean_FD,mean_entropy_gpt2,Ele
+mean_FD,mean_entropy_gpt2,diff
+mean_FD,PLL_bert-large-uncased,Adv
+mean_FD,PLL_bert-large-uncased,Ele
+mean_FD,PLL_bert-large-uncased,diff
+mean_FD,PLL_roberta-base,Adv
+mean_FD,PLL_roberta-base,Ele
+mean_FD,PLL_roberta-base,diff
+mean_FD,PLL_roberta-large,Adv
+mean_FD,PLL_roberta-large,Ele
+mean_FD,PLL_roberta-large,diff
+mean_FD,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_FD,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_FD,llama-3.3-70b-versatile_simple_prompt,diff
+mean_FD,gpt-4o_simple_prompt,Adv
+mean_FD,gpt-4o_simple_prompt,Ele
+mean_FD,gpt-4o_simple_prompt,diff
+mean_FD,gpt-5_simple_prompt,Adv
+mean_FD,gpt-5_simple_prompt,Ele
+mean_FD,gpt-5_simple_prompt,diff
+mean_FD,gemini-2.0-flash_simple_prompt,Adv
+mean_FD,gemini-2.0-flash_simple_prompt,Ele
+mean_FD,gemini-2.0-flash_simple_prompt,diff
+mean_FD,gemini-2.5-pro_simple_prompt,Adv
+mean_FD,gemini-2.5-pro_simple_prompt,Ele
+mean_FD,gemini-2.5-pro_simple_prompt,diff
+mean_FD,claude-sonnet-4-0_simple_prompt,Adv
+mean_FD,claude-sonnet-4-0_simple_prompt,Ele
+mean_FD,claude-sonnet-4-0_simple_prompt,diff
+mean_FD,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_FD,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_FD,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_FD,gpt-4o_clear_specific_prompt,Adv
+mean_FD,gpt-4o_clear_specific_prompt,Ele
+mean_FD,gpt-4o_clear_specific_prompt,diff
+mean_FD,gpt-5_clear_specific_prompt,Adv
+mean_FD,gpt-5_clear_specific_prompt,Ele
+mean_FD,gpt-5_clear_specific_prompt,diff
+mean_FD,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_FD,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_FD,gemini-2.0-flash_clear_specific_prompt,diff
+mean_FD,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_FD,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_FD,gemini-2.5-pro_clear_specific_prompt,diff
+mean_FD,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_FD,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_FD,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_FD,Pythia 70M Mean,Adv
+mean_FD,Pythia 70M Mean,Ele
+mean_FD,Pythia 70M Mean,diff
+mean_FD,Pythia 160M Mean,Adv
+mean_FD,Pythia 160M Mean,Ele
+mean_FD,Pythia 160M Mean,diff
+mean_FD,Pythia 410M Mean,Adv
+mean_FD,Pythia 410M Mean,Ele
+mean_FD,Pythia 410M Mean,diff
+mean_FD,Pythia 1B Mean,Adv
+mean_FD,Pythia 1B Mean,Ele
+mean_FD,Pythia 1B Mean,diff
+mean_FD,Pythia 1.4B Mean,Adv
+mean_FD,Pythia 1.4B Mean,Ele
+mean_FD,Pythia 1.4B Mean,diff
+mean_FD,Pythia 2.8B Mean,Adv
+mean_FD,Pythia 2.8B Mean,Ele
+mean_FD,Pythia 2.8B Mean,diff
+mean_FD,Pythia 6.9B Mean,Adv
+mean_FD,Pythia 6.9B Mean,Ele
+mean_FD,Pythia 6.9B Mean,diff
+mean_FD,GPT-2 117M Mean,Adv
+mean_FD,GPT-2 117M Mean,Ele
+mean_FD,GPT-2 117M Mean,diff
+mean_FD,GPT-2 345M Mean,Adv
+mean_FD,GPT-2 345M Mean,Ele
+mean_FD,GPT-2 345M Mean,diff
+mean_FD,GPT-2 774M Mean,Adv
+mean_FD,GPT-2 774M Mean,Ele
+mean_FD,GPT-2 774M Mean,diff
+mean_FD,GPT-2 1558M Mean,Adv
+mean_FD,GPT-2 1558M Mean,Ele
+mean_FD,GPT-2 1558M Mean,diff
+mean_FD,GPT-J 6B Mean,Adv
+mean_FD,GPT-J 6B Mean,Ele
+mean_FD,GPT-J 6B Mean,diff
+mean_FD,GPT-Neo 125M Mean,Adv
+mean_FD,GPT-Neo 125M Mean,Ele
+mean_FD,GPT-Neo 125M Mean,diff
+mean_FD,GPT-Neo 1.3B Mean,Adv
+mean_FD,GPT-Neo 1.3B Mean,Ele
+mean_FD,GPT-Neo 1.3B Mean,diff
+mean_FD,GPT-Neo 2.7B Mean,Adv
+mean_FD,GPT-Neo 2.7B Mean,Ele
+mean_FD,GPT-Neo 2.7B Mean,diff
+mean_FD,Llama-2 7B Mean,Adv
+mean_FD,Llama-2 7B Mean,Ele
+mean_FD,Llama-2 7B Mean,diff
+mean_FD,Llama-2 13B Mean,Adv
+mean_FD,Llama-2 13B Mean,Ele
+mean_FD,Llama-2 13B Mean,diff
+mean_FD,OPT 350M Mean,Adv
+mean_FD,OPT 350M Mean,Ele
+mean_FD,OPT 350M Mean,diff
+mean_FD,OPT 1.3B Mean,Adv
+mean_FD,OPT 1.3B Mean,Ele
+mean_FD,OPT 1.3B Mean,diff
+mean_FD,OPT 2.7B Mean,Adv
+mean_FD,OPT 2.7B Mean,Ele
+mean_FD,OPT 2.7B Mean,diff
+mean_FD,OPT 6.7B Mean,Adv
+mean_FD,OPT 6.7B Mean,Ele
+mean_FD,OPT 6.7B Mean,diff
+mean_FD,Mistral-v0.1 7B Mean,Adv
+mean_FD,Mistral-v0.1 7B Mean,Ele
+mean_FD,Mistral-v0.1 7B Mean,diff
+mean_FD,Mistral-v0.3 7B Mean,Adv
+mean_FD,Mistral-v0.3 7B Mean,Ele
+mean_FD,Mistral-v0.3 7B Mean,diff
+mean_FD,Gemma 7B Mean,Adv
+mean_FD,Gemma 7B Mean,Ele
+mean_FD,Gemma 7B Mean,diff
+mean_FD,Gemma-2 9B Mean,Adv
+mean_FD,Gemma-2 9B Mean,Ele
+mean_FD,Gemma-2 9B Mean,diff
+mean_FD,Recurrent-Gemma 9B Mean,Adv
+mean_FD,Recurrent-Gemma 9B Mean,Ele
+mean_FD,Recurrent-Gemma 9B Mean,diff
+mean_FD,RWKV-4 169M Mean,Adv
+mean_FD,RWKV-4 169M Mean,Ele
+mean_FD,RWKV-4 169M Mean,diff
+mean_FD,RWKV-4 430M Mean,Adv
+mean_FD,RWKV-4 430M Mean,Ele
+mean_FD,RWKV-4 430M Mean,diff
+mean_FD,Mamba 370M Mean,Adv
+mean_FD,Mamba 370M Mean,Ele
+mean_FD,Mamba 370M Mean,diff
+mean_FD,Mamba 790M Mean,Adv
+mean_FD,Mamba 790M Mean,Ele
+mean_FD,Mamba 790M Mean,diff
+mean_FD,Mamba 1.4B Mean,Adv
+mean_FD,Mamba 1.4B Mean,Ele
+mean_FD,Mamba 1.4B Mean,diff
+mean_FD,Mamba 2.8B Mean,Adv
+mean_FD,Mamba 2.8B Mean,Ele
+mean_FD,Mamba 2.8B Mean,diff
+mean_HigherPassFixation,flesch_reading_ease,Adv
+mean_HigherPassFixation,flesch_reading_ease,Ele
+mean_HigherPassFixation,flesch_reading_ease,diff
+mean_HigherPassFixation,dale_chall_score,Adv
+mean_HigherPassFixation,dale_chall_score,Ele
+mean_HigherPassFixation,dale_chall_score,diff
+mean_HigherPassFixation,gunning_fog_index,Adv
+mean_HigherPassFixation,gunning_fog_index,Ele
+mean_HigherPassFixation,gunning_fog_index,diff
+mean_HigherPassFixation,ARI,Adv
+mean_HigherPassFixation,ARI,Ele
+mean_HigherPassFixation,ARI,diff
+mean_HigherPassFixation,smog_index,Adv
+mean_HigherPassFixation,smog_index,Ele
+mean_HigherPassFixation,smog_index,diff
+mean_HigherPassFixation,coleman_liau_index,Adv
+mean_HigherPassFixation,coleman_liau_index,Ele
+mean_HigherPassFixation,coleman_liau_index,diff
+mean_HigherPassFixation,flesch_kincaid_grade_score,Adv
+mean_HigherPassFixation,flesch_kincaid_grade_score,Ele
+mean_HigherPassFixation,flesch_kincaid_grade_score,diff
+mean_HigherPassFixation,CML2RI,Adv
+mean_HigherPassFixation,CML2RI,Ele
+mean_HigherPassFixation,CML2RI,diff
+mean_HigherPassFixation,CAREC,Adv
+mean_HigherPassFixation,CAREC,Ele
+mean_HigherPassFixation,CAREC,diff
+mean_HigherPassFixation,CARES,Adv
+mean_HigherPassFixation,CARES,Ele
+mean_HigherPassFixation,CARES,diff
+mean_HigherPassFixation,SBERT,Adv
+mean_HigherPassFixation,SBERT,Ele
+mean_HigherPassFixation,SBERT,diff
+mean_HigherPassFixation,llama-3.3-70b-versatile_clear_prompt,Adv
+mean_HigherPassFixation,llama-3.3-70b-versatile_clear_prompt,Ele
+mean_HigherPassFixation,llama-3.3-70b-versatile_clear_prompt,diff
+mean_HigherPassFixation,gpt-4o_clear_prompt,Adv
+mean_HigherPassFixation,gpt-4o_clear_prompt,Ele
+mean_HigherPassFixation,gpt-4o_clear_prompt,diff
+mean_HigherPassFixation,gpt-5_clear_prompt,Adv
+mean_HigherPassFixation,gpt-5_clear_prompt,Ele
+mean_HigherPassFixation,gpt-5_clear_prompt,diff
+mean_HigherPassFixation,gemini-2.0-flash_clear_prompt,Adv
+mean_HigherPassFixation,gemini-2.0-flash_clear_prompt,Ele
+mean_HigherPassFixation,gemini-2.0-flash_clear_prompt,diff
+mean_HigherPassFixation,gemini-2.5-pro_clear_prompt,Adv
+mean_HigherPassFixation,gemini-2.5-pro_clear_prompt,Ele
+mean_HigherPassFixation,gemini-2.5-pro_clear_prompt,diff
+mean_HigherPassFixation,claude-sonnet-4-0_clear_prompt,Adv
+mean_HigherPassFixation,claude-sonnet-4-0_clear_prompt,Ele
+mean_HigherPassFixation,claude-sonnet-4-0_clear_prompt,diff
+mean_HigherPassFixation,text_evaluator,Adv
+mean_HigherPassFixation,text_evaluator,Ele
+mean_HigherPassFixation,text_evaluator,diff
+mean_HigherPassFixation,lexile,Adv
+mean_HigherPassFixation,lexile,Ele
+mean_HigherPassFixation,lexile,diff
+mean_HigherPassFixation,PLL_bert-base-uncased,Adv
+mean_HigherPassFixation,PLL_bert-base-uncased,Ele
+mean_HigherPassFixation,PLL_bert-base-uncased,diff
+mean_HigherPassFixation,cpidr_density,Adv
+mean_HigherPassFixation,cpidr_density,Ele
+mean_HigherPassFixation,cpidr_density,diff
+mean_HigherPassFixation,avg_integration_cost,Adv
+mean_HigherPassFixation,avg_integration_cost,Ele
+mean_HigherPassFixation,avg_integration_cost,diff
+mean_HigherPassFixation,avg_embedding_depth,Adv
+mean_HigherPassFixation,avg_embedding_depth,Ele
+mean_HigherPassFixation,avg_embedding_depth,diff
+mean_HigherPassFixation,mean_entropy_pythia,Adv
+mean_HigherPassFixation,mean_entropy_pythia,Ele
+mean_HigherPassFixation,mean_entropy_pythia,diff
+mean_HigherPassFixation,word_length,Adv
+mean_HigherPassFixation,word_length,Ele
+mean_HigherPassFixation,word_length,diff
+mean_HigherPassFixation,wordFreq_frequency,Adv
+mean_HigherPassFixation,wordFreq_frequency,Ele
+mean_HigherPassFixation,wordFreq_frequency,diff
+mean_HigherPassFixation,depid_density,Adv
+mean_HigherPassFixation,depid_density,Ele
+mean_HigherPassFixation,depid_density,diff
+mean_HigherPassFixation,max_embedding_depth,Adv
+mean_HigherPassFixation,max_embedding_depth,Ele
+mean_HigherPassFixation,max_embedding_depth,diff
+mean_HigherPassFixation,max_integration_cost,Adv
+mean_HigherPassFixation,max_integration_cost,Ele
+mean_HigherPassFixation,max_integration_cost,diff
+mean_HigherPassFixation,total_integration_cost,Adv
+mean_HigherPassFixation,total_integration_cost,Ele
+mean_HigherPassFixation,total_integration_cost,diff
+mean_HigherPassFixation,CAREC_M,Adv
+mean_HigherPassFixation,CAREC_M,Ele
+mean_HigherPassFixation,CAREC_M,diff
+mean_HigherPassFixation,mean_entropy_gpt2,Adv
+mean_HigherPassFixation,mean_entropy_gpt2,Ele
+mean_HigherPassFixation,mean_entropy_gpt2,diff
+mean_HigherPassFixation,PLL_bert-large-uncased,Adv
+mean_HigherPassFixation,PLL_bert-large-uncased,Ele
+mean_HigherPassFixation,PLL_bert-large-uncased,diff
+mean_HigherPassFixation,PLL_roberta-base,Adv
+mean_HigherPassFixation,PLL_roberta-base,Ele
+mean_HigherPassFixation,PLL_roberta-base,diff
+mean_HigherPassFixation,PLL_roberta-large,Adv
+mean_HigherPassFixation,PLL_roberta-large,Ele
+mean_HigherPassFixation,PLL_roberta-large,diff
+mean_HigherPassFixation,llama-3.3-70b-versatile_simple_prompt,Adv
+mean_HigherPassFixation,llama-3.3-70b-versatile_simple_prompt,Ele
+mean_HigherPassFixation,llama-3.3-70b-versatile_simple_prompt,diff
+mean_HigherPassFixation,gpt-4o_simple_prompt,Adv
+mean_HigherPassFixation,gpt-4o_simple_prompt,Ele
+mean_HigherPassFixation,gpt-4o_simple_prompt,diff
+mean_HigherPassFixation,gpt-5_simple_prompt,Adv
+mean_HigherPassFixation,gpt-5_simple_prompt,Ele
+mean_HigherPassFixation,gpt-5_simple_prompt,diff
+mean_HigherPassFixation,gemini-2.0-flash_simple_prompt,Adv
+mean_HigherPassFixation,gemini-2.0-flash_simple_prompt,Ele
+mean_HigherPassFixation,gemini-2.0-flash_simple_prompt,diff
+mean_HigherPassFixation,gemini-2.5-pro_simple_prompt,Adv
+mean_HigherPassFixation,gemini-2.5-pro_simple_prompt,Ele
+mean_HigherPassFixation,gemini-2.5-pro_simple_prompt,diff
+mean_HigherPassFixation,claude-sonnet-4-0_simple_prompt,Adv
+mean_HigherPassFixation,claude-sonnet-4-0_simple_prompt,Ele
+mean_HigherPassFixation,claude-sonnet-4-0_simple_prompt,diff
+mean_HigherPassFixation,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+mean_HigherPassFixation,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+mean_HigherPassFixation,llama-3.3-70b-versatile_clear_specific_prompt,diff
+mean_HigherPassFixation,gpt-4o_clear_specific_prompt,Adv
+mean_HigherPassFixation,gpt-4o_clear_specific_prompt,Ele
+mean_HigherPassFixation,gpt-4o_clear_specific_prompt,diff
+mean_HigherPassFixation,gpt-5_clear_specific_prompt,Adv
+mean_HigherPassFixation,gpt-5_clear_specific_prompt,Ele
+mean_HigherPassFixation,gpt-5_clear_specific_prompt,diff
+mean_HigherPassFixation,gemini-2.0-flash_clear_specific_prompt,Adv
+mean_HigherPassFixation,gemini-2.0-flash_clear_specific_prompt,Ele
+mean_HigherPassFixation,gemini-2.0-flash_clear_specific_prompt,diff
+mean_HigherPassFixation,gemini-2.5-pro_clear_specific_prompt,Adv
+mean_HigherPassFixation,gemini-2.5-pro_clear_specific_prompt,Ele
+mean_HigherPassFixation,gemini-2.5-pro_clear_specific_prompt,diff
+mean_HigherPassFixation,claude-sonnet-4-0_clear_specific_prompt,Adv
+mean_HigherPassFixation,claude-sonnet-4-0_clear_specific_prompt,Ele
+mean_HigherPassFixation,claude-sonnet-4-0_clear_specific_prompt,diff
+mean_HigherPassFixation,Pythia 70M Mean,Adv
+mean_HigherPassFixation,Pythia 70M Mean,Ele
+mean_HigherPassFixation,Pythia 70M Mean,diff
+mean_HigherPassFixation,Pythia 160M Mean,Adv
+mean_HigherPassFixation,Pythia 160M Mean,Ele
+mean_HigherPassFixation,Pythia 160M Mean,diff
+mean_HigherPassFixation,Pythia 410M Mean,Adv
+mean_HigherPassFixation,Pythia 410M Mean,Ele
+mean_HigherPassFixation,Pythia 410M Mean,diff
+mean_HigherPassFixation,Pythia 1B Mean,Adv
+mean_HigherPassFixation,Pythia 1B Mean,Ele
+mean_HigherPassFixation,Pythia 1B Mean,diff
+mean_HigherPassFixation,Pythia 1.4B Mean,Adv
+mean_HigherPassFixation,Pythia 1.4B Mean,Ele
+mean_HigherPassFixation,Pythia 1.4B Mean,diff
+mean_HigherPassFixation,Pythia 2.8B Mean,Adv
+mean_HigherPassFixation,Pythia 2.8B Mean,Ele
+mean_HigherPassFixation,Pythia 2.8B Mean,diff
+mean_HigherPassFixation,Pythia 6.9B Mean,Adv
+mean_HigherPassFixation,Pythia 6.9B Mean,Ele
+mean_HigherPassFixation,Pythia 6.9B Mean,diff
+mean_HigherPassFixation,GPT-2 117M Mean,Adv
+mean_HigherPassFixation,GPT-2 117M Mean,Ele
+mean_HigherPassFixation,GPT-2 117M Mean,diff
+mean_HigherPassFixation,GPT-2 345M Mean,Adv
+mean_HigherPassFixation,GPT-2 345M Mean,Ele
+mean_HigherPassFixation,GPT-2 345M Mean,diff
+mean_HigherPassFixation,GPT-2 774M Mean,Adv
+mean_HigherPassFixation,GPT-2 774M Mean,Ele
+mean_HigherPassFixation,GPT-2 774M Mean,diff
+mean_HigherPassFixation,GPT-2 1558M Mean,Adv
+mean_HigherPassFixation,GPT-2 1558M Mean,Ele
+mean_HigherPassFixation,GPT-2 1558M Mean,diff
+mean_HigherPassFixation,GPT-J 6B Mean,Adv
+mean_HigherPassFixation,GPT-J 6B Mean,Ele
+mean_HigherPassFixation,GPT-J 6B Mean,diff
+mean_HigherPassFixation,GPT-Neo 125M Mean,Adv
+mean_HigherPassFixation,GPT-Neo 125M Mean,Ele
+mean_HigherPassFixation,GPT-Neo 125M Mean,diff
+mean_HigherPassFixation,GPT-Neo 1.3B Mean,Adv
+mean_HigherPassFixation,GPT-Neo 1.3B Mean,Ele
+mean_HigherPassFixation,GPT-Neo 1.3B Mean,diff
+mean_HigherPassFixation,GPT-Neo 2.7B Mean,Adv
+mean_HigherPassFixation,GPT-Neo 2.7B Mean,Ele
+mean_HigherPassFixation,GPT-Neo 2.7B Mean,diff
+mean_HigherPassFixation,Llama-2 7B Mean,Adv
+mean_HigherPassFixation,Llama-2 7B Mean,Ele
+mean_HigherPassFixation,Llama-2 7B Mean,diff
+mean_HigherPassFixation,Llama-2 13B Mean,Adv
+mean_HigherPassFixation,Llama-2 13B Mean,Ele
+mean_HigherPassFixation,Llama-2 13B Mean,diff
+mean_HigherPassFixation,OPT 350M Mean,Adv
+mean_HigherPassFixation,OPT 350M Mean,Ele
+mean_HigherPassFixation,OPT 350M Mean,diff
+mean_HigherPassFixation,OPT 1.3B Mean,Adv
+mean_HigherPassFixation,OPT 1.3B Mean,Ele
+mean_HigherPassFixation,OPT 1.3B Mean,diff
+mean_HigherPassFixation,OPT 2.7B Mean,Adv
+mean_HigherPassFixation,OPT 2.7B Mean,Ele
+mean_HigherPassFixation,OPT 2.7B Mean,diff
+mean_HigherPassFixation,OPT 6.7B Mean,Adv
+mean_HigherPassFixation,OPT 6.7B Mean,Ele
+mean_HigherPassFixation,OPT 6.7B Mean,diff
+mean_HigherPassFixation,Mistral-v0.1 7B Mean,Adv
+mean_HigherPassFixation,Mistral-v0.1 7B Mean,Ele
+mean_HigherPassFixation,Mistral-v0.1 7B Mean,diff
+mean_HigherPassFixation,Mistral-v0.3 7B Mean,Adv
+mean_HigherPassFixation,Mistral-v0.3 7B Mean,Ele
+mean_HigherPassFixation,Mistral-v0.3 7B Mean,diff
+mean_HigherPassFixation,Gemma 7B Mean,Adv
+mean_HigherPassFixation,Gemma 7B Mean,Ele
+mean_HigherPassFixation,Gemma 7B Mean,diff
+mean_HigherPassFixation,Gemma-2 9B Mean,Adv
+mean_HigherPassFixation,Gemma-2 9B Mean,Ele
+mean_HigherPassFixation,Gemma-2 9B Mean,diff
+mean_HigherPassFixation,Recurrent-Gemma 9B Mean,Adv
+mean_HigherPassFixation,Recurrent-Gemma 9B Mean,Ele
+mean_HigherPassFixation,Recurrent-Gemma 9B Mean,diff
+mean_HigherPassFixation,RWKV-4 169M Mean,Adv
+mean_HigherPassFixation,RWKV-4 169M Mean,Ele
+mean_HigherPassFixation,RWKV-4 169M Mean,diff
+mean_HigherPassFixation,RWKV-4 430M Mean,Adv
+mean_HigherPassFixation,RWKV-4 430M Mean,Ele
+mean_HigherPassFixation,RWKV-4 430M Mean,diff
+mean_HigherPassFixation,Mamba 370M Mean,Adv
+mean_HigherPassFixation,Mamba 370M Mean,Ele
+mean_HigherPassFixation,Mamba 370M Mean,diff
+mean_HigherPassFixation,Mamba 790M Mean,Adv
+mean_HigherPassFixation,Mamba 790M Mean,Ele
+mean_HigherPassFixation,Mamba 790M Mean,diff
+mean_HigherPassFixation,Mamba 1.4B Mean,Adv
+mean_HigherPassFixation,Mamba 1.4B Mean,Ele
+mean_HigherPassFixation,Mamba 1.4B Mean,diff
+mean_HigherPassFixation,Mamba 2.8B Mean,Adv
+mean_HigherPassFixation,Mamba 2.8B Mean,Ele
+mean_HigherPassFixation,Mamba 2.8B Mean,diff
+reading_speed,flesch_reading_ease,Adv
+reading_speed,flesch_reading_ease,Ele
+reading_speed,flesch_reading_ease,diff
+reading_speed,dale_chall_score,Adv
+reading_speed,dale_chall_score,Ele
+reading_speed,dale_chall_score,diff
+reading_speed,gunning_fog_index,Adv
+reading_speed,gunning_fog_index,Ele
+reading_speed,gunning_fog_index,diff
+reading_speed,ARI,Adv
+reading_speed,ARI,Ele
+reading_speed,ARI,diff
+reading_speed,smog_index,Adv
+reading_speed,smog_index,Ele
+reading_speed,smog_index,diff
+reading_speed,coleman_liau_index,Adv
+reading_speed,coleman_liau_index,Ele
+reading_speed,coleman_liau_index,diff
+reading_speed,flesch_kincaid_grade_score,Adv
+reading_speed,flesch_kincaid_grade_score,Ele
+reading_speed,flesch_kincaid_grade_score,diff
+reading_speed,CML2RI,Adv
+reading_speed,CML2RI,Ele
+reading_speed,CML2RI,diff
+reading_speed,CAREC,Adv
+reading_speed,CAREC,Ele
+reading_speed,CAREC,diff
+reading_speed,CARES,Adv
+reading_speed,CARES,Ele
+reading_speed,CARES,diff
+reading_speed,SBERT,Adv
+reading_speed,SBERT,Ele
+reading_speed,SBERT,diff
+reading_speed,llama-3.3-70b-versatile_clear_prompt,Adv
+reading_speed,llama-3.3-70b-versatile_clear_prompt,Ele
+reading_speed,llama-3.3-70b-versatile_clear_prompt,diff
+reading_speed,gpt-4o_clear_prompt,Adv
+reading_speed,gpt-4o_clear_prompt,Ele
+reading_speed,gpt-4o_clear_prompt,diff
+reading_speed,gpt-5_clear_prompt,Adv
+reading_speed,gpt-5_clear_prompt,Ele
+reading_speed,gpt-5_clear_prompt,diff
+reading_speed,gemini-2.0-flash_clear_prompt,Adv
+reading_speed,gemini-2.0-flash_clear_prompt,Ele
+reading_speed,gemini-2.0-flash_clear_prompt,diff
+reading_speed,gemini-2.5-pro_clear_prompt,Adv
+reading_speed,gemini-2.5-pro_clear_prompt,Ele
+reading_speed,gemini-2.5-pro_clear_prompt,diff
+reading_speed,claude-sonnet-4-0_clear_prompt,Adv
+reading_speed,claude-sonnet-4-0_clear_prompt,Ele
+reading_speed,claude-sonnet-4-0_clear_prompt,diff
+reading_speed,text_evaluator,Adv
+reading_speed,text_evaluator,Ele
+reading_speed,text_evaluator,diff
+reading_speed,lexile,Adv
+reading_speed,lexile,Ele
+reading_speed,lexile,diff
+reading_speed,PLL_bert-base-uncased,Adv
+reading_speed,PLL_bert-base-uncased,Ele
+reading_speed,PLL_bert-base-uncased,diff
+reading_speed,cpidr_density,Adv
+reading_speed,cpidr_density,Ele
+reading_speed,cpidr_density,diff
+reading_speed,avg_integration_cost,Adv
+reading_speed,avg_integration_cost,Ele
+reading_speed,avg_integration_cost,diff
+reading_speed,avg_embedding_depth,Adv
+reading_speed,avg_embedding_depth,Ele
+reading_speed,avg_embedding_depth,diff
+reading_speed,mean_entropy_pythia,Adv
+reading_speed,mean_entropy_pythia,Ele
+reading_speed,mean_entropy_pythia,diff
+reading_speed,word_length,Adv
+reading_speed,word_length,Ele
+reading_speed,word_length,diff
+reading_speed,wordFreq_frequency,Adv
+reading_speed,wordFreq_frequency,Ele
+reading_speed,wordFreq_frequency,diff
+reading_speed,depid_density,Adv
+reading_speed,depid_density,Ele
+reading_speed,depid_density,diff
+reading_speed,max_embedding_depth,Adv
+reading_speed,max_embedding_depth,Ele
+reading_speed,max_embedding_depth,diff
+reading_speed,max_integration_cost,Adv
+reading_speed,max_integration_cost,Ele
+reading_speed,max_integration_cost,diff
+reading_speed,total_integration_cost,Adv
+reading_speed,total_integration_cost,Ele
+reading_speed,total_integration_cost,diff
+reading_speed,CAREC_M,Adv
+reading_speed,CAREC_M,Ele
+reading_speed,CAREC_M,diff
+reading_speed,mean_entropy_gpt2,Adv
+reading_speed,mean_entropy_gpt2,Ele
+reading_speed,mean_entropy_gpt2,diff
+reading_speed,PLL_bert-large-uncased,Adv
+reading_speed,PLL_bert-large-uncased,Ele
+reading_speed,PLL_bert-large-uncased,diff
+reading_speed,PLL_roberta-base,Adv
+reading_speed,PLL_roberta-base,Ele
+reading_speed,PLL_roberta-base,diff
+reading_speed,PLL_roberta-large,Adv
+reading_speed,PLL_roberta-large,Ele
+reading_speed,PLL_roberta-large,diff
+reading_speed,llama-3.3-70b-versatile_simple_prompt,Adv
+reading_speed,llama-3.3-70b-versatile_simple_prompt,Ele
+reading_speed,llama-3.3-70b-versatile_simple_prompt,diff
+reading_speed,gpt-4o_simple_prompt,Adv
+reading_speed,gpt-4o_simple_prompt,Ele
+reading_speed,gpt-4o_simple_prompt,diff
+reading_speed,gpt-5_simple_prompt,Adv
+reading_speed,gpt-5_simple_prompt,Ele
+reading_speed,gpt-5_simple_prompt,diff
+reading_speed,gemini-2.0-flash_simple_prompt,Adv
+reading_speed,gemini-2.0-flash_simple_prompt,Ele
+reading_speed,gemini-2.0-flash_simple_prompt,diff
+reading_speed,gemini-2.5-pro_simple_prompt,Adv
+reading_speed,gemini-2.5-pro_simple_prompt,Ele
+reading_speed,gemini-2.5-pro_simple_prompt,diff
+reading_speed,claude-sonnet-4-0_simple_prompt,Adv
+reading_speed,claude-sonnet-4-0_simple_prompt,Ele
+reading_speed,claude-sonnet-4-0_simple_prompt,diff
+reading_speed,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+reading_speed,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+reading_speed,llama-3.3-70b-versatile_clear_specific_prompt,diff
+reading_speed,gpt-4o_clear_specific_prompt,Adv
+reading_speed,gpt-4o_clear_specific_prompt,Ele
+reading_speed,gpt-4o_clear_specific_prompt,diff
+reading_speed,gpt-5_clear_specific_prompt,Adv
+reading_speed,gpt-5_clear_specific_prompt,Ele
+reading_speed,gpt-5_clear_specific_prompt,diff
+reading_speed,gemini-2.0-flash_clear_specific_prompt,Adv
+reading_speed,gemini-2.0-flash_clear_specific_prompt,Ele
+reading_speed,gemini-2.0-flash_clear_specific_prompt,diff
+reading_speed,gemini-2.5-pro_clear_specific_prompt,Adv
+reading_speed,gemini-2.5-pro_clear_specific_prompt,Ele
+reading_speed,gemini-2.5-pro_clear_specific_prompt,diff
+reading_speed,claude-sonnet-4-0_clear_specific_prompt,Adv
+reading_speed,claude-sonnet-4-0_clear_specific_prompt,Ele
+reading_speed,claude-sonnet-4-0_clear_specific_prompt,diff
+reading_speed,Pythia 70M Mean,Adv
+reading_speed,Pythia 70M Mean,Ele
+reading_speed,Pythia 70M Mean,diff
+reading_speed,Pythia 160M Mean,Adv
+reading_speed,Pythia 160M Mean,Ele
+reading_speed,Pythia 160M Mean,diff
+reading_speed,Pythia 410M Mean,Adv
+reading_speed,Pythia 410M Mean,Ele
+reading_speed,Pythia 410M Mean,diff
+reading_speed,Pythia 1B Mean,Adv
+reading_speed,Pythia 1B Mean,Ele
+reading_speed,Pythia 1B Mean,diff
+reading_speed,Pythia 1.4B Mean,Adv
+reading_speed,Pythia 1.4B Mean,Ele
+reading_speed,Pythia 1.4B Mean,diff
+reading_speed,Pythia 2.8B Mean,Adv
+reading_speed,Pythia 2.8B Mean,Ele
+reading_speed,Pythia 2.8B Mean,diff
+reading_speed,Pythia 6.9B Mean,Adv
+reading_speed,Pythia 6.9B Mean,Ele
+reading_speed,Pythia 6.9B Mean,diff
+reading_speed,GPT-2 117M Mean,Adv
+reading_speed,GPT-2 117M Mean,Ele
+reading_speed,GPT-2 117M Mean,diff
+reading_speed,GPT-2 345M Mean,Adv
+reading_speed,GPT-2 345M Mean,Ele
+reading_speed,GPT-2 345M Mean,diff
+reading_speed,GPT-2 774M Mean,Adv
+reading_speed,GPT-2 774M Mean,Ele
+reading_speed,GPT-2 774M Mean,diff
+reading_speed,GPT-2 1558M Mean,Adv
+reading_speed,GPT-2 1558M Mean,Ele
+reading_speed,GPT-2 1558M Mean,diff
+reading_speed,GPT-J 6B Mean,Adv
+reading_speed,GPT-J 6B Mean,Ele
+reading_speed,GPT-J 6B Mean,diff
+reading_speed,GPT-Neo 125M Mean,Adv
+reading_speed,GPT-Neo 125M Mean,Ele
+reading_speed,GPT-Neo 125M Mean,diff
+reading_speed,GPT-Neo 1.3B Mean,Adv
+reading_speed,GPT-Neo 1.3B Mean,Ele
+reading_speed,GPT-Neo 1.3B Mean,diff
+reading_speed,GPT-Neo 2.7B Mean,Adv
+reading_speed,GPT-Neo 2.7B Mean,Ele
+reading_speed,GPT-Neo 2.7B Mean,diff
+reading_speed,Llama-2 7B Mean,Adv
+reading_speed,Llama-2 7B Mean,Ele
+reading_speed,Llama-2 7B Mean,diff
+reading_speed,Llama-2 13B Mean,Adv
+reading_speed,Llama-2 13B Mean,Ele
+reading_speed,Llama-2 13B Mean,diff
+reading_speed,OPT 350M Mean,Adv
+reading_speed,OPT 350M Mean,Ele
+reading_speed,OPT 350M Mean,diff
+reading_speed,OPT 1.3B Mean,Adv
+reading_speed,OPT 1.3B Mean,Ele
+reading_speed,OPT 1.3B Mean,diff
+reading_speed,OPT 2.7B Mean,Adv
+reading_speed,OPT 2.7B Mean,Ele
+reading_speed,OPT 2.7B Mean,diff
+reading_speed,OPT 6.7B Mean,Adv
+reading_speed,OPT 6.7B Mean,Ele
+reading_speed,OPT 6.7B Mean,diff
+reading_speed,Mistral-v0.1 7B Mean,Adv
+reading_speed,Mistral-v0.1 7B Mean,Ele
+reading_speed,Mistral-v0.1 7B Mean,diff
+reading_speed,Mistral-v0.3 7B Mean,Adv
+reading_speed,Mistral-v0.3 7B Mean,Ele
+reading_speed,Mistral-v0.3 7B Mean,diff
+reading_speed,Gemma 7B Mean,Adv
+reading_speed,Gemma 7B Mean,Ele
+reading_speed,Gemma 7B Mean,diff
+reading_speed,Gemma-2 9B Mean,Adv
+reading_speed,Gemma-2 9B Mean,Ele
+reading_speed,Gemma-2 9B Mean,diff
+reading_speed,Recurrent-Gemma 9B Mean,Adv
+reading_speed,Recurrent-Gemma 9B Mean,Ele
+reading_speed,Recurrent-Gemma 9B Mean,diff
+reading_speed,RWKV-4 169M Mean,Adv
+reading_speed,RWKV-4 169M Mean,Ele
+reading_speed,RWKV-4 169M Mean,diff
+reading_speed,RWKV-4 430M Mean,Adv
+reading_speed,RWKV-4 430M Mean,Ele
+reading_speed,RWKV-4 430M Mean,diff
+reading_speed,Mamba 370M Mean,Adv
+reading_speed,Mamba 370M Mean,Ele
+reading_speed,Mamba 370M Mean,diff
+reading_speed,Mamba 790M Mean,Adv
+reading_speed,Mamba 790M Mean,Ele
+reading_speed,Mamba 790M Mean,diff
+reading_speed,Mamba 1.4B Mean,Adv
+reading_speed,Mamba 1.4B Mean,Ele
+reading_speed,Mamba 1.4B Mean,diff
+reading_speed,Mamba 2.8B Mean,Adv
+reading_speed,Mamba 2.8B Mean,Ele
+reading_speed,Mamba 2.8B Mean,diff
+SkipRateFirstPass,flesch_reading_ease,Adv
+SkipRateFirstPass,flesch_reading_ease,Ele
+SkipRateFirstPass,flesch_reading_ease,diff
+SkipRateFirstPass,dale_chall_score,Adv
+SkipRateFirstPass,dale_chall_score,Ele
+SkipRateFirstPass,dale_chall_score,diff
+SkipRateFirstPass,gunning_fog_index,Adv
+SkipRateFirstPass,gunning_fog_index,Ele
+SkipRateFirstPass,gunning_fog_index,diff
+SkipRateFirstPass,ARI,Adv
+SkipRateFirstPass,ARI,Ele
+SkipRateFirstPass,ARI,diff
+SkipRateFirstPass,smog_index,Adv
+SkipRateFirstPass,smog_index,Ele
+SkipRateFirstPass,smog_index,diff
+SkipRateFirstPass,coleman_liau_index,Adv
+SkipRateFirstPass,coleman_liau_index,Ele
+SkipRateFirstPass,coleman_liau_index,diff
+SkipRateFirstPass,flesch_kincaid_grade_score,Adv
+SkipRateFirstPass,flesch_kincaid_grade_score,Ele
+SkipRateFirstPass,flesch_kincaid_grade_score,diff
+SkipRateFirstPass,CML2RI,Adv
+SkipRateFirstPass,CML2RI,Ele
+SkipRateFirstPass,CML2RI,diff
+SkipRateFirstPass,CAREC,Adv
+SkipRateFirstPass,CAREC,Ele
+SkipRateFirstPass,CAREC,diff
+SkipRateFirstPass,CARES,Adv
+SkipRateFirstPass,CARES,Ele
+SkipRateFirstPass,CARES,diff
+SkipRateFirstPass,SBERT,Adv
+SkipRateFirstPass,SBERT,Ele
+SkipRateFirstPass,SBERT,diff
+SkipRateFirstPass,llama-3.3-70b-versatile_clear_prompt,Adv
+SkipRateFirstPass,llama-3.3-70b-versatile_clear_prompt,Ele
+SkipRateFirstPass,llama-3.3-70b-versatile_clear_prompt,diff
+SkipRateFirstPass,gpt-4o_clear_prompt,Adv
+SkipRateFirstPass,gpt-4o_clear_prompt,Ele
+SkipRateFirstPass,gpt-4o_clear_prompt,diff
+SkipRateFirstPass,gpt-5_clear_prompt,Adv
+SkipRateFirstPass,gpt-5_clear_prompt,Ele
+SkipRateFirstPass,gpt-5_clear_prompt,diff
+SkipRateFirstPass,gemini-2.0-flash_clear_prompt,Adv
+SkipRateFirstPass,gemini-2.0-flash_clear_prompt,Ele
+SkipRateFirstPass,gemini-2.0-flash_clear_prompt,diff
+SkipRateFirstPass,gemini-2.5-pro_clear_prompt,Adv
+SkipRateFirstPass,gemini-2.5-pro_clear_prompt,Ele
+SkipRateFirstPass,gemini-2.5-pro_clear_prompt,diff
+SkipRateFirstPass,claude-sonnet-4-0_clear_prompt,Adv
+SkipRateFirstPass,claude-sonnet-4-0_clear_prompt,Ele
+SkipRateFirstPass,claude-sonnet-4-0_clear_prompt,diff
+SkipRateFirstPass,text_evaluator,Adv
+SkipRateFirstPass,text_evaluator,Ele
+SkipRateFirstPass,text_evaluator,diff
+SkipRateFirstPass,lexile,Adv
+SkipRateFirstPass,lexile,Ele
+SkipRateFirstPass,lexile,diff
+SkipRateFirstPass,PLL_bert-base-uncased,Adv
+SkipRateFirstPass,PLL_bert-base-uncased,Ele
+SkipRateFirstPass,PLL_bert-base-uncased,diff
+SkipRateFirstPass,cpidr_density,Adv
+SkipRateFirstPass,cpidr_density,Ele
+SkipRateFirstPass,cpidr_density,diff
+SkipRateFirstPass,avg_integration_cost,Adv
+SkipRateFirstPass,avg_integration_cost,Ele
+SkipRateFirstPass,avg_integration_cost,diff
+SkipRateFirstPass,avg_embedding_depth,Adv
+SkipRateFirstPass,avg_embedding_depth,Ele
+SkipRateFirstPass,avg_embedding_depth,diff
+SkipRateFirstPass,mean_entropy_pythia,Adv
+SkipRateFirstPass,mean_entropy_pythia,Ele
+SkipRateFirstPass,mean_entropy_pythia,diff
+SkipRateFirstPass,word_length,Adv
+SkipRateFirstPass,word_length,Ele
+SkipRateFirstPass,word_length,diff
+SkipRateFirstPass,wordFreq_frequency,Adv
+SkipRateFirstPass,wordFreq_frequency,Ele
+SkipRateFirstPass,wordFreq_frequency,diff
+SkipRateFirstPass,depid_density,Adv
+SkipRateFirstPass,depid_density,Ele
+SkipRateFirstPass,depid_density,diff
+SkipRateFirstPass,max_embedding_depth,Adv
+SkipRateFirstPass,max_embedding_depth,Ele
+SkipRateFirstPass,max_embedding_depth,diff
+SkipRateFirstPass,max_integration_cost,Adv
+SkipRateFirstPass,max_integration_cost,Ele
+SkipRateFirstPass,max_integration_cost,diff
+SkipRateFirstPass,total_integration_cost,Adv
+SkipRateFirstPass,total_integration_cost,Ele
+SkipRateFirstPass,total_integration_cost,diff
+SkipRateFirstPass,CAREC_M,Adv
+SkipRateFirstPass,CAREC_M,Ele
+SkipRateFirstPass,CAREC_M,diff
+SkipRateFirstPass,mean_entropy_gpt2,Adv
+SkipRateFirstPass,mean_entropy_gpt2,Ele
+SkipRateFirstPass,mean_entropy_gpt2,diff
+SkipRateFirstPass,PLL_bert-large-uncased,Adv
+SkipRateFirstPass,PLL_bert-large-uncased,Ele
+SkipRateFirstPass,PLL_bert-large-uncased,diff
+SkipRateFirstPass,PLL_roberta-base,Adv
+SkipRateFirstPass,PLL_roberta-base,Ele
+SkipRateFirstPass,PLL_roberta-base,diff
+SkipRateFirstPass,PLL_roberta-large,Adv
+SkipRateFirstPass,PLL_roberta-large,Ele
+SkipRateFirstPass,PLL_roberta-large,diff
+SkipRateFirstPass,llama-3.3-70b-versatile_simple_prompt,Adv
+SkipRateFirstPass,llama-3.3-70b-versatile_simple_prompt,Ele
+SkipRateFirstPass,llama-3.3-70b-versatile_simple_prompt,diff
+SkipRateFirstPass,gpt-4o_simple_prompt,Adv
+SkipRateFirstPass,gpt-4o_simple_prompt,Ele
+SkipRateFirstPass,gpt-4o_simple_prompt,diff
+SkipRateFirstPass,gpt-5_simple_prompt,Adv
+SkipRateFirstPass,gpt-5_simple_prompt,Ele
+SkipRateFirstPass,gpt-5_simple_prompt,diff
+SkipRateFirstPass,gemini-2.0-flash_simple_prompt,Adv
+SkipRateFirstPass,gemini-2.0-flash_simple_prompt,Ele
+SkipRateFirstPass,gemini-2.0-flash_simple_prompt,diff
+SkipRateFirstPass,gemini-2.5-pro_simple_prompt,Adv
+SkipRateFirstPass,gemini-2.5-pro_simple_prompt,Ele
+SkipRateFirstPass,gemini-2.5-pro_simple_prompt,diff
+SkipRateFirstPass,claude-sonnet-4-0_simple_prompt,Adv
+SkipRateFirstPass,claude-sonnet-4-0_simple_prompt,Ele
+SkipRateFirstPass,claude-sonnet-4-0_simple_prompt,diff
+SkipRateFirstPass,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+SkipRateFirstPass,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+SkipRateFirstPass,llama-3.3-70b-versatile_clear_specific_prompt,diff
+SkipRateFirstPass,gpt-4o_clear_specific_prompt,Adv
+SkipRateFirstPass,gpt-4o_clear_specific_prompt,Ele
+SkipRateFirstPass,gpt-4o_clear_specific_prompt,diff
+SkipRateFirstPass,gpt-5_clear_specific_prompt,Adv
+SkipRateFirstPass,gpt-5_clear_specific_prompt,Ele
+SkipRateFirstPass,gpt-5_clear_specific_prompt,diff
+SkipRateFirstPass,gemini-2.0-flash_clear_specific_prompt,Adv
+SkipRateFirstPass,gemini-2.0-flash_clear_specific_prompt,Ele
+SkipRateFirstPass,gemini-2.0-flash_clear_specific_prompt,diff
+SkipRateFirstPass,gemini-2.5-pro_clear_specific_prompt,Adv
+SkipRateFirstPass,gemini-2.5-pro_clear_specific_prompt,Ele
+SkipRateFirstPass,gemini-2.5-pro_clear_specific_prompt,diff
+SkipRateFirstPass,claude-sonnet-4-0_clear_specific_prompt,Adv
+SkipRateFirstPass,claude-sonnet-4-0_clear_specific_prompt,Ele
+SkipRateFirstPass,claude-sonnet-4-0_clear_specific_prompt,diff
+SkipRateFirstPass,Pythia 70M Mean,Adv
+SkipRateFirstPass,Pythia 70M Mean,Ele
+SkipRateFirstPass,Pythia 70M Mean,diff
+SkipRateFirstPass,Pythia 160M Mean,Adv
+SkipRateFirstPass,Pythia 160M Mean,Ele
+SkipRateFirstPass,Pythia 160M Mean,diff
+SkipRateFirstPass,Pythia 410M Mean,Adv
+SkipRateFirstPass,Pythia 410M Mean,Ele
+SkipRateFirstPass,Pythia 410M Mean,diff
+SkipRateFirstPass,Pythia 1B Mean,Adv
+SkipRateFirstPass,Pythia 1B Mean,Ele
+SkipRateFirstPass,Pythia 1B Mean,diff
+SkipRateFirstPass,Pythia 1.4B Mean,Adv
+SkipRateFirstPass,Pythia 1.4B Mean,Ele
+SkipRateFirstPass,Pythia 1.4B Mean,diff
+SkipRateFirstPass,Pythia 2.8B Mean,Adv
+SkipRateFirstPass,Pythia 2.8B Mean,Ele
+SkipRateFirstPass,Pythia 2.8B Mean,diff
+SkipRateFirstPass,Pythia 6.9B Mean,Adv
+SkipRateFirstPass,Pythia 6.9B Mean,Ele
+SkipRateFirstPass,Pythia 6.9B Mean,diff
+SkipRateFirstPass,GPT-2 117M Mean,Adv
+SkipRateFirstPass,GPT-2 117M Mean,Ele
+SkipRateFirstPass,GPT-2 117M Mean,diff
+SkipRateFirstPass,GPT-2 345M Mean,Adv
+SkipRateFirstPass,GPT-2 345M Mean,Ele
+SkipRateFirstPass,GPT-2 345M Mean,diff
+SkipRateFirstPass,GPT-2 774M Mean,Adv
+SkipRateFirstPass,GPT-2 774M Mean,Ele
+SkipRateFirstPass,GPT-2 774M Mean,diff
+SkipRateFirstPass,GPT-2 1558M Mean,Adv
+SkipRateFirstPass,GPT-2 1558M Mean,Ele
+SkipRateFirstPass,GPT-2 1558M Mean,diff
+SkipRateFirstPass,GPT-J 6B Mean,Adv
+SkipRateFirstPass,GPT-J 6B Mean,Ele
+SkipRateFirstPass,GPT-J 6B Mean,diff
+SkipRateFirstPass,GPT-Neo 125M Mean,Adv
+SkipRateFirstPass,GPT-Neo 125M Mean,Ele
+SkipRateFirstPass,GPT-Neo 125M Mean,diff
+SkipRateFirstPass,GPT-Neo 1.3B Mean,Adv
+SkipRateFirstPass,GPT-Neo 1.3B Mean,Ele
+SkipRateFirstPass,GPT-Neo 1.3B Mean,diff
+SkipRateFirstPass,GPT-Neo 2.7B Mean,Adv
+SkipRateFirstPass,GPT-Neo 2.7B Mean,Ele
+SkipRateFirstPass,GPT-Neo 2.7B Mean,diff
+SkipRateFirstPass,Llama-2 7B Mean,Adv
+SkipRateFirstPass,Llama-2 7B Mean,Ele
+SkipRateFirstPass,Llama-2 7B Mean,diff
+SkipRateFirstPass,Llama-2 13B Mean,Adv
+SkipRateFirstPass,Llama-2 13B Mean,Ele
+SkipRateFirstPass,Llama-2 13B Mean,diff
+SkipRateFirstPass,OPT 350M Mean,Adv
+SkipRateFirstPass,OPT 350M Mean,Ele
+SkipRateFirstPass,OPT 350M Mean,diff
+SkipRateFirstPass,OPT 1.3B Mean,Adv
+SkipRateFirstPass,OPT 1.3B Mean,Ele
+SkipRateFirstPass,OPT 1.3B Mean,diff
+SkipRateFirstPass,OPT 2.7B Mean,Adv
+SkipRateFirstPass,OPT 2.7B Mean,Ele
+SkipRateFirstPass,OPT 2.7B Mean,diff
+SkipRateFirstPass,OPT 6.7B Mean,Adv
+SkipRateFirstPass,OPT 6.7B Mean,Ele
+SkipRateFirstPass,OPT 6.7B Mean,diff
+SkipRateFirstPass,Mistral-v0.1 7B Mean,Adv
+SkipRateFirstPass,Mistral-v0.1 7B Mean,Ele
+SkipRateFirstPass,Mistral-v0.1 7B Mean,diff
+SkipRateFirstPass,Mistral-v0.3 7B Mean,Adv
+SkipRateFirstPass,Mistral-v0.3 7B Mean,Ele
+SkipRateFirstPass,Mistral-v0.3 7B Mean,diff
+SkipRateFirstPass,Gemma 7B Mean,Adv
+SkipRateFirstPass,Gemma 7B Mean,Ele
+SkipRateFirstPass,Gemma 7B Mean,diff
+SkipRateFirstPass,Gemma-2 9B Mean,Adv
+SkipRateFirstPass,Gemma-2 9B Mean,Ele
+SkipRateFirstPass,Gemma-2 9B Mean,diff
+SkipRateFirstPass,Recurrent-Gemma 9B Mean,Adv
+SkipRateFirstPass,Recurrent-Gemma 9B Mean,Ele
+SkipRateFirstPass,Recurrent-Gemma 9B Mean,diff
+SkipRateFirstPass,RWKV-4 169M Mean,Adv
+SkipRateFirstPass,RWKV-4 169M Mean,Ele
+SkipRateFirstPass,RWKV-4 169M Mean,diff
+SkipRateFirstPass,RWKV-4 430M Mean,Adv
+SkipRateFirstPass,RWKV-4 430M Mean,Ele
+SkipRateFirstPass,RWKV-4 430M Mean,diff
+SkipRateFirstPass,Mamba 370M Mean,Adv
+SkipRateFirstPass,Mamba 370M Mean,Ele
+SkipRateFirstPass,Mamba 370M Mean,diff
+SkipRateFirstPass,Mamba 790M Mean,Adv
+SkipRateFirstPass,Mamba 790M Mean,Ele
+SkipRateFirstPass,Mamba 790M Mean,diff
+SkipRateFirstPass,Mamba 1.4B Mean,Adv
+SkipRateFirstPass,Mamba 1.4B Mean,Ele
+SkipRateFirstPass,Mamba 1.4B Mean,diff
+SkipRateFirstPass,Mamba 2.8B Mean,Adv
+SkipRateFirstPass,Mamba 2.8B Mean,Ele
+SkipRateFirstPass,Mamba 2.8B Mean,diff
+RegRateFirstPass,flesch_reading_ease,Adv
+RegRateFirstPass,flesch_reading_ease,Ele
+RegRateFirstPass,flesch_reading_ease,diff
+RegRateFirstPass,dale_chall_score,Adv
+RegRateFirstPass,dale_chall_score,Ele
+RegRateFirstPass,dale_chall_score,diff
+RegRateFirstPass,gunning_fog_index,Adv
+RegRateFirstPass,gunning_fog_index,Ele
+RegRateFirstPass,gunning_fog_index,diff
+RegRateFirstPass,ARI,Adv
+RegRateFirstPass,ARI,Ele
+RegRateFirstPass,ARI,diff
+RegRateFirstPass,smog_index,Adv
+RegRateFirstPass,smog_index,Ele
+RegRateFirstPass,smog_index,diff
+RegRateFirstPass,coleman_liau_index,Adv
+RegRateFirstPass,coleman_liau_index,Ele
+RegRateFirstPass,coleman_liau_index,diff
+RegRateFirstPass,flesch_kincaid_grade_score,Adv
+RegRateFirstPass,flesch_kincaid_grade_score,Ele
+RegRateFirstPass,flesch_kincaid_grade_score,diff
+RegRateFirstPass,CML2RI,Adv
+RegRateFirstPass,CML2RI,Ele
+RegRateFirstPass,CML2RI,diff
+RegRateFirstPass,CAREC,Adv
+RegRateFirstPass,CAREC,Ele
+RegRateFirstPass,CAREC,diff
+RegRateFirstPass,CARES,Adv
+RegRateFirstPass,CARES,Ele
+RegRateFirstPass,CARES,diff
+RegRateFirstPass,SBERT,Adv
+RegRateFirstPass,SBERT,Ele
+RegRateFirstPass,SBERT,diff
+RegRateFirstPass,llama-3.3-70b-versatile_clear_prompt,Adv
+RegRateFirstPass,llama-3.3-70b-versatile_clear_prompt,Ele
+RegRateFirstPass,llama-3.3-70b-versatile_clear_prompt,diff
+RegRateFirstPass,gpt-4o_clear_prompt,Adv
+RegRateFirstPass,gpt-4o_clear_prompt,Ele
+RegRateFirstPass,gpt-4o_clear_prompt,diff
+RegRateFirstPass,gpt-5_clear_prompt,Adv
+RegRateFirstPass,gpt-5_clear_prompt,Ele
+RegRateFirstPass,gpt-5_clear_prompt,diff
+RegRateFirstPass,gemini-2.0-flash_clear_prompt,Adv
+RegRateFirstPass,gemini-2.0-flash_clear_prompt,Ele
+RegRateFirstPass,gemini-2.0-flash_clear_prompt,diff
+RegRateFirstPass,gemini-2.5-pro_clear_prompt,Adv
+RegRateFirstPass,gemini-2.5-pro_clear_prompt,Ele
+RegRateFirstPass,gemini-2.5-pro_clear_prompt,diff
+RegRateFirstPass,claude-sonnet-4-0_clear_prompt,Adv
+RegRateFirstPass,claude-sonnet-4-0_clear_prompt,Ele
+RegRateFirstPass,claude-sonnet-4-0_clear_prompt,diff
+RegRateFirstPass,text_evaluator,Adv
+RegRateFirstPass,text_evaluator,Ele
+RegRateFirstPass,text_evaluator,diff
+RegRateFirstPass,lexile,Adv
+RegRateFirstPass,lexile,Ele
+RegRateFirstPass,lexile,diff
+RegRateFirstPass,PLL_bert-base-uncased,Adv
+RegRateFirstPass,PLL_bert-base-uncased,Ele
+RegRateFirstPass,PLL_bert-base-uncased,diff
+RegRateFirstPass,cpidr_density,Adv
+RegRateFirstPass,cpidr_density,Ele
+RegRateFirstPass,cpidr_density,diff
+RegRateFirstPass,avg_integration_cost,Adv
+RegRateFirstPass,avg_integration_cost,Ele
+RegRateFirstPass,avg_integration_cost,diff
+RegRateFirstPass,avg_embedding_depth,Adv
+RegRateFirstPass,avg_embedding_depth,Ele
+RegRateFirstPass,avg_embedding_depth,diff
+RegRateFirstPass,mean_entropy_pythia,Adv
+RegRateFirstPass,mean_entropy_pythia,Ele
+RegRateFirstPass,mean_entropy_pythia,diff
+RegRateFirstPass,word_length,Adv
+RegRateFirstPass,word_length,Ele
+RegRateFirstPass,word_length,diff
+RegRateFirstPass,wordFreq_frequency,Adv
+RegRateFirstPass,wordFreq_frequency,Ele
+RegRateFirstPass,wordFreq_frequency,diff
+RegRateFirstPass,depid_density,Adv
+RegRateFirstPass,depid_density,Ele
+RegRateFirstPass,depid_density,diff
+RegRateFirstPass,max_embedding_depth,Adv
+RegRateFirstPass,max_embedding_depth,Ele
+RegRateFirstPass,max_embedding_depth,diff
+RegRateFirstPass,max_integration_cost,Adv
+RegRateFirstPass,max_integration_cost,Ele
+RegRateFirstPass,max_integration_cost,diff
+RegRateFirstPass,total_integration_cost,Adv
+RegRateFirstPass,total_integration_cost,Ele
+RegRateFirstPass,total_integration_cost,diff
+RegRateFirstPass,CAREC_M,Adv
+RegRateFirstPass,CAREC_M,Ele
+RegRateFirstPass,CAREC_M,diff
+RegRateFirstPass,mean_entropy_gpt2,Adv
+RegRateFirstPass,mean_entropy_gpt2,Ele
+RegRateFirstPass,mean_entropy_gpt2,diff
+RegRateFirstPass,PLL_bert-large-uncased,Adv
+RegRateFirstPass,PLL_bert-large-uncased,Ele
+RegRateFirstPass,PLL_bert-large-uncased,diff
+RegRateFirstPass,PLL_roberta-base,Adv
+RegRateFirstPass,PLL_roberta-base,Ele
+RegRateFirstPass,PLL_roberta-base,diff
+RegRateFirstPass,PLL_roberta-large,Adv
+RegRateFirstPass,PLL_roberta-large,Ele
+RegRateFirstPass,PLL_roberta-large,diff
+RegRateFirstPass,llama-3.3-70b-versatile_simple_prompt,Adv
+RegRateFirstPass,llama-3.3-70b-versatile_simple_prompt,Ele
+RegRateFirstPass,llama-3.3-70b-versatile_simple_prompt,diff
+RegRateFirstPass,gpt-4o_simple_prompt,Adv
+RegRateFirstPass,gpt-4o_simple_prompt,Ele
+RegRateFirstPass,gpt-4o_simple_prompt,diff
+RegRateFirstPass,gpt-5_simple_prompt,Adv
+RegRateFirstPass,gpt-5_simple_prompt,Ele
+RegRateFirstPass,gpt-5_simple_prompt,diff
+RegRateFirstPass,gemini-2.0-flash_simple_prompt,Adv
+RegRateFirstPass,gemini-2.0-flash_simple_prompt,Ele
+RegRateFirstPass,gemini-2.0-flash_simple_prompt,diff
+RegRateFirstPass,gemini-2.5-pro_simple_prompt,Adv
+RegRateFirstPass,gemini-2.5-pro_simple_prompt,Ele
+RegRateFirstPass,gemini-2.5-pro_simple_prompt,diff
+RegRateFirstPass,claude-sonnet-4-0_simple_prompt,Adv
+RegRateFirstPass,claude-sonnet-4-0_simple_prompt,Ele
+RegRateFirstPass,claude-sonnet-4-0_simple_prompt,diff
+RegRateFirstPass,llama-3.3-70b-versatile_clear_specific_prompt,Adv
+RegRateFirstPass,llama-3.3-70b-versatile_clear_specific_prompt,Ele
+RegRateFirstPass,llama-3.3-70b-versatile_clear_specific_prompt,diff
+RegRateFirstPass,gpt-4o_clear_specific_prompt,Adv
+RegRateFirstPass,gpt-4o_clear_specific_prompt,Ele
+RegRateFirstPass,gpt-4o_clear_specific_prompt,diff
+RegRateFirstPass,gpt-5_clear_specific_prompt,Adv
+RegRateFirstPass,gpt-5_clear_specific_prompt,Ele
+RegRateFirstPass,gpt-5_clear_specific_prompt,diff
+RegRateFirstPass,gemini-2.0-flash_clear_specific_prompt,Adv
+RegRateFirstPass,gemini-2.0-flash_clear_specific_prompt,Ele
+RegRateFirstPass,gemini-2.0-flash_clear_specific_prompt,diff
+RegRateFirstPass,gemini-2.5-pro_clear_specific_prompt,Adv
+RegRateFirstPass,gemini-2.5-pro_clear_specific_prompt,Ele
+RegRateFirstPass,gemini-2.5-pro_clear_specific_prompt,diff
+RegRateFirstPass,claude-sonnet-4-0_clear_specific_prompt,Adv
+RegRateFirstPass,claude-sonnet-4-0_clear_specific_prompt,Ele
+RegRateFirstPass,claude-sonnet-4-0_clear_specific_prompt,diff
+RegRateFirstPass,Pythia 70M Mean,Adv
+RegRateFirstPass,Pythia 70M Mean,Ele
+RegRateFirstPass,Pythia 70M Mean,diff
+RegRateFirstPass,Pythia 160M Mean,Adv
+RegRateFirstPass,Pythia 160M Mean,Ele
+RegRateFirstPass,Pythia 160M Mean,diff
+RegRateFirstPass,Pythia 410M Mean,Adv
+RegRateFirstPass,Pythia 410M Mean,Ele
+RegRateFirstPass,Pythia 410M Mean,diff
+RegRateFirstPass,Pythia 1B Mean,Adv
+RegRateFirstPass,Pythia 1B Mean,Ele
+RegRateFirstPass,Pythia 1B Mean,diff
+RegRateFirstPass,Pythia 1.4B Mean,Adv
+RegRateFirstPass,Pythia 1.4B Mean,Ele
+RegRateFirstPass,Pythia 1.4B Mean,diff
+RegRateFirstPass,Pythia 2.8B Mean,Adv
+RegRateFirstPass,Pythia 2.8B Mean,Ele
+RegRateFirstPass,Pythia 2.8B Mean,diff
+RegRateFirstPass,Pythia 6.9B Mean,Adv
+RegRateFirstPass,Pythia 6.9B Mean,Ele
+RegRateFirstPass,Pythia 6.9B Mean,diff
+RegRateFirstPass,GPT-2 117M Mean,Adv
+RegRateFirstPass,GPT-2 117M Mean,Ele
+RegRateFirstPass,GPT-2 117M Mean,diff
+RegRateFirstPass,GPT-2 345M Mean,Adv
+RegRateFirstPass,GPT-2 345M Mean,Ele
+RegRateFirstPass,GPT-2 345M Mean,diff
+RegRateFirstPass,GPT-2 774M Mean,Adv
+RegRateFirstPass,GPT-2 774M Mean,Ele
+RegRateFirstPass,GPT-2 774M Mean,diff
+RegRateFirstPass,GPT-2 1558M Mean,Adv
+RegRateFirstPass,GPT-2 1558M Mean,Ele
+RegRateFirstPass,GPT-2 1558M Mean,diff
+RegRateFirstPass,GPT-J 6B Mean,Adv
+RegRateFirstPass,GPT-J 6B Mean,Ele
+RegRateFirstPass,GPT-J 6B Mean,diff
+RegRateFirstPass,GPT-Neo 125M Mean,Adv
+RegRateFirstPass,GPT-Neo 125M Mean,Ele
+RegRateFirstPass,GPT-Neo 125M Mean,diff
+RegRateFirstPass,GPT-Neo 1.3B Mean,Adv
+RegRateFirstPass,GPT-Neo 1.3B Mean,Ele
+RegRateFirstPass,GPT-Neo 1.3B Mean,diff
+RegRateFirstPass,GPT-Neo 2.7B Mean,Adv
+RegRateFirstPass,GPT-Neo 2.7B Mean,Ele
+RegRateFirstPass,GPT-Neo 2.7B Mean,diff
+RegRateFirstPass,Llama-2 7B Mean,Adv
+RegRateFirstPass,Llama-2 7B Mean,Ele
+RegRateFirstPass,Llama-2 7B Mean,diff
+RegRateFirstPass,Llama-2 13B Mean,Adv
+RegRateFirstPass,Llama-2 13B Mean,Ele
+RegRateFirstPass,Llama-2 13B Mean,diff
+RegRateFirstPass,OPT 350M Mean,Adv
+RegRateFirstPass,OPT 350M Mean,Ele
+RegRateFirstPass,OPT 350M Mean,diff
+RegRateFirstPass,OPT 1.3B Mean,Adv
+RegRateFirstPass,OPT 1.3B Mean,Ele
+RegRateFirstPass,OPT 1.3B Mean,diff
+RegRateFirstPass,OPT 2.7B Mean,Adv
+RegRateFirstPass,OPT 2.7B Mean,Ele
+RegRateFirstPass,OPT 2.7B Mean,diff
+RegRateFirstPass,OPT 6.7B Mean,Adv
+RegRateFirstPass,OPT 6.7B Mean,Ele
+RegRateFirstPass,OPT 6.7B Mean,diff
+RegRateFirstPass,Mistral-v0.1 7B Mean,Adv
+RegRateFirstPass,Mistral-v0.1 7B Mean,Ele
+RegRateFirstPass,Mistral-v0.1 7B Mean,diff
+RegRateFirstPass,Mistral-v0.3 7B Mean,Adv
+RegRateFirstPass,Mistral-v0.3 7B Mean,Ele
+RegRateFirstPass,Mistral-v0.3 7B Mean,diff
+RegRateFirstPass,Gemma 7B Mean,Adv
+RegRateFirstPass,Gemma 7B Mean,Ele
+RegRateFirstPass,Gemma 7B Mean,diff
+RegRateFirstPass,Gemma-2 9B Mean,Adv
+RegRateFirstPass,Gemma-2 9B Mean,Ele
+RegRateFirstPass,Gemma-2 9B Mean,diff
+RegRateFirstPass,Recurrent-Gemma 9B Mean,Adv
+RegRateFirstPass,Recurrent-Gemma 9B Mean,Ele
+RegRateFirstPass,Recurrent-Gemma 9B Mean,diff
+RegRateFirstPass,RWKV-4 169M Mean,Adv
+RegRateFirstPass,RWKV-4 169M Mean,Ele
+RegRateFirstPass,RWKV-4 169M Mean,diff
+RegRateFirstPass,RWKV-4 430M Mean,Adv
+RegRateFirstPass,RWKV-4 430M Mean,Ele
+RegRateFirstPass,RWKV-4 430M Mean,diff
+RegRateFirstPass,Mamba 370M Mean,Adv
+RegRateFirstPass,Mamba 370M Mean,Ele
+RegRateFirstPass,Mamba 370M Mean,diff
+RegRateFirstPass,Mamba 790M Mean,Adv
+RegRateFirstPass,Mamba 790M Mean,Ele
+RegRateFirstPass,Mamba 790M Mean,diff
+RegRateFirstPass,Mamba 1.4B Mean,Adv
+RegRateFirstPass,Mamba 1.4B Mean,Ele
+RegRateFirstPass,Mamba 1.4B Mean,diff
+RegRateFirstPass,Mamba 2.8B Mean,Adv
+RegRateFirstPass,Mamba 2.8B Mean,Ele
+RegRateFirstPass,Mamba 2.8B Mean,diff

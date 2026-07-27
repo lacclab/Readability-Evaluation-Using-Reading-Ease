@@ -1,0 +1,11 @@
+# Diagnostic snapshots are timestamped, so ad-hoc re-runs (e.g. to confirm 0 stale after a fix)
+# don't clutter git. The evidence snapshot for a specific run is committed deliberately with
+# `git add -f` (see analysis/Readme.md) — once tracked, git keeps it regardless of this ignore.
+regeneration_diff_*.txt
+regeneration_diff_*.html
+stale_correlations_*.csv
+rank_comparison_*.html
+rank_comparison_*.csv
+review_old_vs_new_*.html
+review_pdf_old_*/
+pdf_compare_*.html

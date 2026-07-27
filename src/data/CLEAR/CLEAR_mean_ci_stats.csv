@@ -1,0 +1,9 @@
+metric,mean_ci
+number_of_passages,4724
+number_of_sentences,46110
+words_per_passage,173.34 ± 0.48
+sentences_per_passage,9.76 ± 0.13
+sentence_length_words,21.19 ± 0.27
+word_length_characters,4.45 ± 0.01
+word_frequency_wordfreq,10.76 ± 0.01
+word_surprisal_pythia70m,4.71 ± 0.01

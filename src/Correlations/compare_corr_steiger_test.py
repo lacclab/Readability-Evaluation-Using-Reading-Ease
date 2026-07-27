@@ -5,7 +5,7 @@ from typing import List, Literal
 from tqdm import tqdm
 from loguru import logger
 from src.utils.stat_analysis.stat_utils import add_p_val_symbols
-from utils.stat_analysis.cocor import cocor_test, init_cocor, setup_julia # Julia install - run: curl -fsSL https://install.julialang.org | sh -s -- --default-channel lts
+from src.utils.stat_analysis.Julia_models import cocor_test, init_cocor, setup_julia # Julia install - run: curl -fsSL https://install.julialang.org | sh -s -- --default-channel lts
 from src.Correlations.define_cols import (
     MAIN_RT_COLS, MAIN_TEXT_COLS, SM_TEXT_COLS, SM_RT_COLS, SM_PROMPT_COLS, MAIN_SURP_COLS
 )
@@ -34,6 +34,7 @@ def calc_steiger_test_between_RT(
     logger.info(f"{resolution=} | {reading_regime=}")
     
     text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + surp_cols_to_run
+    text_cols = list(dict.fromkeys(text_cols))  # dedupe (MAIN_TEXT_COLS and SM_TEXT_COLS may overlap)
     corr_between_RT_cols = _load_corr_between_RT_cols(results_dir, resolution)
 
     cocor = init_cocor()
@@ -119,6 +120,7 @@ def calc_steiger_test_between_readability_formulas(
     logger.info(f"{resolution=} | {reading_regime=}")
     
     text_cols = MAIN_TEXT_COLS + SM_TEXT_COLS + SM_PROMPT_COLS + surp_cols_to_run
+    text_cols = list(dict.fromkeys(text_cols))  # dedupe (MAIN_TEXT_COLS and SM_TEXT_COLS may overlap)
     corr_between_formulas = _load_corr_between_formulas(src_path, resolution)
 
     cocor = init_cocor()
@@ -188,7 +190,7 @@ def calc_steiger_test_between_readability_formulas(
 #### Helper functions
 
 def _load_corr_between_formulas(src_path, resolution):
-    path = src_path / f"readability_metrics/formulas_corrs_{resolution}.csv"
+    path = src_path / f"readability_metrics/correlations_between_formulas/formulas_corrs_{resolution}.csv"
     if not path.exists():
         raise FileNotFoundError(f"{path} does not exist.")
     else:

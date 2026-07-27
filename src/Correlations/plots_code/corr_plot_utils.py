@@ -1,15 +1,17 @@
 import pandas as pd
 from matplotlib.patches import Patch
 import matplotlib.patches as mpatches
+from src.utils.plot_utils import DELTA
 from src.utils.plot_utils import SIGNIFICANCE_COLORS, SIGNIFICANCE_LABELS
 from src.constants import LEXTALE_BINS_NAMES, ADV_COMP_BINS_NAMES, LEXTALE_BIN_LABELS, ADV_COMP_BIN_LABELS, LEXTALE_BIN_COLORS, ADV_COMP_BIN_COLORS
 
 HATCH_STR_DICT_LABELS = {
     'pearson_spearman': {'': 'Pearson', '///': 'Spearman'},
     'L1_next_to_L2': {'': 'L1', '///': 'L2'},
-    'Gathering0_next_to_Hunting0': {'': 'Ordinary Reading', '///': 'Information Seeking'},
+    'Gathering0_next_to_Hunting0': {'': 'Reading for Comprehension', '///': 'Information Seeking'},
     'FirstReading_next_to_RepeatedReading': {'': 'First Reading', '///': 'Repeated Reading'},
     'FirstReading_next_to_Gathering0': {'': 'First Reading', '///': 'Ordinary Reading'},
+    'RE_next_to_delta_RE': {'': 'Reading Ease', '///': f'{DELTA} Reading Ease (Original - Simplified)'},
 }
 HATCH_STR_DICT = {
     'pearson_spearman': {'Pearson': '', 'Spearman': '///'},
@@ -17,6 +19,7 @@ HATCH_STR_DICT = {
     'Gathering0_next_to_Hunting0': {'Gathering0': '', 'Hunting0': '///'},
     'FirstReading_next_to_RepeatedReading': {'FirstReading': '', 'RepeatedReading': '///'},
     'FirstReading_next_to_Gathering0': {'FirstReading': '', 'Gathering0': '///'},
+    'RE_next_to_delta_RE': {'all': '', 'diff': '///'},
 }
 OFFSET_DICT = {
     'pearson_spearman': {'Pearson': -0.2, 'Spearman': 0.2},
@@ -24,7 +27,64 @@ OFFSET_DICT = {
     'Gathering0_next_to_Hunting0': {'Gathering0': -0.2, 'Hunting0': 0.2},
     'FirstReading_next_to_RepeatedReading': {'FirstReading': -0.2, 'RepeatedReading': 0.2},
     'FirstReading_next_to_Gathering0': {'FirstReading': -0.2, 'Gathering0': 0.2},
+    'RE_next_to_delta_RE': {'all': -0.2, 'diff': 0.2},
 }
+
+def _load_corr_boot_df(reader_type, reading_regime, resolution, src_path, pred_col):
+    level_type = "diff"
+    
+    def _filter_boot_df(corr_boot_df, pred_col, level_type):
+        corr_boot_df = corr_boot_df[(corr_boot_df['pred_col'] == pred_col) & (corr_boot_df['level_type'] == level_type)]
+        corr_boot_df = corr_boot_df[corr_boot_df['fold'] == "bootstrap_all"].reset_index(drop=True)
+        return corr_boot_df
+    
+    if reader_type == "L1_next_to_L2":
+        L1_corr_boot_df = pd.read_csv(src_path / f"Correlations/L1/{reading_regime}/correlations_{resolution}_{pred_col}.csv")
+        L1_corr_boot_df = _filter_boot_df(L1_corr_boot_df, pred_col, level_type)
+        L2_corr_boot_df = pd.read_csv(src_path / f"Correlations/L2/{reading_regime}/correlations_{resolution}_{pred_col}.csv")
+        L2_corr_boot_df = _filter_boot_df(L2_corr_boot_df, pred_col, level_type)
+        L1_corr_boot_df['reader_type'] = 'L1'
+        L2_corr_boot_df['reader_type'] = 'L2'
+        # union
+        corr_boot_df = pd.concat([L1_corr_boot_df, L2_corr_boot_df], ignore_index=True)
+        return corr_boot_df
+    elif reading_regime == "Gathering0_next_to_Hunting0":
+        Gathering_corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/Gathering0/correlations_{resolution}_{pred_col}.csv")
+        Gathering_corr_boot_df = _filter_boot_df(Gathering_corr_boot_df, pred_col, level_type)
+        Hunting_corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/Hunting0/correlations_{resolution}_{pred_col}.csv")
+        Hunting_corr_boot_df = _filter_boot_df(Hunting_corr_boot_df, pred_col, level_type)
+        Gathering_corr_boot_df['reading_regime'] = 'Gathering0'
+        Hunting_corr_boot_df['reading_regime'] = 'Hunting0'
+        # union
+        corr_boot_df = pd.concat([Gathering_corr_boot_df, Hunting_corr_boot_df], ignore_index=True)
+        return corr_boot_df
+    elif reading_regime == "FirstReading_next_to_RepeatedReading":
+        first_corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/FirstReading/correlations_{resolution}_{pred_col}.csv")
+        first_corr_boot_df = _filter_boot_df(first_corr_boot_df, pred_col, level_type)
+        repeated_corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/RepeatedReading/correlations_{resolution}_{pred_col}.csv")
+        repeated_corr_boot_df = _filter_boot_df(repeated_corr_boot_df, pred_col, level_type)
+        repeated_corr_boot_df['reading_regime'] = 'RepeatedReading'
+        first_corr_boot_df['reading_regime'] = 'FirstReading'
+        # union
+        corr_boot_df = pd.concat([first_corr_boot_df, repeated_corr_boot_df], ignore_index=True)
+        return corr_boot_df
+    elif reading_regime == "FirstReading_next_to_Gathering0":
+        first_corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/FirstReading/correlations_{resolution}_{pred_col}.csv")
+        first_corr_boot_df = _filter_boot_df(first_corr_boot_df, pred_col, level_type)
+        gathering_corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/Gathering0/correlations_{resolution}_{pred_col}.csv")
+        gathering_corr_boot_df = _filter_boot_df(gathering_corr_boot_df, pred_col, level_type)
+        first_corr_boot_df['reading_regime'] = 'FirstReading'
+        gathering_corr_boot_df['reading_regime'] = 'Gathering0'
+        # union
+        corr_boot_df = pd.concat([first_corr_boot_df, gathering_corr_boot_df], ignore_index=True)
+        return corr_boot_df
+    else:
+        corr_boot_df = pd.read_csv(src_path / f"Correlations/{reader_type}/{reading_regime}/correlations_{resolution}_{pred_col}.csv")
+        corr_boot_df = _filter_boot_df(corr_boot_df, pred_col, level_type)
+        corr_boot_df['reader_type'] = reader_type
+        corr_boot_df['reading_regime'] = reading_regime
+        return corr_boot_df    
+    
 
 def _load_corr_df(reader_type, reading_regime, resolution, src_path, text_cols):
     if reader_type == "L1_next_to_L2":
@@ -101,18 +161,18 @@ def _load_corr_df(reader_type, reading_regime, resolution, src_path, text_cols):
         corr_df['reading_regime'] = reading_regime
     return corr_df
 
-def _add_legend_for_hatch(fig, hatch_str_dict):
+def _add_legend_for_hatch(fig, hatch_str_dict, legend_text_fontsize=8):
     # 5) A small legend in the top-right
     #  We'll define two patches for Pearson vs. Spearman
     pear_patch = Patch(facecolor='white', edgecolor='black', hatch='',    label=hatch_str_dict[''])
     spear_patch= Patch(facecolor='white', edgecolor='black', hatch='///', label=hatch_str_dict['///'])
 
-    handels = [pear_patch, spear_patch]
-        
+    handles = [spear_patch, pear_patch]
+
     fig.legend(
-        handles=handels,
+        handles=handles,
         loc='lower right',
-        fontsize=8,
+        fontsize=legend_text_fontsize,
         # title="Correlation Type"
     )
     return fig

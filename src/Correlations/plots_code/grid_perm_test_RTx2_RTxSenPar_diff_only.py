@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from typing import Literal
 from loguru import logger
+import pandas as pd
 
 from src.utils.plot_utils import add_significance_legend, SIGNIFICANCE_SIGN_DIFF_COLORS, SIGNIFICANCE_SIGN_DIFF_LABELS
 from src.Correlations.define_cols import MAIN_RT_COLS, READING_COMPREHENSION_COLS
@@ -34,7 +35,7 @@ def plot_perm_test_RTx2_RTxSenPar_diff_only(
     # create fig with subplots
     n_rows = len(pred_cols)
     n_cols = len(resolution_types)
-    fig, axs = plt.subplots(n_rows, n_cols, figsize=(n_cols*7.5, n_rows*7.5), sharey=True)
+    fig, axs = plt.subplots(n_rows, n_cols, figsize=(n_cols*7.5, n_rows*7.5)) # , sharey=True
     
     # Set y-label on the left column, set column titles on top row
     for j, y_type in enumerate(resolution_types):
@@ -51,8 +52,12 @@ def plot_perm_test_RTx2_RTxSenPar_diff_only(
                 logger.warning(f"Empty sub_perm_test_df for {pred_col} at {resolution} level. Skipping...")
                 continue
             
+            path_steiger_res = src_path / f"Correlations/{reader_type}/{reading_regime}/steiger_test_between_readability_formulas_{resolution}.csv"
+            steiger_res = pd.read_csv(path_steiger_res)
+            steiger_res = steiger_res[(steiger_res['level_type'] == level_type) & (steiger_res['pred_col'] == pred_col)]
+            
             _single_plot_perm_test(
-                ax=ax, sub_perm_test_df=sub_perm_test_df, 
+                ax=ax, sub_perm_test_df=sub_perm_test_df, steiger_res=steiger_res,
                 pred_col=pred_col, row_index=i, col_index=j,
                 level_type=level_type, all_levels=False, resolution=resolution, RTxSenPar=True)
             
@@ -86,4 +91,18 @@ def plot_perm_test_RTx2_RTxSenPar_diff_only(
         pred_cols=None, 
         text_cols=None, 
         corr_to_plot=None, src_path=src_path, est_strategy=est_strategy
+    )
+
+if __name__ == "__main__":
+    from pathlib import Path
+
+    src_path = Path.cwd() / "src"
+    L1_or_L2 = "L2" # "L1" or "L2" or "L1_and_L2"
+    
+    plot_perm_test_RTx2_RTxSenPar_diff_only(
+        src_path=src_path,
+        reader_type=L1_or_L2,
+        reading_regime="Gathering0",
+        est_strategy="Bootstrap",
+        pred_type="RT"
     )

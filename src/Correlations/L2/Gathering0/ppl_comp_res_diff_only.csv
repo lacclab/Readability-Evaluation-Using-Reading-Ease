@@ -1,0 +1,11 @@
+comp_r,comp_p,log_comp_r,log_comp_p,ppl_coef,ppl_coef_p,mean_result,n_values,models_families,pred_col,level_type,resolution,comp_p_symbol,log_comp_p_symbol,ppl_coef_p_symbol
+0.7816523200865098,1.282471803525819e-07,0.8576512206057776,3.6013198274488875e-10,0.0039565870910828966,1.2824718035256782e-07,0.2859799839335737,32,"['GPT-2' 'GPT-J' 'GPT-Neo' 'Gemma' 'Llama-2' 'Mamba' 'Mistral' 'OPT'
+ 'Pythia' 'RWKV']",mean_FirstPassGD,diff,paragraph,***,***,***
+0.7337522888455053,1.767343616972673e-06,0.8303244387547257,4.1380812177919045e-09,0.0009618065518396275,1.7673436169723856e-06,0.26448807940929797,32,"['GPT-2' 'GPT-J' 'GPT-Neo' 'Gemma' 'Llama-2' 'Mamba' 'Mistral' 'OPT'
+ 'Pythia' 'RWKV']",SkipRateTotal,diff,sentence,***,***,***
+0.6307103613176545,0.00010900301524269872,0.7400744554215817,1.2916262814810639e-06,0.002319815928740123,0.00010900301524269105,0.31246265862551104,32,"['GPT-2' 'GPT-J' 'GPT-Neo' 'Gemma' 'Llama-2' 'Mamba' 'Mistral' 'OPT'
+ 'Pythia' 'RWKV']",SkipRateTotal,diff,paragraph,***,***,***
+0.5028565034063835,0.003353734734233214,0.563795367882712,0.0007783012085384435,0.0006512138483664632,0.003353734734232637,0.20003289232916324,32,"['GPT-2' 'GPT-J' 'GPT-Neo' 'Gemma' 'Llama-2' 'Mamba' 'Mistral' 'OPT'
+ 'Pythia' 'RWKV']",RegRateTotal,diff,sentence,**,***,**
+-0.034300209871275106,0.8521576086231213,0.02854040766887528,0.8767764683610116,-8.119025467375763e-05,0.85215760862313,0.3350439767502029,32,"['GPT-2' 'GPT-J' 'GPT-Neo' 'Gemma' 'Llama-2' 'Mamba' 'Mistral' 'OPT'
+ 'Pythia' 'RWKV']",RegRateTotal,diff,paragraph,ns,ns,ns

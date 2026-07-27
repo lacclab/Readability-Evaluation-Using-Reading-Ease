@@ -4,6 +4,12 @@ import scipy.stats
 from typing import Literal
 
 
+def sanitize_col_name(name: str) -> str:
+    """Sanitize a column name for use in statistical formulas (e.g. Julia/R).
+    Replaces characters like hyphens and dots that would be parsed as operators."""
+    return name.replace('-', '_').replace('.', '_')
+
+
 def add_p_val_symbols(df, p_val_col):
     """
     Create a new column in df with significance symbols based on p-values,

@@ -3,8 +3,11 @@ from typing import Literal
 
 def agg_col_by_level_subject(eye_df: pd.DataFrame, col: str, agg_func: str, resolution: Literal["sentence", "paragraph", "article"]) -> pd.DataFrame:
     text_id_cols = get_text_id_cols(resolution)
-    group_by_cols = list(set(text_id_cols + ['level', 'subject_id', 'batch']))
-        
+    # dict.fromkeys (not set) dedups while preserving order, so the grouped/saved column order
+    # is deterministic across runs. set() iteration order varies with PYTHONHASHSEED and was
+    # causing spurious column-reorder diffs in every *_agg_by_subject_df.csv on each rerun.
+    group_by_cols = list(dict.fromkeys(text_id_cols + ['level', 'subject_id', 'batch']))
+
     return eye_df.groupby(group_by_cols)[col].agg(agg_func).reset_index()
 
 def agg_col_by_level(eye_df: pd.DataFrame, col: str, agg_func: str, resolution: Literal["sentence", "paragraph", "article"]) -> pd.DataFrame:

@@ -6,7 +6,8 @@ from loguru import logger
 
 from src.utils.stat_analysis.stat_utils import add_p_val_symbols
 from src.Correlations.utils import _save_file_to_all_paths
-from src.Correlations.plots_code.single_correlation_by_ppl_plot import _single_corr_by_perplexity_plot, _get_models_data, _build_legend_ppl_plot
+from src.Correlations.plots_code.single_correlation_by_ppl_plot import _single_corr_by_perplexity_plot, _build_legend_ppl_plot
+from src.Correlations.analysis.ppl_trend.models_ppl import _get_models_data
 
 def plot_corr_by_ppl_grid_RTx2_RTxSenPar_diff_only(
     src_path: str,
@@ -19,7 +20,7 @@ def plot_corr_by_ppl_grid_RTx2_RTxSenPar_diff_only(
     est_strategy: Literal["Regular", "CV", "Bootstrap"],
     fontsize_title=20,
     fontsize_legend_text=16,
-    markzise_legend=12
+    markzise_legend=12,
 ):
     pass
 
@@ -89,3 +90,27 @@ def plot_corr_by_ppl_grid_RTx2_RTxSenPar_diff_only(
         text_cols=surp_cols, 
         corr_to_plot=corr_to_plot, src_path=src_path, est_strategy=est_strategy
         )
+
+if __name__ == "__main__":
+    from pathlib import Path
+    from src.Correlations.define_cols import (
+        MAIN_RT_COLS, ALL_SURP_COLS
+    )
+    from src.utils.stat_analysis.Julia_models import setup_julia # Julia install - run: curl -fsSL https://install.julialang.org | sh -s -- --default-channel lts
+    setup_julia()
+    
+    src_path = Path.cwd() / "src"
+    L1_or_L2 = "L2" # "L1" or "L2"
+    
+    # @ Fig 3 Main
+    plot_corr_by_ppl_grid_RTx2_RTxSenPar_diff_only(
+        src_path=src_path,
+        reader_type=L1_or_L2,
+        reading_regime="Gathering0",
+        pred_cols=MAIN_RT_COLS,
+        surp_cols=ALL_SURP_COLS,
+        corr_to_plot=["pearson_corr"],
+        output_file="RTxSenPar_pearson_corr_by_perplexity_diff_only.pdf",
+        est_strategy="Bootstrap" # "Bootstrap" | "Regular"
+    )
+

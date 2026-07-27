@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 from typing import Literal
-from src.constants import PRED_COLS_FULL_LABELS
-from src.utils.plot_utils import SIGNIFICANCE_COLORS
+from src.constants import PRED_COLS_FULL_LABELS, LEXTALE_BIN_COLORS, ADV_COMP_BIN_COLORS, LEXTALE_BIN_LABELS, ADV_COMP_BIN_LABELS, BIN_TO_CODE, CODES
+from src.utils.plot_utils import SIGNIFICANCE_COLORS, SIGNIFICANCE_SIGN_DIFF_COLORS
 from src.Correlations.calc_correlations import N_BOOTSTRAP
+from src.Correlations.compare_corr_perm_test import _compare_corr_using_perm_test
 from src.Correlations.plots_code.corr_plot_utils import HATCH_STR_DICT, OFFSET_DICT
 from src.Correlations.define_cols import (
     TEXT_COLS_FULL_LABELS, TEXT_COL_TO_YEAR, 
@@ -13,6 +14,9 @@ from src.Correlations.define_cols import (
 )
 from loguru import logger
 from src.utils.plot_utils import DELTA
+from src.utils.stat_analysis.stat_utils import p_to_star
+from src.utils.stat_analysis.Julia_models import fit_linear_model # Julia install - run: curl -fsSL https://install.julialang.org | sh -s -- --default-channel lts
+from tqdm import tqdm
 
 LOCATION_PROMPT_CATEGORIES = -0.62
 LOCATION_READABILITY_CATEGORIES = - 0.62
@@ -54,13 +58,14 @@ def _single_corr_plot(
     need_to_calc_perm_test=False,
     all_and_diff=False,
     SM_TEXT_plot=False,
+    level_labels_override: dict = None,
     ): 
     corr_cols = _get_corr_cols_by_est_strategy(est_strategy)
     corr_metas = _get_corr_metas(corr_to_plot, corr_cols)
     n_corrs = len(corr_metas)
     sub_corr_df = _preprocess_sub_corr_df(sub_corr_df, text_cols, text_cols_labels, SM_prompts_plot, orientation, RE_next_to_delta_RE)
     if pair_bars:
-        corr_diffs, _ = _get_corr_diffs(
+        corr_diffs, new_perm_test_res = _get_corr_diffs(
             sub_corr_df, sub_corr_boot_df, corr_cols['pearson_col'], corr_cols['spearman_col'], 
             L1_next_to_L2, 
             Gathering0_next_to_Hunting0, 
@@ -70,6 +75,8 @@ def _single_corr_plot(
             n_corrs, need_to_calc_perm_test)
         axes_fontsize = 13
         subtitle_fontsize = 13
+    if pair_bars and new_perm_test_res is not None:
+        perm_test_res = new_perm_test_res
 
     # 1) positions for each text_col (become x for vertical, y for horizontal)
     existing_text_cols = sub_corr_df['text_col'].unique()
@@ -87,7 +94,7 @@ def _single_corr_plot(
         RE_next_to_delta_RE=RE_next_to_delta_RE
     )
     _add_value_axis_lines(ax, col_index, zorder=1, orientation=orientation, main_plot=main_plot)
-    _set_value_axis_label(ax, y_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, orientation, main_plot)
+    _set_value_axis_label(ax, y_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, orientation, main_plot, level_labels_override=level_labels_override, resolution=resolution)
 
     for L1_L2_val, group_df in sub_corr_df.groupby('reader_type'):
         for reading_regime, group_df in group_df.groupby('reading_regime'):
@@ -136,18 +143,307 @@ def _single_corr_plot(
                             steiger_res=steiger_res,
                             text_col=text_col,
                             Pearson_next_to_Spearman=Pearson_next_to_Spearman,
-                            RE_next_to_delta_RE=RE_next_to_delta_RE
+                            RE_next_to_delta_RE=RE_next_to_delta_RE,
+                            axes_fontsize=axes_fontsize,
                         )
 
     _add_category_separators(ax, col_index, resolution, SM_prompts_plot, subtitle_fontsize, orientation, main_plot, pair_bars, SM_TEXT_plot)
     _set_text_cols_ticks(ax, exisiting_text_cols_labels, cat_positions, axes_fontsize, SM_prompts_plot, orientation)
 
-    return None
+    if pair_bars:
+        return new_perm_test_res
+    else:
+        return None
 
+
+def _single_corr_plot_of_bins(
+    resolution, 
+    ax, row_index, col_index, 
+    sub_corr_df, 
+    corr_to_plot, 
+    pred_col, 
+    text_cols, 
+    all_levels, 
+    est_strategy: Literal["Regular", "CV", "Bootstrap"] = 'Regular',
+    y_label = None,
+    axes_fontsize=11,
+    subtitle_fontsize=11,
+    text_cols_labels=TEXT_COLS_FULL_LABELS,
+    SM_prompts_plot=False,
+    orientation: Literal["vertical","horizontal"]="vertical",
+    all_and_diff=False,
+    ): 
+    corr_cols = _get_corr_cols_by_est_strategy(est_strategy)
+    corr_metas = _get_corr_metas(corr_to_plot, corr_cols)
+    sub_corr_df = _preprocess_sub_corr_df(sub_corr_df, text_cols, text_cols_labels, SM_prompts_plot, orientation)
+
+    existing_text_cols = sub_corr_df['text_col'].unique()
+    xticks_labels = sub_corr_df['text_col_label'].unique()
+    n = len(existing_text_cols)
+    cat_positions = np.arange(n)
+    position_by_text_col = {col: i for i, col in enumerate(existing_text_cols)}
+    
+    _set_value_axis_lim_and_ticks(ax, col_index, axes_fontsize, all_levels, orientation, main_plot=False)
+    _add_value_axis_lines(ax, col_index, zorder=1, orientation=orientation, main_plot=False)
+    _set_value_axis_label(ax, y_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, orientation, main_plot=False)
+
+    BIN_COLORS = LEXTALE_BIN_COLORS if "Lextale" in sub_corr_df['reader_type'].values[0] else ADV_COMP_BIN_COLORS    
+    plotted_bins = set()
+
+    for corr_col, symbol_col in corr_metas:
+        for bin_name, group_df in sub_corr_df.groupby('bin_name', sort=False):
+            for _, _row in group_df.iterrows():
+                if (_row.get('n_bootstraps', np.inf) < N_BOOTSTRAP) and est_strategy == "Bootstrap":
+                    logger.warning(
+                        f"Low N bootstraps ({_row['n_bootstraps']}) for "
+                        f"{_row['text_col']} - {pred_col} - {resolution} - {_row.get('reader_type','')}."
+                    )
+
+            g = group_df.loc[group_df[corr_col].notna()].copy()
+            if g.empty:
+                continue
+
+            g['cat'] = g['text_col'].map(position_by_text_col)
+            g = g.sort_values('cat')
+            cats = g['cat'].to_numpy()
+            vals = np.abs(g[corr_col].to_numpy())
+
+            if orientation == "vertical":
+                ax.plot(
+                    cats, vals,
+                    color=BIN_COLORS.get(bin_name, '0.5'),
+                    linewidth=1.6, alpha=0.9, zorder=3,
+                    label=(bin_name if bin_name not in plotted_bins else None)
+                )
+            else:
+                ax.plot(
+                    vals, cats,
+                    color=BIN_COLORS.get(bin_name, '0.5'),
+                    linewidth=1.6, alpha=0.9, zorder=3,
+                    label=(bin_name if bin_name not in plotted_bins else None)
+                )
+            plotted_bins.add(bin_name)
+
+    _add_category_separators(ax, col_index, resolution, SM_prompts_plot, subtitle_fontsize, orientation, main_plot=False, pair_plot=False)
+    _set_text_cols_ticks(ax, xticks_labels, cat_positions, axes_fontsize, SM_prompts_plot, orientation)
+
+
+def _single_corr_plot_bins_on_x(
+    resolution,
+    ax, row_index, col_index,
+    sub_corr_df,
+    corr_to_plot,               # e.g. ['pearson_corr'] or ['spearman_corr']
+    pred_col,
+    text_cols,
+    all_levels,
+    linear_fits_results,
+    sub_corr_boot_df,
+    est_strategy: Literal["Regular","CV","Bootstrap"] = "Regular",
+    y_label=None,
+    axes_fontsize=11,
+    text_cols_labels=TEXT_COLS_FULL_LABELS,
+    orientation: Literal["vertical","horizontal"]="vertical",
+    debug_mode=False,
+    all_and_diff=False,
+):
+    """
+    Plot correlations with BIN on the categorical axis.
+    Colors = different text columns (readability measures).
+    """
+    # --- choose which correlation to plot (first in list) ---
+    corr_cols = _get_corr_cols_by_est_strategy(est_strategy)
+    corr_metas = _get_corr_metas(corr_to_plot, corr_cols)
+    corr_col, symbol_col = corr_metas[0]   # use the first requested correlation
+    
+    # --- order DF and keep labels for legend ---
+    # (preprocess keeps your text-col order, handles SM prompts, etc.)
+    df = _preprocess_sub_corr_df(
+        sub_corr_df.copy(), text_cols, text_cols_labels,
+        SM_prompts_plot=False, orientation="vertical"  # order of measures, orientation irrelevant here
+    )
+
+    # --- decide bin order (use color dict order if available, else natural) ---
+    is_lextale = df['reader_type'].astype(str).str.contains('Lextale').any()
+    BIN_COLORS = LEXTALE_BIN_COLORS if is_lextale else ADV_COMP_BIN_COLORS
+    seen_bins = list(df['bin_name'].dropna().unique())
+    # keep dict order if keys match; append any unseen bins to the end
+    bin_order = [b for b in BIN_COLORS.keys() if b in seen_bins] + [b for b in seen_bins if b not in BIN_COLORS]
+
+    # --- labels for legend (measures) ---
+    measure_labels = {tc: text_cols_labels.get(tc, tc) for tc in df['text_col'].unique()}
+    
+    # --- pivot: rows=bins, cols=text_cols, values=corr ---
+    piv = (
+        df[['bin_name', 'text_col', corr_col ]]
+        .dropna(subset=['bin_name'])
+        .groupby(['bin_name','text_col'])[corr_col]
+        .mean()                 # in case duplicates exist
+        .unstack('text_col')    # rows=bins, cols=measures
+        .reindex(bin_order)     # enforce bin order
+    )
+
+    # --- numeric axis (value axis) setup ---
+    _set_value_axis_lim_and_ticks(ax, col_index, axes_fontsize, all_levels, orientation, main_plot=False, bins_on_x=True)
+    _add_value_axis_lines(ax, col_index, zorder=1, orientation=orientation, main_plot=False, bins_on_x=True)
+
+    # # --- categorical positions for bins ---
+    # cats = np.arange(len(piv.index))
+
+    # # --- color palette for measures (distinct colors) ---
+    # measures = list(piv.columns)
+    # cmap = plt.cm.get_cmap('tab20', max(3, len(measures)))  # robust default
+    # MEASURE_COLORS = {m: cmap(i) for i, m in enumerate(measures)}
+    
+    # store results for linear fitting
+    if linear_fits_results is None:
+        need_to_calc_linear_fits = True
+        results = []
+    elif linear_fits_results[linear_fits_results['pred_col'] == pred_col].empty:
+        need_to_calc_linear_fits = True
+        results = []
+    else:
+        need_to_calc_linear_fits = False
+    
+    # --- plot one polyline per measure across bins ---
+    measures = list(piv.columns)
+    for m in measures:
+        vals = piv[m].abs().to_numpy()  # absolute correlation, like in your bars
+        valid = ~np.isnan(vals)
+        if not valid.any():
+            continue
+
+        # calc correlation between vals and bin order indices
+        # this tells you whether correlation increases or decreases with bin
+        # use the bootstrap data
+        if need_to_calc_linear_fits or debug_mode:
+            # ----- mini_df by boostrap - not good -----
+            # mini_df = sub_corr_boot_df[sub_corr_boot_df['text_col'] == m].reset_index()
+            # mini_df = mini_df[['bin_name', 'pearson_corr', 'text_col', 'bootstrap_iter']]
+            # # asset that mini_df has 200 rows per bin_name
+            # n_rows_per_bin = mini_df['bin_name'].value_counts().unique()
+            # assert len(n_rows_per_bin) == 1 and n_rows_per_bin[0] == 200, f"Expected 200 rows per bin, got {n_rows_per_bin}"
+            
+            # ----- mini_df by agged vals  -----
+            mini_df = piv[m].reset_index().rename(columns={m: 'pearson_corr'})
+            
+            # --- linear fit of corr ~ bin (bin as numeric) ---
+            # map bin_name to bin index
+            # bin_to_index = {bin_name: i for i, bin_name in enumerate(piv.index)}
+            mini_df['bin_code'] = mini_df['bin_name'].map(BIN_TO_CODE)
+            # print unique bin codes for first measure
+            if m == measures[0]:
+                bin_codes = mini_df[['bin_name', 'bin_code']].drop_duplicates().sort_values('bin_code')
+                logger.debug(f"Bin codes: {bin_codes}")
+
+            # fit linear model: pearson_corr ~ 1 + bin
+            x_in_formula = 'bin_code'
+            y_in_formula = 'pearson_corr'
+            formula = f"{y_in_formula} ~ 1 + {x_in_formula}"
+            coef_table = fit_linear_model(mini_df, y_in_formula, formula, silent=True, needed_cols=[y_in_formula, x_in_formula])
+            coef_res = coef_table[coef_table['Name']==x_in_formula][['Coef.', 'Pr(>|t|)']].values.flatten()
+            bin_coef, bin_coef_p = coef_res[0], coef_res[1]
+            bin_coef_star = p_to_star(bin_coef_p)
+            increase_symbol = f"{bin_coef_star} +" if bin_coef > 0 else f"{bin_coef_star} -"
+            color = SIGNIFICANCE_SIGN_DIFF_COLORS[increase_symbol]
+            # append to results
+            results.append({
+                'resolution': resolution,
+                'row_index': row_index,
+                'col_index': col_index,
+                'pred_col': pred_col,
+                'measure': m,
+                'bin_coef': bin_coef,
+                'bin_coef_p': bin_coef_p,
+                'bin_coef_star': bin_coef_star,
+                'increase_symbol': increase_symbol,
+                'n_values': valid.sum()
+            })
+        else:
+            res = linear_fits_results[
+                (linear_fits_results['resolution'] == resolution) &
+                (linear_fits_results['row_index'] == row_index) &
+                (linear_fits_results['col_index'] == col_index) &
+                (linear_fits_results['pred_col'] == pred_col) &
+                (linear_fits_results['measure'] == m)
+            ]
+            increase_symbol = res['increase_symbol'].item()
+            bin_coef = res['bin_coef'].item()
+            color = SIGNIFICANCE_SIGN_DIFF_COLORS.get(increase_symbol, '0.5')
+
+        # color = MEASURE_COLORS[m]
+        if orientation == "vertical":
+            ax.plot(
+                CODES, vals[valid],
+                marker='o', linewidth=1.8, markersize=4.5,
+                color=color, label=measure_labels.get(m, m), zorder=3
+            )
+        else:
+            ax.plot(
+                vals[valid], CODES,
+                marker='o', linewidth=1.8, markersize=4.5,
+                color=color, label=measure_labels.get(m, m), zorder=3
+            )
+
+        # add the name of the measure on the line if the pearson corr is significant
+        # if pearson_star != 'ns':
+            # text_position = vals[valid][-1]
+            # text_position by index of measure in measures
+            # cut 0.5 to to len(measures) pieces to get the ranges for text positions
+        all_text_positions = np.linspace(0, 0.5, len(measures)+2)
+        m_id = df[df['text_col']==m]['text_col_id'].iloc[0].item()
+        # reverse
+        m_id = len(measures) + 1 - m_id
+        text_position = all_text_positions[m_id] - 0.01
+        if orientation == "vertical":
+            ax.text(
+                CODES[-1] + 10, text_position,
+                f"{bin_coef:.4f} | {measure_labels.get(m, m)}",
+                fontsize=10, color=color, va='center', fontweight='bold'
+            )
+        else:
+            ax.text(
+                text_position, CODES[-1] + 10,
+                f"{bin_coef:.4f} | {measure_labels.get(m, m)}",
+                fontsize=10, color=color, va='center', fontweight='bold'
+            )
+            
+        # set lime 0, 100 on value axis
+        if orientation == "vertical":
+            ax.set_xlim(0, 100)
+        else:
+            ax.set_ylim(0, 100)
+
+    # --- ticks & axis labels (bins on cat axis, corr on value axis) ---
+    labels = LEXTALE_BIN_LABELS.values() if is_lextale else ADV_COMP_BIN_LABELS.values()
+    if orientation == "vertical":
+        ax.set_xticks(CODES)
+        ax.set_xticklabels(CODES, fontsize=axes_fontsize)
+        # value-axis label
+        _set_value_axis_label(ax, y_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, "vertical", main_plot=False, bins_on_x_plot=True)
+    else:
+        ax.set_yticks(CODES)
+        ax.set_yticklabels(CODES, fontsize=axes_fontsize)
+        _set_value_axis_label(ax, y_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, "horizontal", main_plot=False, bins_on_x_plot=True)
+
+    return results if need_to_calc_linear_fits else []
 
 # ---------
 # Helpers
 # ---------
+
+def _compare_corr_for_all_text_cols(pivot_boot_df, col_a, col_b):
+    res = []
+    for text_col, group in tqdm(pivot_boot_df.groupby('text_col')):
+        group_1 = group[col_a].rename({col_a:'corr_1'})
+        group_2 = group[col_b].rename({col_a:'corr_2'})
+        perm_p, perm_stat, perm_star = _compare_corr_using_perm_test(group_1, group_2)
+        res.append({
+            'text_col': text_col,
+            'perm_p': perm_p,
+            'perm_stat': perm_stat,
+            'perm_star': perm_star
+        })
+    return pd.DataFrame(res)
 
 def _get_corr_diffs(
     sub_corr_df, sub_corr_boot_df, 
@@ -163,31 +459,61 @@ def _get_corr_diffs(
         # calc using pivot
         pivot_df = sub_corr_df.pivot(index='text_col', columns='reading_regime', values=pearson_col)
         diffs_series = pivot_df['Gathering0'] - pivot_df['Hunting0']
-        return diffs_series.to_dict(), None
+        if need_to_calc_perm_test:
+            pivot_boot_df = sub_corr_boot_df.pivot_table(index=['text_col', 'bootstrap_iter'], columns='reading_regime', values="pearson_corr").reset_index()
+            perm_test_res = _compare_corr_for_all_text_cols(pivot_boot_df, col_a='Gathering0', col_b='Hunting0')
+        else:
+            perm_test_res = None
+    
+        return diffs_series.to_dict(), perm_test_res
     
     elif FirstReading_next_to_RepeatedReading:
         # calc using pivot
         pivot_df = sub_corr_df.pivot(index='text_col', columns='reading_regime', values=pearson_col)
         diffs_series = pivot_df['FirstReading'] - pivot_df['RepeatedReading']
-        return diffs_series.to_dict(), None
+        if need_to_calc_perm_test:
+            pivot_boot_df = sub_corr_boot_df.pivot_table(index=['text_col', 'bootstrap_iter'], columns='reading_regime', values="pearson_corr").reset_index()
+            perm_test_res = _compare_corr_for_all_text_cols(pivot_boot_df, col_a='FirstReading', col_b='RepeatedReading')
+        else:
+            perm_test_res = None
+        return diffs_series.to_dict(), perm_test_res
     elif FirstReading_next_to_Gathering0:
         # calc using pivot
         pivot_df = sub_corr_df.pivot(index='text_col', columns='reading_regime', values=pearson_col)
         diffs_series = pivot_df['FirstReading'] - pivot_df['Gathering0']
-        return diffs_series.to_dict(), None
+        if need_to_calc_perm_test:
+            pivot_boot_df = sub_corr_boot_df.pivot_table(index=['text_col', 'bootstrap_iter'], columns='reading_regime', values="pearson_corr").reset_index()
+            perm_test_res = _compare_corr_for_all_text_cols(pivot_boot_df, col_a='FirstReading', col_b='Gathering0')
+        else:
+            perm_test_res = None
+        return diffs_series.to_dict(), perm_test_res
     elif L1_next_to_L2:      
         # calc using pivot
         pivot_df = sub_corr_df.pivot(index='text_col', columns='reader_type', values=pearson_col)
         diffs_series = pivot_df['L2'] - pivot_df['L1']
-        return diffs_series.to_dict(), None
+        if need_to_calc_perm_test:
+            pivot_boot_df = sub_corr_boot_df.pivot_table(index=['text_col', 'bootstrap_iter'], columns='reader_type', values="pearson_corr").reset_index()
+            perm_test_res = _compare_corr_for_all_text_cols(pivot_boot_df, col_a='L1', col_b='L2')
+        else:
+            perm_test_res = None
+        return diffs_series.to_dict(), perm_test_res
     elif n_corrs == 2:
         diffs_series = sub_corr_df.set_index('text_col')[pearson_col] - sub_corr_df.set_index('text_col')[spearman_col]
-        return diffs_series.to_dict(), None
+        if need_to_calc_perm_test:         
+            perm_test_res = _compare_corr_for_all_text_cols(sub_corr_boot_df, col_a='pearson_corr', col_b='spearman_corr')
+        else:
+            perm_test_res = None
+        return diffs_series.to_dict(), perm_test_res
     elif RE_next_to_delta_RE:
         # calc using pivot
         pivot_df = sub_corr_df.pivot(index='text_col', columns='level_type', values=pearson_col)
         diffs_series = pivot_df['all'] - pivot_df['diff']
-        return diffs_series.to_dict(), None
+        if need_to_calc_perm_test:
+            pivot_boot_df = sub_corr_boot_df.pivot_table(index=['text_col', 'bootstrap_iter'], columns='level_type', values="pearson_corr").reset_index()
+            perm_test_res = _compare_corr_for_all_text_cols(pivot_boot_df, col_a='all', col_b='diff')
+        else:
+            perm_test_res = None
+        return diffs_series.to_dict(), perm_test_res
     else:
         return False, None
 
@@ -315,13 +641,14 @@ def _add_bar(
     return ax
 
 def _add_value_text(
-    ax, col_index, corr_val, 
-    all_levels, 
-    cat_pos, cat_pos_with_offset, 
+    ax, col_index, corr_val,
+    all_levels,
+    cat_pos, cat_pos_with_offset,
     year, main_plot, corr_diff, orientation,
     pair_bars, perm_test_res, steiger_res,
     text_col,
-    Pearson_next_to_Spearman, RE_next_to_delta_RE
+    Pearson_next_to_Spearman, RE_next_to_delta_RE,
+    axes_fontsize,
     ):
     fontsize = 9 if all_levels else 8
     if pair_bars:
@@ -332,14 +659,16 @@ def _add_value_text(
     if main_plot:
         text = year
         if orientation == "vertical":
-            ax.text(cat_pos, 1.03, text, ha='center', va='bottom', fontsize=fontsize, rotation=rotation, color='#57534D')
+            ax.text(cat_pos, 1.03, text, ha='center', va='bottom', fontsize=axes_fontsize, rotation=rotation, color='#57534D')
         else:
             if col_index == 0:
-                ax.text(LOCATION_YEARS__MAIN_PLOT, cat_pos, f"{year}", ha='left', va='center', fontsize=fontsize)
+                ax.text(LOCATION_YEARS__MAIN_PLOT, cat_pos, f"{year}", ha='left', va='center_baseline', fontsize=axes_fontsize)
         return ax
 
     # show diffs when offset groups are present
     elif pair_bars:
+        # curr_perm_test_res = perm_test_res[perm_test_res['text_col'] == text_col]
+        # symbol_star = curr_perm_test_res['perm_star'].item()
         
         if Pearson_next_to_Spearman or RE_next_to_delta_RE:
             symbol_star = 'ns'
@@ -413,7 +742,7 @@ def _set_value_axis_lim_and_ticks(
         ax.tick_params(axis='x', labelsize=axes_fontsize)
     return ax
 
-def _set_value_axis_label(ax, set_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, orientation, main_plot, bins_on_x_plot=False):
+def _set_value_axis_label(ax, set_label, row_index, col_index, all_levels, all_and_diff, corr_to_plot, pred_col, axes_fontsize, orientation, main_plot, bins_on_x_plot=False, level_labels_override=None, resolution=None):
     if corr_to_plot == ['pearson_corr']:
         corr_str = "$Pearson$ $r$"
     elif corr_to_plot == ['spearman_corr']:
@@ -434,7 +763,10 @@ def _set_value_axis_label(ax, set_label, row_index, col_index, all_levels, all_a
     else:
         if all_levels:
             if all_and_diff:
-                level_labels = {'all': 'Reading Ease\n\n', 'diff': f'{DELTA}: Reading Ease\n(Original - Simplified)\n'}
+                if level_labels_override is not None:
+                    level_labels = level_labels_override
+                else:
+                    level_labels = {'all': 'Reading Ease\n\n', 'diff': f'{DELTA}: Reading Ease\n\n'}
                 level_by_index = {0: 'all', 1: 'diff'}
             else:
                 level_labels = {'Adv': 'Original\n\n\n', 'Ele': 'Simplified\n\n\n', 'diff': f'{DELTA}: Original - Simplified\n\n\n'}
@@ -443,10 +775,12 @@ def _set_value_axis_label(ax, set_label, row_index, col_index, all_levels, all_a
             level_label = level_labels[level_by_index[row_index]]
             level_fontsize = axes_fontsize + 9
         elif main_plot:
-            resolution_label = 'Sentences\n\n\n\n\n\n' if row_index == 0 else 'Passages\n\n\n\n\n\n'
+            is_sentence = resolution == 'sentence' if resolution else row_index == 0
+            resolution_label = f"{'Sentences' if is_sentence else 'Passages'}\n\n\n\n\n\n"
             resolution_fontsize = axes_fontsize + 9
         else:
-            resolution_label = 'Sentences\n\n\n' if row_index == 0 else 'Passages\n\n\n'
+            is_sentence = resolution == 'sentence' if resolution else row_index == 0
+            resolution_label = f"{'Sentences' if is_sentence else 'Passages'}\n\n\n"
             resolution_fontsize = axes_fontsize + 9
     
         if row_index == 1 and col_index == 1:
@@ -686,7 +1020,7 @@ def _add_lines_readability_measures_categories(ax, col_index, resolution, main_p
                 x = x - 0.1
                 subtitle_fontsize = subtitle_fontsize + 2
             ax.text(x, loc_traditional, "\nTraditional\n", ha='left', va='center', fontsize=subtitle_fontsize, rotation=90, fontweight='bold')
-            ax.text(x, loc_modern, "\n| Modern |\n", ha='left', va='center', fontsize=subtitle_fontsize, rotation=90, fontweight='bold')
+            ax.text(x, loc_modern, "\n|    Modern    |\n", ha='left', va='center', fontsize=subtitle_fontsize, rotation=90, fontweight='bold')
             ax.text(x, loc_LLM, "\nLLMs\n", ha='left', va='center', fontsize=subtitle_fontsize, rotation=90, fontweight='bold')
             ax.text(x, loc_sys, "\n|Sys.|\n", ha='left', va='center', fontsize=subtitle_fontsize, rotation=90, fontweight='bold')
             ax.text(x, loc_psycho, "\nPsycholinguistic\n", ha='left', va='center', fontsize=subtitle_fontsize, rotation=90, fontweight='bold')
